@@ -1,0 +1,51 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@using Evious.Web
+@model PaypalApi
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.PPAccount)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PPAccount, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PPAccount)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.ApiUserName)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApiUserName, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiUserName)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.ApiPassword)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApiPassword, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiPassword)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.IsActive)：</label>
+                <div class="controls">
+                    @Html.CheckBoxFor(m => m.IsActive)
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.IsActive)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.Signature)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Signature)
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Signature)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Ims\Evious.Ims.DAL" Label="Evious.Ims.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Ims\Evious.Ims.Contract" Label="Evious.Ims.Contract" Category="项目" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="PayPalCoreSDK 1.6.0" Label="PayPalCoreSDK 1.6.0" Category="包" />
+    <Node Id="PayPalMerchantSDK 2.14.117" Label="PayPalMerchantSDK 2.14.117" Category="包" />
+    <Node Id="Ims\Evious.Ims.BLL" Label="Evious.Ims.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="EntityFramework.Extended 6.1.0.133" Label="EntityFramework.Extended 6.1.0.133" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="PayPalCoreSDK 1.6.0" Label="PayPalCoreSDK 1.6.0" Category="包" />
+    <Node Id="PayPalMerchantSDK 2.14.117" Label="PayPalMerchantSDK 2.14.117" Category="包" />
+    <Node Id="Web\Evious.Web.AdminApplication" Label="Evious.Web.AdminApplication" Category="项目" />
+    <Node Id="Antlr 3.5.0.2" Label="Antlr 3.5.0.2" Category="包" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.3" Label="Microsoft.AspNet.Mvc 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Label="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.3" Label="Microsoft.AspNet.Razor 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Label="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.3" Label="Microsoft.AspNet.Web.Optimization 1.1.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.2.3" Label="Microsoft.AspNet.WebApi 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Label="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Label="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.3" Label="Microsoft.AspNet.WebPages 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Label="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="PayPalCoreSDK 1.6.0" Label="PayPalCoreSDK 1.6.0" Category="包" />
+    <Node Id="PayPalMerchantSDK 2.14.117" Label="PayPalMerchantSDK 2.14.117" Category="包" />
+    <Node Id="WebGrease 1.6.0" Label="WebGrease 1.6.0" Category="包" />
+    <Node Id="Web\Evious.Web" Label="Evious.Web" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.3" Label="Microsoft.AspNet.Mvc 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Label="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.3" Label="Microsoft.AspNet.Razor 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.2.3" Label="Microsoft.AspNet.WebApi 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.3" Label="Microsoft.AspNet.WebPages 3.2.3" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="PayPalCoreSDK 1.6.0" Label="PayPalCoreSDK 1.6.0" Category="包" />
+    <Node Id="PayPalMerchantSDK 2.14.117" Label="PayPalMerchantSDK 2.14.117" Category="包" />
+    <Node Id="OA\Evious.OA.DAL" Label="Evious.OA.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="OA\Evious.OA.BLL" Label="Evious.OA.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="Crm\Evious.Crm.DAL" Label="Evious.Crm.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Crm\Evious.Crm.Contract" Label="Evious.Crm.Contract" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Crm\Evious.Crm.BLL" Label="Evious.Crm.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="EntityFramework.Extended 6.1.0.133" Label="EntityFramework.Extended 6.1.0.133" Category="包" />
+    <Node Id="Cms\Evious.Cms.DAL" Label="Evious.Cms.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Cms\Evious.Cms.BLL" Label="Evious.Cms.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="EntityFramework.Extended 6.1.0.133" Label="EntityFramework.Extended 6.1.0.133" Category="包" />
+    <Node Id="Account\Evious.Account.DAL" Label="Evious.Account.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Account\Evious.Account.Contract" Label="Evious.Account.Contract" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="Account\Evious.Account.BLL" Label="Evious.Account.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="EntityFramework.Extended 6.1.0.133" Label="EntityFramework.Extended 6.1.0.133" Category="包" />
+    <Node Id="_Framework\Evious.Framework.Web" Label="Evious.Framework.Web" Category="项目" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.3" Label="Microsoft.AspNet.Mvc 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.3" Label="Microsoft.AspNet.Razor 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.2.3" Label="Microsoft.AspNet.WebApi 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.3" Label="Microsoft.AspNet.WebPages 3.2.3" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="_Framework\Evious.Framework.DAL" Label="Evious.Framework.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="_Framework\Evious.Framework.Contract" Label="Evious.Framework.Contract" Category="项目" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="_Core\Evious.Core.Service" Label="Evious.Core.Service" Category="项目" />
+    <Node Id="Castle.Core 3.3.3" Label="Castle.Core 3.3.3" Category="包" />
+    <Node Id="_Core\Evious.Core.Module" Label="Evious.Core.Module" Category="项目" />
+    <Node Id="MvcDonutCaching 1.3.0" Label="MvcDonutCaching 1.3.0" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="_Core\Evious.Core.Log" Label="Evious.Core.Log" Category="项目" />
+    <Node Id="EntityFramework 6.1.2" Label="EntityFramework 6.1.2" Category="包" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="_Core\Evious.Core.Config" Label="Evious.Core.Config" Category="项目" />
+    <Node Id="log4net 2.0.3" Label="log4net 2.0.3" Category="包" />
+  </Nodes>
+  <Links>
+    <Link Source="Ims\Evious.Ims.DAL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="PayPalCoreSDK 1.6.0" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="PayPalMerchantSDK 2.14.117" Target="PayPalCoreSDK 1.6.0" Category="程序包依赖项" />
+    <Link Source="Ims\Evious.Ims.Contract" Target="PayPalMerchantSDK 2.14.117" Category="安装的程序包" />
+    <Link Source="EntityFramework.Extended 6.1.0.133" Target="EntityFramework 6.1.2" Category="程序包依赖项" />
+    <Link Source="PayPalCoreSDK 1.6.0" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="PayPalMerchantSDK 2.14.117" Target="PayPalCoreSDK 1.6.0" Category="程序包依赖项" />
+    <Link Source="Ims\Evious.Ims.BLL" Target="EntityFramework.Extended 6.1.0.133" Category="安装的程序包" />
+    <Link Source="Ims\Evious.Ims.BLL" Target="PayPalMerchantSDK 2.14.117" Category="安装的程序包" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Target="Microsoft.AspNet.Mvc 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.3" Target="WebGrease 1.6.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="PayPalCoreSDK 1.6.0" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="PayPalMerchantSDK 2.14.117" Target="PayPalCoreSDK 1.6.0" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.6.0" Target="Antlr 3.5.0.2" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.6.0" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.Web.Optimization 1.1.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.WebApi 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web.AdminApplication" Target="PayPalMerchantSDK 2.14.117" Category="安装的程序包" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Target="Microsoft.AspNet.Mvc 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="PayPalCoreSDK 1.6.0" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="PayPalMerchantSDK 2.14.117" Target="PayPalCoreSDK 1.6.0" Category="程序包依赖项" />
+    <Link Source="Web\Evious.Web" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web" Target="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web" Target="Microsoft.AspNet.WebApi 5.2.3" Category="安装的程序包" />
+    <Link Source="Web\Evious.Web" Target="PayPalMerchantSDK 2.14.117" Category="安装的程序包" />
+    <Link Source="OA\Evious.OA.DAL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="OA\Evious.OA.BLL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="OA\Evious.OA.BLL" Target="Newtonsoft.Json 6.0.8" Category="安装的程序包" />
+    <Link Source="Crm\Evious.Crm.DAL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="Crm\Evious.Crm.Contract" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="EntityFramework.Extended 6.1.0.133" Target="EntityFramework 6.1.2" Category="程序包依赖项" />
+    <Link Source="Crm\Evious.Crm.BLL" Target="EntityFramework.Extended 6.1.0.133" Category="安装的程序包" />
+    <Link Source="Cms\Evious.Cms.DAL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="EntityFramework.Extended 6.1.0.133" Target="EntityFramework 6.1.2" Category="程序包依赖项" />
+    <Link Source="Cms\Evious.Cms.BLL" Target="EntityFramework.Extended 6.1.0.133" Category="安装的程序包" />
+    <Link Source="Account\Evious.Account.DAL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="Account\Evious.Account.Contract" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="EntityFramework.Extended 6.1.0.133" Target="EntityFramework 6.1.2" Category="程序包依赖项" />
+    <Link Source="Account\Evious.Account.BLL" Target="EntityFramework.Extended 6.1.0.133" Category="安装的程序包" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="_Framework\Evious.Framework.Web" Target="Microsoft.AspNet.Mvc 5.2.3" Category="安装的程序包" />
+    <Link Source="_Framework\Evious.Framework.Web" Target="Microsoft.AspNet.WebApi 5.2.3" Category="安装的程序包" />
+    <Link Source="_Framework\Evious.Framework.DAL" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="_Framework\Evious.Framework.Contract" Target="Newtonsoft.Json 6.0.8" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Service" Target="Castle.Core 3.3.3" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Module" Target="MvcDonutCaching 1.3.0" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Module" Target="Newtonsoft.Json 6.0.8" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Log" Target="EntityFramework 6.1.2" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Log" Target="log4net 2.0.3" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Log" Target="Newtonsoft.Json 6.0.8" Category="安装的程序包" />
+    <Link Source="_Core\Evious.Core.Config" Target="log4net 2.0.3" Category="安装的程序包" />
+  </Links>
+  <Categories>
+    <Category Id="项目" />
+    <Category Id="包" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="项目" ValueLabel="True">
+      <Condition Expression="HasCategory('项目')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="程序包依赖项" ValueLabel="True">
+      <Condition Expression="HasCategory('程序包依赖项')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

@@ -1,0 +1,525 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Utility
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model;
+@using Evious.Web;
+
+@model PagedList<TransactionDetail>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-datepicker/css/datepicker.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-datetimepicker/css/datetimepicker.css")" />
+
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-select/bootstrap-select.min.css" )" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/select2/select2.css" )" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/select2/select2-metronic.css" )" />
+
+
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/data-tables/DT_bootstrap.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-datepicker/css/datepicker.css")" />
+
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-modal/css/bootstrap-modal.css")" />
+   
+
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>    
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-daterangepicker/daterangepicker.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/scripts/custom/components-pickers.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-daterangepicker/moment.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/jquery-validation/dist/jquery.validate.min.js")"></script>
+    <script type ="text/javascript" src="@Url.StaticFile("/scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-select/bootstrap-select.min.js" )"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/select2/select2.min.js" )"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/select2/select2_locale_zh-CN.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/data-tables/jquery.dataTables.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/data-tables/DT_bootstrap.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-modal/js/bootstrap-modalmanager.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-modal/js/bootstrap-modal.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/jquery-validation/dist/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/jquery-validation/dist/additional-methods.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/Scripts/knockout-3.1.0.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/scripts/core/datatable.js")"></script>    
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/scripts/custom/ecommerce-orders.js")"></script>
+
+    <script>
+        var uniqueId = "@Guid.NewGuid().ToString()";
+
+        function getStatus() {
+            var url = "@Url.StaticFile("/TransactionDetail/GetCurrentProgress/")" + uniqueId;
+            $.get(url, function (data) {
+                if (data == 0) {
+                    $("#progress").attr("data-percent", "准备中....");
+                } else if (data == 100) {
+                    $("#progress").attr("data-percent", data + "%,同步已经完成,3秒后自动刷新");
+                    //$("#progressbar").attr("style", "width:" + data + "%")
+                    setTimeout("location.reload()", 3000);
+                } else {
+                    //$("#progress").attr("data-percent", data);
+                    $("#progressbar").attr("style", "width:" + data + "%")
+                }
+                window.setTimeout("getStatus()", 100);
+            });
+        }
+
+        
+
+        jQuery(document).ready(function () {
+            ComponentsPickers.init();
+            EcommerceOrders.init();
+           // UIExtendedModals.init();
+
+            // general settings
+            $.fn.modal.defaults.spinner = $.fn.modalmanager.defaults.spinner =
+              '<div class="loading-spinner" style="width: 200px; margin-left: -100px;">' +
+                '<div class="progress progress-striped active">' +
+                  '<div class="progress-bar" style="width: 100%;"></div>' +
+                '</div>' +
+              '</div>';
+            $.fn.modalmanager.defaults.resize = true;
+            //ajax demo:
+            var $modal = $('#ajax-modal');
+            $modal.on('hidden', function () {
+                if ($("#ajax-modal").hasClass("container"))
+                {
+                    $("#ajax-modal").removeClass("container");
+                }
+                
+            })
+            $modal.on('click', '.update', function () {
+                $modal.modal('loading');
+                setTimeout(function () {
+                    $modal
+                      .modal('loading')
+                      .find('.modal-body')
+                        .prepend('<div class="alert alert-info fade in">' +
+                          'Updated!<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                        '</div>');
+                }, 1000);
+            });
+
+            $('#ordersync').on('click', function () {
+                if ($("#ajax-modal").hasClass("container")) {
+                    $("#ajax-modal").removeClass("container");
+                }
+                $('body').modalmanager('loading');
+                setTimeout(function () {
+                    $modal.load('/Ims/TransactionDetail/Sync', '', function () {
+                        $modal.modal();
+
+                        if (jQuery().daterangepicker) {
+                            $('#defaultrange').daterangepicker({
+                                opens: (App.isRTL() ? 'left' : 'right'),
+                                format: 'MM/DD/YYYY',
+                                separator: ' to ',
+                                startDate: moment().subtract('days', 29),
+                                endDate: moment(),
+                                minDate: '01/01/2012',
+                                maxDate: '12/31/2014',
+                            },
+                                function (start, end) {
+                                    console.log("Callback has been called!");
+                                    $('#defaultrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                                }
+                            );
+                            
+                        }
+                        
+                        if (jQuery().select2) {
+                            $('.select2me').select2({
+                                placeholder: "请选择",
+                                allowClear: true
+                            });                           
+                        }
+                        
+                        $modal.on('click', '#startProcess', function () {
+                            
+                            $.post(
+                                    "@Url.StaticFile("/Ims/TransactionDetail/StartLongRunningProcess")",
+                                    { "PaypalApi": $("#PaypalApi").val(), "RangeDate": $('#defaultrange input').val(), id: uniqueId },
+                                    function () {
+                                        $('#progress').show();
+                                        getStatus();
+                                    });
+                        });
+
+
+                    });
+                }, 1000);
+            });
+
+            $('#datatable_orders').on('click', '.ajax-order-delete-dispatch', function (e) {
+                e.preventDefault();
+                id = e.currentTarget.id;               
+                $.post(
+                     "@Url.StaticFile("/Ims/TransactionDetail/DeleteDispatchOrder")",
+                       {"id":id},
+                       function (data) {
+                         if (data.message)
+                            {
+                              alert(data.message);
+                            }
+                        window.location.href="@Url.StaticFile("/Ims/TransactionDetail/Index")"
+                      });
+            });
+
+            $('#datatable_orders').on('click', '.ajax-order-submit-dispatch', function (e) {
+                e.preventDefault();
+                id = e.currentTarget.id;
+                //alert(id);
+                $.post(
+                     "@Url.StaticFile("/Ims/TransactionDetail/SubmitDispatchOrder")",
+                       { "id": id },                       
+                       function (data) {
+                           if (data.message)
+                           {
+                               alert(data.message);
+                           }
+                           window.location.href="@Url.StaticFile("/Ims/TransactionDetail/Index")"
+                       });
+            });
+            
+
+            $('#datatable_orders').on('click', '.ajax-order-dispatch', function (e) {
+                $("#ajax-modal").addClass("container");
+                e.preventDefault();
+                id = e.currentTarget.id;
+                $('body').modalmanager('loading');
+                setTimeout(function () {                   
+                    $modal.load('/Ims/TransactionDetail/Dispatch/'+id, '', function () {
+                        $modal.modal();
+                    
+                        if (jQuery().bootstrapWizard) {
+                            var form = $('#dispatch_form');
+                            var error = $('.alert-danger', form);
+                            var success = $('.alert-success', form);
+
+                            var displayConfirm = function () {
+                                $('#tab4 .form-control-static', form).each(function () {
+                                    var input = $('[name="' + $(this).attr("data-display") + '"]', form);
+                                    if (input.is(":radio")) {
+                                        input = $('[name="' + $(this).attr("data-display") + '"]:checked', form);
+                                    }
+                                    if (input.is(":text") || input.is("textarea")) {
+                                        $(this).html(input.val());
+                                    } else if (input.is("select")) {
+                                        $(this).html(input.find('option:selected').text());
+                                    } else if (input.is(":radio") && input.is(":checked")) {
+                                        $(this).html(input.attr("data-title"));
+                                    } else if ($(this).attr("data-display") == 'payment') {
+                                        var payment = [];
+                                        $('[name="payment[]"]').each(function () {
+                                            payment.push($(this).attr('data-title'));
+                                        });
+                                        $(this).html(payment.join("<br>"));
+                                    }
+                                });
+                            }
+
+                            var handleTitle = function (tab, navigation, index) {
+                                var total = navigation.find('li').length;
+                                var current = index + 1;
+                                // set wizard title
+                               // $('.step-title', $('#form_wizard_1')).text('Step ' + (index + 1) + ' of ' + total);
+                                // set done steps
+                                jQuery('li', $('#form_wizard_1')).removeClass("done");
+                                var li_list = navigation.find('li');
+                                for (var i = 0; i < index; i++) {
+                                    jQuery(li_list[i]).addClass("done");
+                                }
+
+                                if (current == 1) {
+                                    $('#form_wizard_1').find('.button-previous').hide();
+                                } else {
+                                    $('#form_wizard_1').find('.button-previous').show();
+                                }
+
+                                if (current >= total) {
+                                    $('#form_wizard_1').find('.button-next').hide();
+                                    $('#form_wizard_1').find('.button-submit').show();
+                                    displayConfirm();
+                                } else {
+                                    $('#form_wizard_1').find('.button-next').show();
+                                    $('#form_wizard_1').find('.button-submit').hide();
+                                }
+                                //App.scrollTo($('.page-title'));
+                            }
+                            // default form wizard
+                            $('#form_wizard_1').bootstrapWizard({
+                                'nextSelector': '.button-next',
+                                'previousSelector': '.button-previous',
+                                onTabClick: function (tab, navigation, index, clickedIndex) {
+                                    success.hide();
+                                    error.hide();
+                                    if (form.valid() == false) {
+                                        return false;
+                                    }
+                                    handleTitle(tab, navigation, clickedIndex);
+                                },
+                                onNext: function (tab, navigation, index) {
+                                    success.hide();
+                                    error.hide();
+
+                                    if (form.valid() == false) {
+                                        return false;
+                                    }
+
+                                    handleTitle(tab, navigation, index);
+                                },
+                                onPrevious: function (tab, navigation, index) {
+                                    success.hide();
+                                    error.hide();
+
+                                    handleTitle(tab, navigation, index);
+                                },
+                                onTabShow: function (tab, navigation, index) {
+                                    var total = navigation.find('li').length;
+                                    var current = index + 1;
+                                    var $percent = (current / total) * 100;
+                                    $('#form_wizard_1').find('.progress-bar').css({
+                                        width: $percent + '%'
+                                    });
+                                }
+                            });
+
+                            var postdata = {};
+                            $('#form_wizard_1').find('.button-previous').hide();
+                            $('#form_wizard_1 .button-submit').click(function () {
+                                //   alert('Finished! Hope you like it :)');
+                                switch (dispatchorder.agent)
+                                {
+                                    case "1"://ck1                                        
+                                        var postdata = {
+                                            "Express": dispatchorder.express, "Agent": dispatchorder.agent, "ID": dispatchorder.transactiondetailid, "Type": dispatchorder.type, "Warehouse": dispatchorder.warehouse
+                                                    , "goodsDescription": $("#goodsDescription").val()
+                                                    , "goodsQuantity": $("#goodsQuantity").val(), "goodsDeclareWorth": $("#goodsDeclareWorth").val(), "detailDescriptionCN": $("#detailDescriptionCN").val()
+                                                    , "goodsWeight": $("#goodsWeight").val(), "size": $("#size").val()
+                                                    , "Length": $("#length").val(), "Width": $("#width").val(), "Height": $("#height").val()
+                                        };
+                                        
+                                        break;
+
+                                    case "2"://sfc
+                                        var postdata = {
+                                            "Express": dispatchorder.express, "Agent": dispatchorder.agent, "ID": dispatchorder.transactiondetailid, "Type": dispatchorder.type, "Warehouse": dispatchorder.warehouse
+                                                    , "goodsDescription": $("#goodsDescription").val()
+                                                    , "goodsQuantity": $("#goodsQuantity").val(), "goodsDeclareWorth": $("#goodsDeclareWorth").val(), "detailDescriptionCN": $("#detailDescriptionCN").val()
+                                                    , "goodsWeight": $("#goodsWeight").val()
+                                                    
+                                        };
+                                        break;
+
+                                }
+
+                                $.post(
+                                        "@Url.StaticFile("/Ims/TransactionDetail/Dispatch")",
+                                         postdata,
+                                         function (data) {
+                                             if (data.Message)
+                                                {
+                                                        alert(data.Message);
+
+                                                 }
+                                            window.location.href="@Url.StaticFile("/Ims/TransactionDetail/Index")"
+                                          });
+                                
+                            }).hide();
+                        }
+                        
+                    });
+                }, 1000);               
+            });
+        });
+    </script>
+
+}
+
+
+
+
+<!-- ajax -->
+<div id="ajax-modal" class="modal fade" data-backdrop="static" tabindex="-1" >
+</div>
+
+
+<!-- /.modal -->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- Begin: life time stats -->
+        <div class="portlet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-shopping-cart"></i>订单列表
+                </div>
+                <div class="actions">
+                    <a data-toggle="modal" id="ordersync"  class="btn default yellow-stripe">
+                        <i class="fa fa-plus"></i>
+                        <span class="hidden-480">
+                            同步订单
+                        </span>
+                    </a>                    
+                    <div class="btn-group">
+                        <a class="btn default yellow-stripe" href="#" data-toggle="dropdown">
+                            <i class="fa fa-share"></i>
+                            <span class="hidden-480">
+                                工具
+                            </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="#">
+                                    Export to Excel
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Export to CSV
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Export to XML
+                                </a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Print Invoices
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-container">
+                    <div class="table-actions-wrapper">
+                        <span>
+                        </span>
+                        <!--<select class="table-group-action-input form-control input-inline input-small input-sm">
+                             <option value="">Select...</option>
+                             <option value="Cancel">Cancel</option>
+                             <option value="Cancel">Hold</option>
+                             <option value="Cancel">On Hold</option>
+                             <option value="Close">Close</option>
+                         </select>
+                         <select class="table-group-action-input form-control input-inline input-small input-sm">
+                             <option value="">Select...</option>
+                             <option value="Cancel">Cancel</option>
+                             <option value="Cancel">Hold</option>
+                             <option value="Cancel">On Hold</option>
+                             <option value="Close">Close</option>
+                         </select>-->
+                        <select class="table-group-action-input form-control input-inline input-small input-sm">
+                            <option value="">Select...</option>
+                            <option value="Cancel">Cancel</option>
+                            <option value="Cancel">Hold</option>
+                            <option value="Cancel">On Hold</option>
+                            <option value="Close">Close</option>
+                        </select>
+                        <button class="btn btn-sm blue table-group-action-submit"><i class="fa fa-check"></i> 提交</button>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="datatable_orders">
+                        <thead>
+                            <tr role="row" class="heading">
+                                <th width="5%">
+                                    <input type="checkbox" class="group-checkable">
+                                </th>
+                                <th width="15%">
+                                    交易时间
+                                </th>
+                                <th width="15%">
+                                    交易ID
+                                </th>
+
+                                <th width="15%">
+                                    买家ID
+                                </th>
+                                <th width="10%">
+                                    国家名称
+                                </th>
+                                <th width="10%">
+                                    销售价
+                                </th>
+                                <th width="10%">
+                                    物流代理
+                                </th>
+                                <th width="10%">
+                                    速递服务
+                                </th>
+                                <th width="10%">
+                                    操作
+                                </th>
+                            </tr>
+                            <tr role="row" class="filter">
+                                <td></td>
+                                <td>
+                                    <div class="input-group" id="ordertimerange">
+                                        <input type="text" class="form-control form-filter input-sm" data-val="true" name="ordertimerange" id="RangeDate">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-sm date-range-toggle" type="button"><i class="fa fa-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="transaction_id">
+                                </td>
+
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="buyer_id">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="shiptocountrycode">
+                                </td>
+                                <td>
+
+                                    <div class="margin-bottom-5">
+                                        <input type="text" class="form-control form-filter input-sm" name="order_base_price_from" placeholder="从" />
+                                    </div>
+                                    <input type="text" class="form-control form-filter input-sm" name="order_base_price_to" placeholder="到" />
+                                </td>
+                                <td>
+                                    <div class="margin-bottom-5">
+                                        @Html.DropDownList("agent", null, "", new { @class = "form-filter input-sm",@id="filteragent" })
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="order_id">
+                                </td>
+                                <td>
+                                    <div class="margin-bottom-5">
+                                        <button class="btn btn-sm blue filter-submit margin-bottom"><i class="fa fa-search"></i> 搜索</button>
+                                    </div>
+                                    <button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> 重置</button>                                    
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+    </div>
+</div>

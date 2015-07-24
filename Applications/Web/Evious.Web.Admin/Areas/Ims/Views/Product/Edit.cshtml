@@ -1,0 +1,144 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@using Evious.Web
+@model Product
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+
+
+@section PageSpecificJavascriptIncludes{
+<script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/flashupload.js")"></script>
+    <script type="text/javascript">
+        $('#uploader').FileUpload({
+            'subfolder': 'ims',
+            'callback': function (msg) {
+                //msg.url为图片地址
+                $("#CoverPicture").val(msg.url);
+                $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl(msg.url) + "'/>" });
+            }
+        }); 
+
+        if ($("#CoverPicture").val()) {
+            $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl($("#CoverPicture").val()) + "'/>" });
+        }
+    </script>
+}
+@section PageSpecificStyleSheetIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-switch/css/bootstrap-switch.min.css")" />
+}
+
+@section ModualJavascriptIncludes{
+    Custom.init();
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered ">
+        <div class="row">
+           
+            
+            
+            
+            <table class="form-group table-bordered">
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group no-border">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.Name)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+                            </div>
+                        </div>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group no-border">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.Sku)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Sku, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Sku)</span>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group no-border">
+                            <label class="control-label">@Html.DisplayNameFor(m => m.Remark)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Remark, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group no-border">
+                            <label class="control-label">@Html.DisplayNameFor(m => m.CoverPicture)：</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    @Html.TextBoxFor(m => m.CoverPicture, new { @class = "form-control input-large" })
+                                    <span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
+                                </div>
+                                <div id="uploader"></div>
+                                <div id="fileQueue"></div>
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.CoverPicture)</span>
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group no-border">
+                            <label class="control-label">@Html.DisplayNameFor(m => m.Weight)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Weight, new { @class = "form-control input-small" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Weight)</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group  no-border">
+                            <label class="control-label">@Html.DisplayNameFor(m => m.Size)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Size, new { @class = "form-control input-small mask_size" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Size)</span>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label">@Html.DisplayNameFor(m => m.PackWeight)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.PackWeight, new { @class = "form-control input-small" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.PackWeight)</span>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label">@Html.DisplayNameFor(m => m.PackSize)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.PackSize, new { @class = "form-control input-small" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.PackSize)</span>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table> 
+         </div>        
+
+    </div>
+}
+

@@ -1,0 +1,109 @@
+﻿@using Evious.Web
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="@Url.StaticFile("/assets/admin/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/assets/admin/plugins/bootstrap/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/assets/admin/plugins/uniform/css/uniform.default.css")" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <!--<link href="@Url.StaticFile("/assets/admin/plugins/select2/select2-metronic.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/assets/admin/plugins/data-tables/DT_bootstrap.css")" rel="stylesheet" />-->
+    @RenderSection("PageSpecificStyleSheetIncludes", required: false)
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="@Url.StaticFile("/assets/admin/css/style-metronic.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/assets/admin/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/assets/admin/css/style-responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/assets/admin/css/plugins.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/content/Styles/admin.main.css")" rel="stylesheet" type="text/css" />
+    <!-- END THEME STYLES -->
+
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+  @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+  {
+
+      @RenderSection("MainContent", required: false)
+        @RenderBody()
+
+    <div style="height:80px;"></div>  
+      
+    <div class="form-actions navbar-fixed-bottom">
+        <button type="submit" id="submit" class="btn blue"><i class="fa fa-check"></i> 提交</button>
+        <span id="submitloading" style="display:none;"><img src='@Url.StaticFile("/content/images/loading.gif")'/></span>
+        <button type="button" class="btn" id="cancel">撤销</button>
+        @Html.ValidationSummary(false)
+    </div>
+  }
+   @RenderSection("OtherContent", required: false)
+
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+    </script>
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+       <script src="@Url.StaticFile("/assets/admin/plugins/respond.min.js")"></script>
+       <script src="@Url.StaticFile("/assets/admin/plugins/excanvas.min.js")"></script>
+       <![endif]-->
+    <script src="@Url.StaticFile("/assets/admin/plugins/jquery-1.10.2.min.js" )" type="text/javascript"></script>
+    <script src="@Url.StaticFile("/assets/admin/plugins/jquery-migrate-1.2.1.min.js" )" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.thickbox.js")"></script>
+    <script src="@Url.StaticFile("/assets/admin/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.StaticFile("/assets/admin/plugins/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
+    <!-- <script src="@Url.StaticFile("/assets/admin/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js")" type="text/javascript"></script>-->
+    <script src="@Url.StaticFile("/assets/admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js")" type="text/javascript"></script>
+    <script src="@Url.StaticFile("/assets/admin/plugins/jquery.blockui.min.js")" type="text/javascript"></script>
+    <script src="@Url.StaticFile("/assets/admin/plugins/jquery.cokie.min.js")" type="text/javascript"></script>
+    <script src="@Url.StaticFile("/assets/admin/plugins/uniform/jquery.uniform.min.js")" type="text/javascript"></script>
+    <script src="@Url.StaticFile("/content/scripts/admin.main.js")" type="text/javascript"></script>
+
+    <!--  END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    @RenderSection("PageSpecificJavascriptIncludes", required: false)
+   
+    
+    <!-- END PAGE LEVEL PLUGINS -->
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.numeric.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/jquery.ui.datapicker-zh-CN.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/scripts/admin.edit.js")"></script>	
+
+    <script src="@Url.StaticFile("/assets/admin/scripts/core/app.js")"></script>
+    <script src="@Url.StaticFile("/assets/admin/scripts/custom/custom.js")"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.init();            
+            @RenderSection("ModualJavascriptIncludes", required: false)
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+
+</body>
+<!-- END BODY -->
+</html>

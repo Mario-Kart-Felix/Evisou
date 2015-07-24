@@ -1,0 +1,213 @@
+﻿@using Evious.Web
+@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@model PaypalApi
+
+<div class="modal-header">
+    
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    @{
+        if(Model.ID == 0)
+        {
+        <h4 class="modal-title" id="ModalLabel">添加新物流代理</h4>
+        }
+        else
+        {
+        <h4 class="modal-title" id="ModalLabel">编辑物流代理</h4>
+        }
+    }    
+</div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="modal-body">
+        <div class="form-horizontal">            
+            <div class="form-group">
+                <label class="control-label col-md-3"><span class="required">*</span>PP账号	：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.PPAccount, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PPAccount)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">API用户名：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa  fa-list-ol"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.ApiUserName, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                     </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiUserName)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">API密码：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.ApiPassword, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiPassword)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">签名：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextAreaFor(m => m.Signature, new { @class = "form-control text-box single-line input-medium", @row="3" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Signature)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">是否激活：</label>
+                <div class="col-md-4">
+                    @Html.CheckBoxFor(m => m.IsActive, new { @id = "active", @class = "switch-chekcbox", @data_on_text = "是", @data_off_text = "否" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.IsActive)</span>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" id="submitbutton" class="btn blue btn-sm default"><i class="fa fa-check"></i> 提交</button>
+        <button type="button" class="btn btn-sm default" id="cancel" data-dismiss="modal">撤销</button>
+    </div>
+
+}
+
+
+<script>
+    var FormComponents = function () {        
+        var handleCheckBox = function () {
+            $('.switch-chekcbox').bootstrapSwitch();
+        };
+
+        var handleCheckForm = function () {
+            var form = $("#mainForm");
+            var error = $('.alert-danger', form);
+            var success = $('.alert-success', form);
+
+            form.validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-block help-block-error', // default input error message class
+                focusInvalid: false, // do not focus the last invalid input
+                ignore: "",  // validate all fields including form hidden input
+                rules: {
+                    PPAccount: {
+                        minlength: 2,
+                        required: true,
+                    },
+                    ApiUserName: {
+                        minlength: 2,
+                        required: true,
+
+                    },
+                    ApiPassword: {
+                       
+                        required: true,
+                    },
+                    Signature: {
+                        
+                        required: true,
+                    },
+                    //Gender: {
+
+                    //    required: true,
+                    //},
+
+
+                },
+                messages: { // custom messages for radio buttons and checkboxes
+                    Gender: {
+                        required: "Please select a Membership type"
+                    },
+                },
+                invalidHandler: function (event, validator) { //display error alert on form submit
+                    success.hide();
+                    error.show();
+                    Metronic.scrollTo(error, -200);
+
+                },
+
+                errorPlacement: function (error, element) { // render error placement for each input type
+                    var icon = $(element).parent('.input-icon').children('i');
+                    icon.removeClass('fa-check').addClass("fa-warning");
+                    icon.attr("data-original-title", error.text()).tooltip({ 'container': 'body' });
+                },
+
+                highlight: function (element) { // hightlight error inputs
+                    $(element)
+                        .closest('.form-group').removeClass("has-success").addClass('has-error'); // set error class to the control group
+                },
+
+                unhighlight: function (element) { // revert the change done by hightlight
+
+                },
+
+                success: function (label, element) {
+                    var icon = $(element).parent('.input-icon').children('i');
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
+                    icon.removeClass("fa-warning").addClass("fa-check");
+                },
+
+                submitHandler: function (form) {
+                    success.show();
+                    error.hide();
+                    //form[0].submit(alert('dasdas')); // submit the form
+                }
+            });
+
+
+            $("#submitbutton").click(function (e) {
+                if (!form.valid()) {
+                    e.preventDefault();
+                }
+
+            });
+        };
+
+        return {
+            init: function () {
+                handleCheckBox();
+                handleCheckForm();
+            }
+        }
+
+
+    }();
+
+    $(function () {
+        
+        FormComponents.init();
+    });
+</script>
+
+
+
+

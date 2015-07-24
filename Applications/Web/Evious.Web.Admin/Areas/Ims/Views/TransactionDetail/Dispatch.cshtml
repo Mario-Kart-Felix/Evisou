@@ -1,0 +1,962 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@using Evious.Web
+@model TransactionDetail
+<script>
+    function deleteExpress()
+    {
+        $("#express").select2('data', null);
+        $("#express option").each(function () {            
+            $("#express option").remove();
+        })
+    }
+    
+    function expressdetailValidation()
+    {
+        $("#goodsDescription").rules("add", { required: true });
+        $("#goodsQuantity").rules("add", { required: true });
+        $("#goodsDeclareWorth").rules("add", { required: true });
+        $("#detailDescriptionCN").rules("add", { required: true });
+        if (agent == 2) {
+            $("#goodsWeight").rules("add", { required: true });
+           // $("#size").rules("add", { required: true });
+        }
+    }
+    var form = $('#dispatch_form');
+    var error = $('.alert-danger', form);
+    var success = $('.alert-success', form);
+
+    form.validate({
+        doNotHideMessage: true, //this option enables to show the error/success messages on tab switch.
+        errorElement: 'span', //default input error message container
+        errorClass: 'help-block', // default input error message class
+        focusInvalid: false, // do not focus the last invalid input
+        rules: {            
+            agent: {               
+                required: true
+            },
+            type: {
+                required: true
+            },
+            express: {
+                required: true
+            },
+            
+        },
+       
+
+        errorPlacement: function (error, element) { // render error placement for each input type
+            if (element.attr("name") == "gender") { // for uniform radio buttons, insert the after the given container
+                error.insertAfter("#form_gender_error");
+            } else if (element.attr("name") == "payment[]") { // for uniform radio buttons, insert the after the given container
+                error.insertAfter("#form_payment_error");
+            } else {
+                error.insertAfter(element); // for other inputs, just perform default behavior
+            }
+        },
+
+        invalidHandler: function (event, validator) { //display error alert on form submit   
+            success.hide();
+            error.show();
+            App.scrollTo(error, -200);
+        },
+
+        highlight: function (element) { // hightlight error inputs
+            $(element)
+                .closest('.form-group').removeClass('has-success').addClass('has-error'); // set error class to the control group
+        },
+
+        unhighlight: function (element) { // revert the change done by hightlight
+            $(element)
+                .closest('.form-group').removeClass('has-error'); // set error class to the control group
+        },
+
+        success: function (label) {
+            if (label.attr("for") == "gender" || label.attr("for") == "payment[]") { // for checkboxes and radio buttons, no need to show OK icon
+                label
+                    .closest('.form-group').removeClass('has-error').addClass('has-success');
+                label.remove(); // remove error label here
+            } else { // display success icon for other inputs
+                label
+                    .addClass('valid') // mark the current input as valid and display OK icon
+                .closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
+            }
+        },
+
+        submitHandler: function (form) {
+            success.show();
+            error.hide();
+            //add here some ajax code to submit your form or just call form.submit() if you want to submit the form without ajax
+        }
+
+    });
+
+
+    if (jQuery().select2) {
+        $('.select2me').select2({
+            placeholder: "请选择",
+            allowClear: true
+        });      
+       
+
+        var dispatchorder = {};
+       
+        dispatchorder.transactiondetailid = "@Model.ID";
+        
+
+
+        $('#agent').select2({
+            placeholder: "选择物流代理",
+            allowClear: true
+        }).on("change", function (e) {            
+            deleteExpress()
+            $("#type").select2('data', null);           
+            $('#warehousegroup').hide();
+            $('#expressgroup').hide();
+            $('#showagent').text($('#agent').select2('data').text);
+           
+            switch (e.val)
+            {
+                case "1":
+                    $('#type').find('option[value=1]').removeAttr('disabled');
+                    $("#typegroup").show();
+                    dispatchorder.agent = e.val;                   
+                    break;
+
+                case "2":
+                    $('#type').find('option[value=1]').attr('disabled', 'disabled');
+                    $("#typegroup").show();
+                    dispatchorder.agent = e.val;                   
+                    break;
+
+                default:
+                    $("#typegroup").hide();
+                    $('#warehousegroup').hide();
+                    $('#expressgroup').hide();
+                    break;
+            }
+        });
+
+        $('#type').select2({
+            placeholder: "发货类型",
+            allowClear: true
+        }).on("change", function (e) {
+            deleteExpress();
+
+            $("#goodsDescription").rules('remove', 'required');
+            $("#goodsQuantity").rules('remove', 'required');
+            $("#goodsDeclareWorth").rules('remove', 'required');
+            $("#detailDescriptionCN").rules('remove', 'required');
+            $("#goodsWeight").rules('remove', 'required');
+           // $("#size").rules('remove', 'required');
+
+            $('#warehousegroup').show();
+            $("#expressdetail").hide(function () {              
+                
+            });
+            if (e.val) {
+                dispatchorder.type = e.val;
+                $('#showtype').text($('#type').select2('data').text);
+               // alert($('#type').select2('data').text);
+                switch (e.val)
+                {
+                    case "1":                        
+                        $('#warehousegroup').show();
+                        break;
+                    case "2":
+                        $("#expressdetail").show(function () {
+                            //expressdetailValidation()                            
+                        });
+                        $('#expressgroup').show(                            
+                            function () {
+                                //alert(agent);
+                                $.getJSON("/TransactionDetail/GetExpressList/?agentid=" + dispatchorder.agent, null, function (data) {
+                                    $("<option value=''></option>").appendTo($('#express'));
+                                    $.each(data, function (i, n) {
+                                        $("<option value=" + n.Code + ">" + n.Code+'---'+n.Name + "</option>").appendTo($('#express'));
+                                    });
+                                });
+                            }
+                           );
+                        $('#warehousegroup').hide();
+                        break;
+                }                
+            } else {                
+                $('#warehousegroup').hide();
+                $('#expressgroup').hide(function () {
+                    deleteExpress();
+                });
+            }
+        });
+
+        $('#warehouse').select2({
+            placeholder: "选择仓库",
+            allowClear: true
+        }).on("change", function (e) {
+            $('#showwarehouse').text($('#warehouse').select2('data').text);
+            deleteExpress();
+            if (e.val) {
+                dispatchorder.warehouse = e.val;
+                $.getJSON("/TransactionDetail/GetOutboundExpressList/?agentid=" + dispatchorder.agent + "&warehouse=" + e.val, null, function (data) {
+                $("<option value=''></option>").appendTo($('#express'));
+                $.each(data, function (i, n) {
+                            $("<option value=" + n.Code + ">" + n.Code + '---' + n.Name + "</option>").appendTo($('#express'));
+                        });
+                    });                
+                $('#expressgroup').show();
+            } else {
+                $('#expressgroup').hide(deleteExpress());
+            }
+        });
+
+        $('#express').select2({
+            placeholder: "快递方式",
+            allowClear: true,
+        }).on("change", function (e) {
+            $('#showexpress').text($('#express').select2('data').text);
+            dispatchorder.express = e.val;
+        });
+        
+       // $("#express").select2('data', null);
+    } 
+</script>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title">发货</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="" id="form_wizard_1">
+                <form action="#" class="form-horizontal" id="dispatch_form" novalidate="novalidate">
+                    <div class="form-wizard">
+                        <div class="form-body">
+                            <ul class="nav nav-pills nav-justified steps">
+                                <li class="active">
+                                    <a href="#tab1" data-toggle="tab" class="step">
+                                        <span class="number">
+                                            1
+                                        </span>
+                                        <span class="desc">
+                                            <i class="fa fa-check"></i> 准备下单
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab2" data-toggle="tab" class="step">
+                                        <span class="number">
+                                            2
+                                        </span>
+                                        <span class="desc">
+                                            <i class="fa fa-check"></i> 选择快递
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" data-toggle="tab" class="step active">
+                                        <span class="number">
+                                            3
+                                        </span>
+                                        <span class="desc">
+                                            <i class="fa fa-check"></i> 填写快递资料
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab4" data-toggle="tab" class="step">
+                                        <span class="number">
+                                            4
+                                        </span>
+                                        <span class="desc">
+                                            <i class="fa fa-check"></i> 确认订单
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div id="bar" class="progress progress-striped" role="progressbar">
+                                <div class="progress-bar progress-bar-success" style="width: 25%;">
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="alert alert-danger display-none">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    表单有错误,请检查
+                                </div>
+                                <div class="alert alert-success display-none">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    Your form validation is successful!
+                                </div>
+                                <div class="tab-pane active" id="tab1">                                    
+                                    <div class="portlet-body form-horizontal form-bordered form-row-stripped ">
+                                        <div class="">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="box">
+                                                        <div class="portlet-title">                                                            
+                                                            <h4>订单详细</h4>                                                            
+                                                        </div>
+                                                        <div class="portlet-body">
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m => m.TransactionID)：
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    @Html.DisplayFor(m=>m.TransactionID)
+                                                                    <span class="label label-info label-sm">
+                                                                        Email confirmation was sent
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m => m.OrderTime)：
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    @Html.DisplayFor(m=>m.OrderTime)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    Order Status:
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    <span class="label label-success">
+                                                                        Closed
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m=>m.Amt):
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                  @Html.DisplayFor(m => m.CurrencyCode)  @Html.DisplayFor(m=>m.Amt)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m => m.PaymentType):
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    @Html.DisplayFor(m => m.PaymentType)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="box">
+                                                        <div class="portlet-title">
+                                                            <h4>
+                                                                客户信息
+                                                            </h4>
+                                                            
+                                                        </div>
+                                                        <div class="portlet-body">
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m => m.ShiptoName)：
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    @Html.DisplayFor(m => m.ShiptoName)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m => m.Email)：
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    @Html.DisplayFor(m => m.Email)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    @Html.DisplayNameFor(m => m.ShipToState)：
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    @Html.DisplayFor(m => m.ShipToState)
+                                                                </div>
+                                                            </div>
+                                                            <div class="row static-info">
+                                                                <div class="col-md-5 name">
+                                                                    Phone Number:
+                                                                </div>
+                                                                <div class="col-md-7 value">
+                                                                    12234389
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="box">
+                                                        <div class="portlet-title">
+                                                            <h4>
+                                                                商品
+                                                            </h4>                                                            
+                                                        </div>
+                                                        <div class="portlet-body">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-hover table-bordered table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>
+                                                                                图片
+                                                                            </th>
+                                                                            <th>
+                                                                                SKU
+                                                                            </th>
+                                                                            <th>
+                                                                                产品数量
+                                                                            </th>
+                                                                            <th>
+                                                                                产品尺寸
+                                                                            </th>
+                                                                            <th>
+                                                                                产品重量
+                                                                            </th>                                                                            
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        @{
+                                                                            foreach (var item in Model.TransactionItems)
+                                                                            {
+                                                                                if (item.Association == null)
+                                                                                {
+                                                                                    <tr>
+                                                                                        <td colspan="6"><span class="center">还没有匹配标题</span></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan="6"><span class="center">@item.ItemTitle</span></td>
+                                                                                    </tr>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <tr>
+                                                                                        <td colspan="5">@item.ItemTitle</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a href="@item.Association.Product.CoverPicture">
+                                                                                                <img src="@item.Association.Product.CoverPicture" width="100" />
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <a href="#">
+                                                                                                @item.Association.Product.Sku
+                                                                                            </a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <span class="label label-sm label-success">
+                                                                                                @item.ItemQty
+                                                                                            </span>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            @item.Association.Product.PackSize
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            @item.Association.Product.PackWeight
+                                                                                        </td>
+                                                                                        
+                                                                                    </tr>
+                                                                                }
+
+                                                                            }
+                                                                        }
+
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="box">
+                                                        <div class="portlet-title">
+                                                            <h4>
+                                                                送货地址
+                                                            </h4>                                                            
+                                                        </div>
+                                                        <div class="portlet-body">
+                                                            <div class="row static-info">
+                                                                <div class="col-md-12 value">
+                                                                    @Html.DisplayFor(m => m.ShiptoName)<br>
+                                                                    @Html.DisplayFor(m => m.ShipToStreet)<br>
+                                                                    @Html.DisplayFor(m => m.ShipToStreet2)<br>                                                             
+                                                                    @Html.DisplayFor(m => m.ShiptoCity), @Html.DisplayFor(m => m.ShipToState)<br>
+                                                                    @Html.DisplayFor(m => m.ShipToZip)<br>
+                                                                    @Html.DisplayFor(m => m.ShipToCountryName)<br>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                           
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab2"> 
+                                    
+                                    <div class="portlet-body form-horizontal">
+                                        <div class="col-md-offset-3">
+                                           
+                                            <div class="form-group">
+                                                <label class="control-label"><span class="required">*</span>物流代理：</label>
+                                                <div class="controls">
+                                                    <div class="input-group input-large">                                                  
+                                                        @Html.DropDownList("agent", null, "", new { @class = "form-control select2me", @id="agent" })                                                        
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="display:none" id="typegroup">
+                                                <label class="control-label"><span class="required">*</span>发货类型：</label>
+                                                <div class="controls">
+                                                    <div class="input-group input-large">                                                       
+                                                        @Html.DropDownList("type", null, "", new { @class = "form-control select2me ", @id = "type", })                                                       
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="form-group" style="display:none" id="warehousegroup">
+                                                <label class="control-label"><span class="required">*</span>选择仓库：</label>
+                                                <div class="controls">
+                                                    <div class="input-group input-large">
+                                                        
+                                                        @Html.DropDownList("warehouse", null, "", new { @class = "form-control select2me", @id = "warehouse" })
+                                                      
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                         
+                                            <div class="form-group" style="display:none" id="expressgroup">
+                                                <label class="control-label"><span class="required">*</span>快递方式：</label>
+                                                <div class="controls">
+                                                    <div class="input-group input-large">                                                       
+                                                        <select class="form-control select2me" id="express" name="express">
+                                                            <option value=""></option>
+                                                        </select>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab3">
+                                   
+                                    <div class="portlet-body form">
+                                        <div class="form-body">
+                                            <h3 class="form-section">收件人信息</h3>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m=>m.ShiptoName)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShiptoName)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group has-error">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.ShipToStreet)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShipToStreet)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.ShipToStreet2)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShipToStreet2)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.ShiptoCity)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShiptoCity)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.ShipToState)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShipToState)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.ShipToZip)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShipToZip)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.ShipToCountryName)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.ShipToCountryName)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.Email)</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static">
+                                                                @Html.DisplayFor(m => m.Email)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+
+                                            <h3 class="form-section">详细物品</h3>
+                                         
+                                                <div class="portlet-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-hover table-bordered table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        图片
+                                                                    </th>
+                                                                    <th>
+                                                                        SKU
+                                                                    </th>
+                                                                    <th>
+                                                                        产品数量
+                                                                    </th>
+                                                                    <th>
+                                                                        产品尺寸
+                                                                    </th>
+                                                                    <th>
+                                                                        产品重量
+                                                                    </th>
+                                                                    <th>
+                                                                        标题
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @{
+                                                                    foreach (var item in Model.TransactionItems)
+                                                                    {
+                                                                        if (item.Association == null)
+                                                                        {
+                                                                            <tr>
+                                                                                <td colspan="6"><span class="center">还没有匹配标题</span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="6"><span class="center">@item.ItemTitle</span></td>
+                                                                            </tr>
+                                                                        }
+                                                                        else
+                                                                        {
+
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="@item.Association.Product.CoverPicture">
+                                                                                        <img src="@item.Association.Product.CoverPicture" width="100" />
+                                                                                    </a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a href="#">
+                                                                                        @item.Association.Product.Sku
+                                                                                    </a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <span class="label label-sm label-success">
+                                                                                        @item.ItemQty
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td>
+                                                                                    @item.Association.Product.PackSize
+                                                                                </td>
+                                                                                <td>
+                                                                                    @item.Association.Product.PackWeight
+                                                                                </td>
+                                                                                <td>
+                                                                                    @item.Association.ItemTitle
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+
+                                                                    }
+                                                                }
+
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            
+                                            <div id="expressdetail" style="display:none">
+                                                <!--/row-->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">产品申报名称</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" name="goodsDescription" id="goodsDescription">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">申报数量</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" name="goodsQuantity" id="goodsQuantity">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">申报价值（单位美元 USD）</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" name="goodsDeclareWorth" id="goodsDeclareWorth">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">订单产品中文描述</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" id="detailDescriptionCN" name="detailDescriptionCN">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <!--/row-->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">重量(出口易要填)</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" name="goodsWeight" id="goodsWeight">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">尺寸(出口易要填)</label>
+                                                            <div class="col-md-9">
+                                                                <input class="input-xsmall form-control inline" placeholder="长" name="length" id="length">/
+                                                                <input class="input-xsmall form-control inline" placeholder="宽" name="width" id="width">/
+                                                                <input class="input-xsmall form-control inline" placeholder="高" name="height" id="height">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <!--/row-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab4">
+                                    <div class="portlet-body form">  
+                                        <div class="form-body">
+                                            <h3 class="form-section">地址信息</h3>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">@Html.DisplayNameFor(m => m.FullAddress):</label>
+                                                <div class="col-md-4">
+                                                    <p class="form-control-static">
+                                                        @Html.DisplayFor(m => m.FullAddress)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <h3 class="form-section">快递信息</h3>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">物流代理:</label>
+                                                <div class="col-md-4">
+                                                    <p class="form-control-static" id="showagent">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">发货类型:</label>
+                                                <div class="col-md-4">
+                                                    <p class="form-control-static" id="showtype">
+                                                      
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">选择仓库:</label>
+                                                <div class="col-md-4">
+                                                    <p class="form-control-static" data-display="phone" id="showwarehouse">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">快递方式:</label>
+                                                <div class="col-md-4">
+                                                    <p class="form-control-static" data-display="address" id="showexpress">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <h3 class="form-section">物品信息</h3>
+                                            <div class="portlet-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-bordered table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    图片
+                                                                </th>
+                                                                <th>
+                                                                    SKU
+                                                                </th>
+                                                                <th>
+                                                                    产品数量
+                                                                </th>
+                                                                <th>
+                                                                    产品尺寸
+                                                                </th>
+                                                                <th>
+                                                                    产品重量
+                                                                </th>
+                                                                <th>
+                                                                    标题
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @{
+                                                        foreach (var item in Model.TransactionItems)
+                                                        {
+                                                            if (item.Association == null)
+                                                            {
+                                                    <tr>
+                                                        <td colspan="6"><span class="center">还没有匹配标题</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="6"><span class="center">@item.ItemTitle</span></td>
+                                                    </tr>
+                                                            }
+                                                            else
+                                                            {
+
+                                                    <tr>
+                                                        <td>
+                                                            <a href="@item.Association.Product.CoverPicture">
+                                                                <img src="@item.Association.Product.CoverPicture" width="100" />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#">
+                                                                @item.Association.Product.Sku
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <span class="label label-sm label-success">
+                                                                @item.ItemQty
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            @item.Association.Product.PackSize
+                                                        </td>
+                                                        <td>
+                                                            @item.Association.Product.PackWeight
+                                                        </td>
+                                                        <td>
+                                                            @item.Association.ItemTitle
+                                                        </td>
+                                                    </tr>
+                                                            }
+
+                                                        }
+                                                            }
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-offset-5 col-md-7">
+                                        <a href="javascript:;" class="btn default button-previous disabled" style="display: none;">
+                                            <i class="m-icon-swapleft"></i> 返回
+                                        </a>
+                                        <a href="javascript:;" class="btn blue button-next">
+                                            继续 <i class="m-icon-swapright m-icon-white"></i>
+                                        </a>
+                                        <a href="javascript:;" class="btn green button-submit" style="display: none;">
+                                            提交 <i class="m-icon-swapright m-icon-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="modal-footer">
+    <button type="button" class="btn default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn blue">Save changes</button>
+</div>-->

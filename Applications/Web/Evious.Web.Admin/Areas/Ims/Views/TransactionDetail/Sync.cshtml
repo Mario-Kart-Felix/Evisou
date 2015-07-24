@@ -1,0 +1,53 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Utility
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model;
+@using Evious.Web;
+@model PagedList<TransactionDetail>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title">同步订单</h4>
+    <div class="progress progress-striped active" id="progress" style="display: none;">
+        <div class="progress-bar progress-bar-success" id="progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <span class="sr-only">
+                40% Complete (success)
+            </span>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label">同步时间：</label>
+                <div class="controls">
+                    <div class="input-group input-large" id="defaultrange">
+                        <input type="text" class="form-control" data-val="true" name="RangeDate" id="RangeDate" data-val-required="选择同步的日期">
+                        <span class="input-group-btn">
+                            <button class="btn default date-range-toggle" type="button"><i class="fa fa-calendar"></i></button>
+                        </span>
+                        <span class="help-block">
+                            <span class="field-validation-valid" data-valmsg-for="RangeDate" data-valmsg-replace="true"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>            
+            <div class="form-group">
+                <label class="control-label">账号：</label>
+                <div class="controls">
+                    <div class="input-group input-large" id="defaultrange">
+                        @Html.DropDownList("PaypalApi", ViewBag.PaypalApi as SelectList, null, new { @class = "form-control select2me" })
+                        <span class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn default" data-dismiss="modal">撤消</button>
+    <button type="submit" class="btn blue" id="startProcess">同步</button>
+</div>
