@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E42231F-0A63-42BA-BE08-3C84DFD9E7F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evisou.Crm.BLL</RootNamespace>
+    <AssemblyName>Evisou.Crm.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\..\packages\EntityFramework.Extended.6.1.0.133\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrmService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Evisou.Core.Cache\Evisou.Core.Cache.csproj">
+      <Project>{57e4787a-2dd7-4b00-b0e6-546f80d1d119}</Project>
+      <Name>Evisou.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Contract\Evisou.Framework.Contract.csproj">
+      <Project>{dc181585-d2d9-4748-b425-9a7af7bcab11}</Project>
+      <Name>Evisou.Framework.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.DAL\Evisou.Framework.DAL.csproj">
+      <Project>{8d3c7012-8d28-419e-b24b-5d5a77782d42}</Project>
+      <Name>Evisou.Framework.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Utility\Evisou.Framework.Utility.csproj">
+      <Project>{364b7cd6-924a-46c0-9de8-1191ef6910ab}</Project>
+      <Name>Evisou.Framework.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evisou.Crm.Contract\Evisou.Crm.Contract.csproj">
+      <Project>{754c6dab-9ac3-42f3-b6fe-4960cf238053}</Project>
+      <Name>Evisou.Crm.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evisou.Crm.DAL\Evisou.Crm.DAL.csproj">
+      <Project>{3573cd5f-7871-4235-bc9a-71f7e01724d2}</Project>
+      <Name>Evisou.Crm.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

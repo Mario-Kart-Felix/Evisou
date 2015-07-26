@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2E48E80-612C-48F4-9FB4-2BE8CE4E4587}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evisou.Account.BLL</RootNamespace>
+    <AssemblyName>Evisou.Account.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\..\packages\EntityFramework.Extended.6.1.0.133\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Evisou.Core.Cache\Evisou.Core.Cache.csproj">
+      <Project>{57e4787a-2dd7-4b00-b0e6-546f80d1d119}</Project>
+      <Name>Evisou.Core.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Evisou.Core.Config\Evisou.Core.Config.csproj">
+      <Project>{93f0aaa5-f33f-4c02-95bd-56b24a80eb7b}</Project>
+      <Name>Evisou.Core.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Contract\Evisou.Framework.Contract.csproj">
+      <Project>{dc181585-d2d9-4748-b425-9a7af7bcab11}</Project>
+      <Name>Evisou.Framework.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.DAL\Evisou.Framework.DAL.csproj">
+      <Project>{8d3c7012-8d28-419e-b24b-5d5a77782d42}</Project>
+      <Name>Evisou.Framework.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Utility\Evisou.Framework.Utility.csproj">
+      <Project>{364b7cd6-924a-46c0-9de8-1191ef6910ab}</Project>
+      <Name>Evisou.Framework.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evisou.Account.Contract\Evisou.Account.Contract.csproj">
+      <Project>{6f6a290f-7642-4428-b685-6ecf0a2f12c6}</Project>
+      <Name>Evisou.Account.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evisou.Account.DAL\Evisou.Account.DAL.csproj">
+      <Project>{3e5c28b7-32f3-466d-96e0-2ac4abda2b9e}</Project>
+      <Name>Evisou.Account.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
