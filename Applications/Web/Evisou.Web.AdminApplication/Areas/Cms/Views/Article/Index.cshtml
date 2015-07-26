@@ -1,0 +1,196 @@
+﻿@using Evisou.Web
+@using Evisou.Framework.Contract
+@using Evisou.Framework.Utility
+@using Evisou.Framework.Web.Controls
+@using Evisou.Cms.Contract
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section PageSpecificStyleSheetLevelPluginsIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/Assets/global/plugins/jquery-tags-input/jquery.tagsinput.css")" />
+
+}
+
+@section PageSpecificStyleSheetLevelStylesIncludes{
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css")" />
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-summernote/summernote.css")"/>
+<link href="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css")" rel="stylesheet" />
+<link href="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css")" rel="stylesheet" />
+<link href="@Url.StaticFile("/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet" type="text/css" />
+
+}
+
+@section PageSpecificJavascriptLevelPluginsIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/select2/select2.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-tags-input/jquery.tagsinput.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/ckeditor/ckeditor.js")"></script>
+
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/locales/bootstrap-wysihtml5.zh-CN.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-markdown/lib/markdown.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-summernote/summernote.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-summernote/lang/summernote-zh-CN.js")"></script>
+    <script src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
+    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js")"></script>*@
+
+<!-- BEGIN:File Upload Plugin JS files-->
+<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js")"></script>
+<!-- The Templates plugin is included to render the upload/download listings -->
+@*<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js")"></script>*@
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/vendor/load-image.min.js")"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js")"></script>
+<!-- blueimp Gallery script -->
+@*<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js")"></script>*@
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js")"></script>
+<!-- The basic File Upload plugin -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js")"></script>
+<!-- The File Upload processing plugin -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js")"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js")"></script>
+<!-- The File Upload audio preview plugin -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js")"></script>
+<!-- The File Upload video preview plugin -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js")"></script>
+<!-- The File Upload validation plugin -->
+<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js")"></script>
+<!-- The File Upload user interface plugin -->
+@*<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js")"></script>*@
+>><!-- The main application script -->
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+<!--[if (gte IE 8)&(lt IE 10)]>
+    <script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js")"></script>
+    <![endif]-->
+<!-- END:File Upload Plugin JS files-->
+
+}
+
+@section PageSpecificJavascriptLevelScriptsIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/article-x.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>
+}
+@section JSIncluds{
+    Articles.init();
+}
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="block">
+            <strong>文章：</strong>
+            文章所有
+        </div>
+        <!-- Begin: life time stats -->
+        <div class="portlet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <a class="btn btn-sm default red-stripe delete" href="javascript:;">
+                        <i class="fa fa-trash-o"></i>
+                        <span class="hidden-480">
+                            删除
+                        </span>
+                    </a>
+                    <a data-modal="" href="@Url.Action("Create")" class="btn btn-sm default blue-stripe" title='添加新文章'>
+                        <i class="fa fa-plus"></i>
+                        <span class="hidden-480">
+                            新建
+                        </span>
+                    </a>
+
+                </div>
+                <div class="actions">
+
+                </div>
+            </div>
+            <div class="portlet-body">
+
+                <div class="table-container">
+                    <div class="table-actions-wrapper">
+                        <span>
+
+                        </span>
+                        <select class="table-group-action-input form-control input-inline input-small input-sm" name="status">
+                            <option value="">选择...</option>
+                            <option value="delete">删除</option>
+                        </select>
+                        <button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> 提交</button>
+
+                    </div>
+
+                    <table class="table table-striped table-bordered table-hover table-x" id="datatable_article">
+                        <thead>
+                            <tr role="row" class="heading">
+                                <th width="1%">
+                                    <input type="checkbox" class="group-checkable">
+                                </th>
+
+                                <th width="15%">
+                                    文章标题
+                                </th>
+                                <th width="15%">
+                                    频道
+                                </th>
+                                <th width="55%">
+                                    内容
+                                </th>
+                                <th width="10%">
+                                    操作
+                                </th>
+                            </tr>
+                            <tr role="row" class="filter">
+                                <td></td>
+
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="title">
+                                </td>
+                                <td>
+                                    @Html.DropDownList("ChannelId", null, "所有频道", new { @class = "form-control form-filter input-sm", @name = "ChannelId" })
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="content">
+                                </td>
+                                <td>
+                                    <div class="margin-bottom-5">
+                                        <button class="btn btn-icon-only yellow filter-submit margin-bottom" title="搜索"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-icon-only red filter-cancel" title="重置"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+
+    </div>
+</div>
+
+

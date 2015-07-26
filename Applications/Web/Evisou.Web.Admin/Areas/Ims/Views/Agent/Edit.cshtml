@@ -1,0 +1,88 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@using Evious.Web
+@model Agent
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.AgentName)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.AgentName, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.AgentName)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.AgentCode)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.AgentCode, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.AgentCode)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.Consignee)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Consignee, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Consignee)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.ConsigneeTel)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ConsigneeTel, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ConsigneeTel)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.CS)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CS, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CS)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.CSQQ)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CSQQ, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CSQQ)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.Email)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Email)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.SaleManager)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.SaleManager, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SaleManager)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.SaleMangerMobile)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.SaleMangerMobile, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SaleMangerMobile)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.Address)：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control input-large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Address)</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

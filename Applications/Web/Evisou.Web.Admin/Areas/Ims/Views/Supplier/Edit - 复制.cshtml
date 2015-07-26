@@ -1,0 +1,112 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@using Evious.Web
+@model Supplier
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+
+    
+    <div class="tabbable tabbable-custom">
+		<ul class="nav nav-tabs tabs-left">
+			<li class="active"><a href="#tab1" data-toggle="tab">基本信息</a></li>
+			<li><a href="#tab2" data-toggle="tab">供应产品</a></li>			
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="tab1">
+
+				<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+                    <div class="row">
+            
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.Name)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+                            </div>
+                        </div>   
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.Platform)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Platform, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Platform)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.URL)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.URL, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.URL)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.CS)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.CS, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.CS)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.CSPhone)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.CSPhone, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.CSPhone)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.Contact)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Contact, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Contact)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.ContactPhone)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.ContactPhone, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.ContactPhone)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.Address)：</label>
+                            <div class="controls">
+                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control input-large" })
+                                <span class="help-inline">@Html.ValidationMessageFor(m => m.Address)</span>
+                            </div>
+                        </div>
+
+                                       
+                    </div>
+                </div>
+
+			</div>
+            <div class="tab-pane" id="tab2">	               
+                       @{ var products = ViewBag.Products;//Model.Products==null?ViewBag.Products:Model.Products;    ><ul>
+                            <ul>
+                            @foreach (Product product in products)
+                            {
+                            <li>
+                                
+                                <div class="center">
+                                    @product.Name
+                                    <img src="@product.CoverPicture" width="100"  />
+                                    <input class="ace ace-switch ace-switch-7" name="SelectedProduct" type="checkbox" value="@product.ID"
+                                           @if (Model.Products != null) { var supplierProduct = new HashSet<int>(Model.Products.Select(c => c.ID));  @(Html.Raw(supplierProduct.Contains(product.ID) ? "checked=\"checked\"" : ""))  } />
+                                     
+                                    <span class="lbl"></span>
+                                </div>
+                            </li>
+                            }
+                        </ul>
+                        
+                       
+                        
+                    }
+			</div>            
+        </div>
+    </div>
+
+}
+

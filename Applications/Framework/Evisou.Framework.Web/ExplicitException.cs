@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Evisou.Framework.Web
 {
+    [SerializableAttribute]
     public class ExplicitException : HttpException
     {
         public ExplicitException()

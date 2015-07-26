@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Evisou.Framework.Contract
 {
+    [SerializableAttribute]
     /// <summary>
     /// 业务异常，用于在后端抛出到前端做相应处理
     /// </summary>

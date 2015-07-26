@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AdminMenuConfig>
+  <AdminMenuGroups>
+    <AdminMenuGroup name="管理首页" url="/Account/Auth/Index" icon="icon-home" info="欢迎登录Evisou系统！">
+    </AdminMenuGroup>
+    <AdminMenuGroup name="系统管理" icon="icon-settings">
+      <AdminMenuArray>
+        <AdminMenu name="用户简介" url="/Account/User/MyProfile" info="添加修改删除简介" permission="AccountManage_User_Profile" icon="icon-user-following"/>
+        <AdminMenu name="用户管理" url="/Account/User/Index" info="添加修改删除用户" permission="AccountManage_User" icon="icon-user"/>
+        <AdminMenu name="角色管理" url="/Account/Role/Index" info="添加修改删除角色" permission="AccountManage_Role" icon="icon-users"/>
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="CMS管理" icon="icon-docs">
+      <AdminMenuArray>
+        <AdminMenu name="文章管理" url="/Cms/Article/Index" info="添加修改删除文章" permission="CmsManage_Article" icon="icon-notebook"/>
+        <AdminMenu name="文章频道管理" url="/Cms/Channel/Index" info="添加修改删除文章频道" permission="CmsManage_Channel" icon="icon-book-open"/>
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="OA管理" icon="icon-user">
+      <AdminMenuArray>
+        <AdminMenu name="员工管理" url="/OA/Staff/Index" info="添加修改删除员工信息" permission="OAManage_Staff" icon="icon-user-follow"/>
+        <AdminMenu name="部门管理" url="/OA/Branch/Index" info="添加修改删除部门信息" permission="OAManage_Branch" icon="icon-folder"/>
+        <AdminMenu name="组织结构管理" url="/OA/Org/Index" info="管理部门从属关系及员工所属部门" permission="OAManage_Org" icon="icon-link"/>
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="CRM管理" icon="icon-share">
+      <AdminMenuArray>
+        <AdminMenu name="来访来电" url="/Crm/VisitRecord/Index" info="添加修改删除来访来电" permission="CrmManage_VisitRecord" icon="icon-screen-smartphone"/>
+        <AdminMenu name="客户管理" url="/Crm/Customer/Index" info="添加修改删除客户" permission="CrmManage_Customer" icon="icon-user-following"/>
+        <AdminMenu name="项目管理" url="/Crm/Project/Index" info="添加修改删除项目" permission="CrmManage_Project" icon="icon-film"/>
+        <AdminMenu name="业绩统计" url="/Crm/Analysis/Index" info="查看业绩统计" permission="CrmManage_Analysis" icon="icon-note"/>
+        <AdminMenu name="来电统计" url="/Crm/Analysis/VisitStatistics" info="查看来电统计" permission="CrmManage_Analysis" icon="icon-share-alt"/>
+      </AdminMenuArray>
+    </AdminMenuGroup>
+    
+    
+    <AdminMenuGroup name="IMS管理" icon="icon-star">
+      <AdminMenuArray>
+        <AdminMenu name="产品管理" url="/Ims/Product/Index" info="添加修改删除产品" permission="ImsManage_Product" icon="icon-layers"/>
+        <AdminMenu name="供应商管理" url="/Ims/Supplier/Index" info="添加修改删除供应商" permission="ImsManage_Supplier" icon="icon-handbag"/>
+        <AdminMenu name="采购管理" url="/Ims/Purchase/Index" info="添加修改删除采购" permission="ImsManage_Purchase" icon="icon-basket"/>
+        <AdminMenu name="物流代理管理" url="/Ims/Agent/Index" info="添加修改删除物流代理" permission="ImsManage_Purchase" icon="icon-globe"/>
+        <AdminMenu name="订单管理" url="/Ims/TransactionDetail/Index" info="添加修改删除订单" permission="ImsManage_Purchase"  icon="icon-basket-loaded"/>
+        <AdminMenu name="PaypalApi管理" url="/Ims/PaypalApi/Index" info="添加修改删除订单" permission="ImsManage_PaypalApi" icon="icon-wrench"/>
+        <AdminMenu name="标题配对管理" url="/Ims/Association/Index" info="添加修改删除标题配对" permission="ImsManage_Association" icon="icon-frame" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+  </AdminMenuGroups>
+</AdminMenuConfig>

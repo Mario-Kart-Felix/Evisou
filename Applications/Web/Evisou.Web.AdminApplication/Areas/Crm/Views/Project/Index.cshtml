@@ -1,0 +1,135 @@
+﻿@using Evisou.Web
+@using Evisou.Framework.Contract
+@using Evisou.Framework.Utility
+@using Evisou.Framework.Web.Controls
+@using Evisou.Account.Contract
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section PageSpecificStyleSheetLevelPluginsIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />
+}
+
+@section PageSpecificStyleSheetLevelStylesIncludes{
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/css/datepicker.css")" />
+}
+
+@section PageSpecificJavascriptLevelPluginsIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/select2/select2.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js")"></script>
+
+    
+}
+
+@section PageSpecificJavascriptLevelScriptsIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/project-x.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>
+}
+
+@section JSIncluds{
+    Project.init();
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <strong>项目相关：</strong>
+            项目管理汇总！
+        </div>
+        <!-- Begin: life time stats -->
+        <div class="portlet">
+            <div class="portlet-title">
+                <div class="caption">
+
+                    <a class="btn btn-sm default red-stripe delete" href="javascript:;">
+                        <i class="fa fa-trash-o"></i>
+                        <span class="hidden-480">
+                            删除
+                        </span>
+                    </a>
+                    <a data-modal="" href="@Url.Action("Create")" class="btn btn-sm default blue-stripe">
+                        <i class="fa fa-plus"></i>
+                        <span class="hidden-480">
+                            新建
+                        </span>
+                    </a>
+
+                </div>
+                <div class="actions">
+                   
+                </div>
+            </div>
+            <div class="portlet-body">
+
+                <div class="table-container">
+                    <div class="table-actions-wrapper">
+                        <span>
+
+                        </span>
+                        <select class="table-group-action-input form-control input-inline input-small input-sm" name="status">
+                            <option value="">选择...</option>                            
+                            <option value="delete">删除</option>
+                        </select>
+                        <button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> 提交</button>
+
+                    </div>
+
+                    <table class="table table-striped table-bordered table-hover table-x" id="datatable_project">
+                        <thead>
+                            <tr role="row" class="heading">
+                                <th width="1%">
+                                    <input type="checkbox" class="group-checkable">
+                                </th>
+
+                                <th width="40%">
+                                    名称
+                                </th>
+                                <th width="40%">
+                                    创建时间
+                                </th>
+                                <th width="10%">
+                                    操作
+                                </th>
+                            </tr>
+                            <tr role="row" class="filter">
+                                <td></td>
+
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm" name="name">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control form-filter input-sm date-picker" name="createtime">
+                                </td>                                                         
+                                <td>
+                                    <div class="margin-bottom-5">
+                                        <button class="btn btn-icon-only yellow filter-submit margin-bottom" title="搜索"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-icon-only red filter-cancel" title="重置"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+
+    </div>
+</div>

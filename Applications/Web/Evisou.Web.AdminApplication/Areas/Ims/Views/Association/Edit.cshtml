@@ -1,0 +1,260 @@
+﻿@using Evisou.Web
+@using Evisou.Framework.Contract
+@using Evisou.Framework.Web.Controls
+@using Evisou.Ims.Contract.Model
+@model Association
+
+<div class="modal-header">
+    
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    @{
+        if(Model.ID == 0)
+        {
+        <h4 class="modal-title" id="ModalLabel">添加配对</h4>
+        }
+        else
+        {
+        <h4 class="modal-title" id="ModalLabel">编辑配对</h4>
+        }
+    }    
+</div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm",  }))
+{
+    @Html.ValidationSummary(true)
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-3"><span class="required">*</span>SKU：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.DropDownList("ProductID", null, "选择产品", new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Product.Sku)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Paypal账号：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa  fa-list-ol"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.DropDownList("PaypalApiID", null, "选择Paypal账号", new { @class = "form-control text-box single-line input-medium" })
+
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PaypalApi.PPAccount)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">标题：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon left">
+                            <i class="fa"></i>
+                            @Html.DropDownList("ItemNumber", null, "选择标题", new { @class = "form-control text-box single-line input-medium select2", @name = "ItemNumber" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ItemTitle)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">编号：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.ItemTitle, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ItemTitle)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">销售地点：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon left">
+                            <i class="fa"></i>
+                            @Html.DropDownList("SellingPlace", null, String.Empty, new { @class = "select2 form-control text-box single-line input-medium country" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SellingPlace)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">仓库地点：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon left">
+                            <i class="fa"></i>
+                            @Html.DropDownList("StorePlace", null, String.Empty, new { @class = "select2 form-control text-box single-line input-medium country" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SellingPlace)</span>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" id="submitbutton" class="btn blue btn-sm default"><i class="fa fa-check"></i> 提交</button>
+        <button type="button" class="btn btn-sm default" id="cancel" data-dismiss="modal">撤销</button>
+    </div>
+
+}
+
+
+<script>
+    var FormComponents = function () {        
+      
+
+        var handleCheckForm = function () {
+
+            function format(state) {
+                if (!state.id) return state.text; // optgroup
+                return "<img class='flag' src='../../assets/global/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+            }
+
+            $(".country").select2({
+                placeholder: "Select",
+                allowClear: true,
+                formatResult: format,
+                formatSelection: format,
+                escapeMarkup: function (m) {
+                    return m;
+                }
+            });
+
+            $("#ItemNumber").select2({
+                placeholder: "Select",
+                allowClear: true,               
+            }).on("change", function (e) {
+                //console.log(e.added.text);
+                $('#ItemTitle').val(e.added.text);
+            });
+
+
+            var form = $("#mainForm");
+            var error = $('.alert-danger', form);
+            var success = $('.alert-success', form);
+
+            form.validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-block help-block-error', // default input error message class
+                focusInvalid: false, // do not focus the last invalid input
+                ignore: "",  // validate all fields including form hidden input
+                rules: {
+                    PPAccount: {
+                        minlength: 2,
+                        required: true,
+                    },
+                    ApiUserName: {
+                        minlength: 2,
+                        required: true,
+
+                    },
+                    ApiPassword: {
+                       
+                        required: true,
+                    },
+                    Signature: {
+                        
+                        required: true,
+                    },
+                    //Gender: {
+
+                    //    required: true,
+                    //},
+
+
+                },
+                messages: { // custom messages for radio buttons and checkboxes
+                    Gender: {
+                        required: "Please select a Membership type"
+                    },
+                },
+                invalidHandler: function (event, validator) { //display error alert on form submit
+                    success.hide();
+                    error.show();
+                    Metronic.scrollTo(error, -200);
+
+                },
+
+                errorPlacement: function (error, element) { // render error placement for each input type
+                    var icon = $(element).parent('.input-icon').children('i');
+                    icon.removeClass('fa-check').addClass("fa-warning");
+                    icon.attr("data-original-title", error.text()).tooltip({ 'container': 'body' });
+                },
+
+                highlight: function (element) { // hightlight error inputs
+                    $(element)
+                        .closest('.form-group').removeClass("has-success").addClass('has-error'); // set error class to the control group
+                },
+
+                unhighlight: function (element) { // revert the change done by hightlight
+
+                },
+
+                success: function (label, element) {
+                    var icon = $(element).parent('.input-icon').children('i');
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
+                    icon.removeClass("fa-warning").addClass("fa-check");
+                },
+
+                submitHandler: function (form) {
+                    success.show();
+                    error.hide();
+                    //form[0].submit(alert('dasdas')); // submit the form
+                }
+            });
+
+
+            $("#submitbutton").click(function (e) {
+                if (!form.valid()) {
+                    e.preventDefault();
+                }
+
+            });
+        };
+
+        return {
+            init: function () {              
+                handleCheckForm();
+            }
+        }
+
+
+    }();
+
+    $(function () {
+        
+        FormComponents.init();
+    });
+</script>
+
+
+
+

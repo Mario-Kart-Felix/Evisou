@@ -35,14 +35,16 @@ namespace Evisou.Framework.Utility
             Bitmap bitmap;
             string formatString = "1,2,3,4,5,6,7,8,9";
             GetRandom(formatString, this.ValidataCodeLength, out validataCode);
-            MemoryStream stream = new MemoryStream();
-            this.ImageBmp(out bitmap, validataCode);
-            bitmap.Save(stream, ImageFormat.Png);
-            bitmap.Dispose();
-            bitmap = null;
-            stream.Close();
-            stream.Dispose();
-            return stream.GetBuffer();
+            using (MemoryStream stream = new MemoryStream())
+            {
+                this.ImageBmp(out bitmap, validataCode);
+                bitmap.Save(stream, ImageFormat.Png);
+                bitmap.Dispose();
+                bitmap = null;
+                stream.Close();               
+                return stream.GetBuffer();
+            }
+                
         }
 
         private void CreateImageBmp(ref Bitmap bitMap, string validateCode)

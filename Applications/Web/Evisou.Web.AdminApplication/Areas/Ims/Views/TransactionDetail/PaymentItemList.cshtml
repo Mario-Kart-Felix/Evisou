@@ -1,0 +1,61 @@
+﻿@model Evisou.Ims.Contract.Model.PayPalTransaction
+@{
+
+    foreach (var item in Model.PayPalTransactionPaymentItems)
+    {
+        if (item.Association != null)
+        {
+            <tr>
+                <td>
+                    <a href="@item.Association.Product.CoverPicture">
+                        <img src="@item.Association.Product.CoverPicture" width="100" />
+                    </a>
+                </td>
+                <td>
+                    @item.Association.Product.Sku
+                </td>
+                <td>
+                    <span class="label label-sm label-success">
+                        @item.PaymentItemQuantity
+                    </span>
+                </td>
+                <td>@item.Association.Product.PackingSize.Length*@item.Association.Product.PackingSize.Width*@item.Association.Product.PackingSize.Height</td>
+                <td>@item.Association.Product.PackWeight</td>
+            </tr>
+        }
+        else if (!string.IsNullOrEmpty(item.PaymentItemNumber))
+        {
+            <tr>
+                <td>
+                    <span class="label-danger">
+                        #@item.PaymentItemNumber
+                    </span>
+
+                </td>
+                @*<td>
+                        <span class="label-danger">
+                            @item.Name
+                        </span>
+
+                    </td>
+                    <td>
+                        <span class="label label-sm label-success">
+                            @item.Quantity
+                        </span>
+                    </td>*@
+                <td colspan="4">
+                    <a href="#" id="association" class="association"
+                       data-type="association"
+                       data-pk="1"
+                       data-value='{"number": "@item.PaymentItemNumber" , "title": "@item.PaymentItemNumber" }'
+                       data-original-title="请匹配#@item.PaymentItemNumber">
+                        匹配
+                    </a>
+                </td>
+
+            </tr>
+        }
+
+    }
+
+}

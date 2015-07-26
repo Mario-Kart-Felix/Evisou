@@ -1,0 +1,302 @@
+﻿@using Evisou.Web
+@using Evisou.Framework.Contract
+@using Evisou.Framework.Web.Controls
+@using Evisou.Ims.Contract.Model
+@model Agent
+
+<div class="modal-header">
+    
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    @{
+        if(Model.ID == 0)
+        {
+        <h4 class="modal-title" id="ModalLabel">添加新物流代理</h4>
+        }
+        else
+        {
+        <h4 class="modal-title" id="ModalLabel">编辑物流代理</h4>
+        }
+    }    
+</div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="modal-body">
+        <div class="form-horizontal">            
+            <div class="form-group">
+                <label class="control-label col-md-3"><span class="required">*</span>物流代理：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.AgentName, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.AgentName)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">代理编号：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa  fa-list-ol"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.AgentCode, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                     </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.AgentCode)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">收件人：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.Consignee, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Consignee)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">仓库固话：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.ConsigneeTel, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ConsigneeTel)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">客服：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.CS, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CS)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">客服QQ：</label>
+                <div class="col-md-4">                    
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.CSQQ, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>                
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CSQQ)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">电邮：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control text-box single-line input-medium",@type="email" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Email)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">销售经理：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.SaleManager, new { @class = "form-control text-box single-line input-medium" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SaleManager)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">销售经理手机：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextBoxFor(m => m.SaleMangerMobile, new { @class = "form-control text-box single-line input-medium",@type="tel" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SaleMangerMobile)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">仓库地址：</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-home"></i>
+                        </span>
+                        <div class="input-icon right">
+                            <i class="fa"></i>
+                            @Html.TextAreaFor(m => m.Address, new { @class = "form-control text-box single-line input-medium",@row="3" })
+                        </div>
+                    </div>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Address)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" id="submitbutton" class="btn blue btn-sm default"><i class="fa fa-check"></i> 提交</button>
+        <button type="button" class="btn btn-sm default" id="cancel" data-dismiss="modal">撤销</button>
+    </div>
+
+}
+
+
+<script>
+    var FormComponents = function () {
+
+        var handleInputMasks = function () {
+            $("#SaleMangerMobile").inputmask("mask", {
+                "mask": "999-9999-9999",
+                //"autoUnmask": false
+            });
+            $('#ConsigneeTel').inputmask('(99[9]9) 9999-9999');
+           // $("#ConsigneeTel").inputmask({ mask: ["(099[9]) 89999999", ], keepStatic: true });
+           // $("#ConsigneeTel").inputmask({ mask: ["999-999-9999 [x99999]", "+099 99 99 9999[9]-9999"], showTooltip: true });
+        }
+
+        var handleCheckForm = function () {
+            var form = $("#mainForm");
+            var error = $('.alert-danger', form);
+            var success = $('.alert-success', form);
+
+            form.validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-block help-block-error', // default input error message class
+                focusInvalid: false, // do not focus the last invalid input
+                ignore: "",  // validate all fields including form hidden input
+                rules: {
+                    //Name: {
+                    //    minlength: 2,
+                    //    required: true,
+                    //},
+                    //Number: {
+                    //    minlength: 2,
+                    //    required: true,
+
+                    //},
+                    //Tel: {
+                    //    minlength: 11,
+                    //    maxlength:11,
+                    //    required: true,
+                    //},
+                    Email: {
+                        email: true,
+                        required: true,
+                    },
+                    //Gender: {
+
+                    //    required: true,
+                    //},
+
+
+                },
+                messages: { // custom messages for radio buttons and checkboxes
+                    Gender: {
+                        required: "Please select a Membership type"
+                    },
+                },
+                invalidHandler: function (event, validator) { //display error alert on form submit
+                    success.hide();
+                    error.show();
+                    Metronic.scrollTo(error, -200);
+
+                },
+
+                errorPlacement: function (error, element) { // render error placement for each input type
+                    var icon = $(element).parent('.input-icon').children('i');
+                    icon.removeClass('fa-check').addClass("fa-warning");
+                    icon.attr("data-original-title", error.text()).tooltip({ 'container': 'body' });
+                },
+
+                highlight: function (element) { // hightlight error inputs
+                    $(element)
+                        .closest('.form-group').removeClass("has-success").addClass('has-error'); // set error class to the control group
+                },
+
+                unhighlight: function (element) { // revert the change done by hightlight
+
+                },
+
+                success: function (label, element) {
+                    var icon = $(element).parent('.input-icon').children('i');
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
+                    icon.removeClass("fa-warning").addClass("fa-check");
+                },
+
+                submitHandler: function (form) {
+                    success.show();
+                    error.hide();
+                    //form[0].submit(alert('dasdas')); // submit the form
+                }
+            });
+
+
+            $("#submitbutton").click(function (e) {
+                if (!form.valid()) {
+                    e.preventDefault();
+                }
+
+            });
+        };
+
+        return {
+            init: function () {
+                handleInputMasks()
+                handleCheckForm();
+            }
+        }
+
+
+    }();
+
+    $(function () {
+        FormComponents.init();
+    });
+</script>
+
+
+
+

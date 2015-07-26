@@ -1,0 +1,87 @@
+﻿@using Evious.Framework.Contract
+@using Evious.Framework.Web.Controls
+@using Evious.Ims.Contract.Model
+@using Evious.Web
+@model Association
+
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{    
+
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/bootstrap-select/bootstrap-select.min.css" )" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/select2/select2.css" )" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/admin/plugins/select2/select2-metronic.css" )" />
+
+
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/bootstrap-select/bootstrap-select.min.js" )"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/plugins/select2/select2.min.js" )"></script>
+    <script>
+        jQuery(document).ready(function () {
+            function format(state) {
+                if (!state.id) return state.text; // optgroup
+                return "<img class='flag' src='@Url.StaticFile("/assets/admin/img/flags/")" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+            }
+            $(".select2").select2({
+                placeholder: "选择国家或者地区",
+                allowClear: true,
+                formatResult: format,
+                formatSelection: format,
+                escapeMarkup: function (m) {
+                    return m;
+                }
+            });
+
+        });
+
+    </script>
+}
+
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="">
+            <div class="form-group">
+                <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.ProductID)：</label>
+                <div class="controls">
+                    @Html.DropDownList("ProductID",null,"选择产品",new { @class = "form-control input-large" }) 
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProductID)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label"><span class="required">*</span>@Html.DisplayNameFor(m => m.PaypalApiID)：</label>
+                <div class="controls">
+                    @Html.DropDownList("PaypalApiID", null, "选择Paypal账号",new { @class = "form-control input-large" })                    
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PaypalApiID)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.ItemTitle)：</label>
+                <div class="controls">
+                    @Html.DropDownList("ItemTitle", null, "选择标题", new { @class = "form-control input-large", @name = "ItemTitle" })  
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ItemTitle)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.SellingPlace)：</label>
+                <div class="controls">
+                    @Html.DropDownList("SellingPlace",  null,String.Empty, new { @class = "select2 form-control input-large" })                    
+                   
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SellingPlace)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(m => m.StorePlace)：</label>
+                <div class="controls">
+                  
+                    @Html.DropDownList("StorePlace", null, String.Empty,new { @class = "select2 form-control input-large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.StorePlace)</span>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+}

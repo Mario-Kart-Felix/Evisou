@@ -1,0 +1,373 @@
+﻿@using Evisou.Web
+@using Evisou.Framework.Contract
+@using Evisou.Framework.Web.Controls
+@using Evisou.Ims.Contract
+@using Evisou.Ims.Contract.Model
+@model Evisou.Ims.Contract.Model.Purchase
+<div class="modal-header">    
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    @{
+        if(Model.ID == 0)
+        {
+        <h4 class="modal-title" id="ModalLabel">添加新采购单</h4>
+        }
+        else
+        {
+        <h4 class="modal-title" id="ModalLabel">编辑采购单:</h4>
+        }
+    }    
+</div>
+
+<div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+{
+        <div class="modal-body">
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                表单有错误,请检查
+            </div>
+            <div class="alert alert-success display-hide">
+                <button class="close" data-close="alert"></button>
+                验证成功
+            </div>
+            <div class="form-horizontal">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#tab_general" data-toggle="tab">
+                                基本信息
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tab_purchaseproduct" data-toggle="tab">
+                                采购单的产品
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content no-space">
+                        <div class="tab-pane active" id="tab_general">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">
+                                    采购日期: <span class="required">
+                                        *
+                                    </span>
+                                </label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-cubes"></i>
+                                        </span>
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            @Html.TextBoxFor(m => m.PurchaseDate, new { @class = "form-control text-box single-line input-medium date-picker" })
+                                        </div>
+                                    </div>
+                                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PurchaseDate)</span>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">
+                                        采购交易号: <span class="required">
+                                            *
+                                        </span>
+                                    </label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-cubes"></i>
+                                            </span>
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                @Html.TextBoxFor(m => m.PurchaseTransactionID, new { @class = "form-control text-box single-line input-medium" })
+                                            </div>
+                                        </div>
+                                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PurchaseTransactionID)</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab_purchaseproduct">
+                            <div class="form-body">
+                                <div class="form-group" ng-controller='supplierProductsCtrl' id="supplierproduct">
+                                    <label class="col-md-3 control-label">
+                                        供应商: <span class="required">
+                                            *
+                                        </span>
+                                    </label>
+                                    <div class="col-md-4">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-cubes"></i>
+                                            </span>
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                @Html.DropDownList("SupplierID", ViewBag.Supplier as SelectList, "选择供应商", new { @class = "form-control input-medium", @ng_change = "ca()", @ng_model = "a" })
+                                            </div>
+                                        </div>
+                                        <span class="help-inline">@Html.ValidationMessageFor(m => m.SupplierID)</span>
+                                    </div>
+                                    <div class="col-md-12">
+
+                                        <!-- ngRepeat: x in products -->
+                                        <div class="col-sm-12 col-md-6 product" ng-repeat="x in products">
+                                            <div class="thumbnail">
+                                                <a href="{{x.CoverPicture}}" title="{{ x.Sku  }}||{{ x.Name  }}">
+                                                    <img ng-model="x.CoverPicture" ng-src="{{x.CoverPicture}}" style="width: 100%; height: 150px;" title="{{ x.Sku  }}||{{ x.Name  }}">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>{{ x.Sku  }} </h3>
+                                                    <p>
+                                                        {{ x.Name  }}
+                                                    </p>
+                                                    <p>
+                                                    </p>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">
+                                                            采购:
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            <input ng-model="x.Assigned"
+                                                                   name="SelectedProduct"
+                                                                   type="checkbox" value="{{ x.ID  }}" />
+                                                            {{ x.Assigned  }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">
+                                                            SKU:
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            <div class="input-group">
+                                                                <input class="form-control" id="sku" name="Sku" type="text" ng-model=" x.Sku" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">
+                                                            单价:
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="fa fa-cubes"></i>
+                                                                </span>
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input class="form-control" id="selectedPrice" name="selectedPrice" type="text" ng-model=" x.UnitPrice" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label">
+                                                            数量:
+                                                        </label>
+                                                        <div class="col-md-8">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="fa fa-cubes"></i>
+                                                                </span>
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input class="form-control" id="selectedQuantity" name="selectedQuantity" type="text" ng-model=" x.Quantity" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p></p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" id="submitbutton" class="btn blue btn-sm default"><i class="fa fa-check"></i> 提交</button>
+            <button type="button" class="btn btn-sm default" id="cancel" data-dismiss="modal">撤销</button>
+        </div>
+}
+
+</div>
+                                         
+
+
+
+
+
+<script>
+    var FormComponents = function () {
+
+        var handleInputMasks = function () {           
+            $("#PurchaseTransactionID").inputmask("mask", {
+                "mask": "9999-99-99-9999",
+                //"autoUnmask": false
+            });
+        }
+
+        var handleDatePickers = function () {
+
+            if (jQuery().datepicker) {
+                $('.date-picker').datepicker({
+                    language: 'zh-CN',
+                    rtl: Metronic.isRTL(),
+                    orientation: "left",
+                    autoclose: true,
+                    dateFormat: 'dd日mm月yy年'
+                });
+                //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+            }
+        }
+
+        var handleCheckForm = function () {
+            var form = $("#mainForm");
+            var error = $('.alert-danger', form);
+            var success = $('.alert-success', form);
+
+            jQuery.validator.addMethod("isSN", function (value, element) {
+                var tel = /\d{4}-\d{2}-\d{2}-\d{4}/;    //电话号码格式010-12345678   
+                return this.optional(element) || (tel.test(value));
+            }, "请正确的采购交易号");
+
+            form.validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-block help-block-error', // default input error message class
+                focusInvalid: false, // do not focus the last invalid input
+                ignore: "",  // validate all fields including form hidden input
+                rules: {
+                    PurchaseTransactionID: {
+                        minlength: 15,
+                        maxlength: 15,
+                        isSN:true,
+                        required: true,
+                        cache: false,
+                        remote: "AjaxCheckForm/?" + encodeURIComponent($("#PurchaseTransactionID").val())+"&ID="+encodeURIComponent(@Model.ID),
+                    },
+                    SupplierID: {
+                        required: true,
+                        minlength:1
+                    },
+                    PurchaseDate: {
+                        required: true,
+                        minlength: 2
+                    }
+                },
+               
+                invalidHandler: function (event, validator) { //display error alert on form submit
+                    success.hide();
+                    error.show();
+                    Metronic.scrollTo(error, -200);
+                    console.log(validator);
+                },
+
+                errorPlacement: function (error, element) { // render error placement for each input type
+                    var icon = $(element).parent('.input-icon').children('i');
+                    icon.removeClass('fa-check').addClass("fa-warning");
+                    icon.attr("data-original-title", error.text()).tooltip({ 'container': 'body' });
+                },
+
+                highlight: function (element) { // hightlight error inputs
+                    $(element)
+                        .closest('.form-group').removeClass("has-success").addClass('has-error'); // set error class to the control group
+                },
+
+                unhighlight: function (element) { // revert the change done by hightlight
+
+                },
+
+                success: function (label, element) {
+                    var icon = $(element).parent('.input-icon').children('i');
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
+                    icon.removeClass("fa-warning").addClass("fa-check");
+                },
+
+                submitHandler: function (form) {
+                    success.show();
+                    error.hide();
+                    //form[0].submit(alert('dasdas')); // submit the form
+                }
+            });
+
+
+            $("#submitbutton").click(function (e) {
+                if (!form.valid()) {
+                    e.preventDefault();
+                }
+
+            });
+        };
+
+        var handleAngluarTmpl = function () {
+            var app = angular.module('app', []);
+            var supplier;
+            var purchaseid;
+
+            app.controller('supplierProductsCtrl', ['$scope', '$http', function ($scope, $http) {
+                $scope.ca = function () {
+                    if ($('#SupplierID').val() != "") {
+
+                         supplier = $("#SupplierID").val();
+                         purchaseid = "@Model.ID";
+
+                        if (supplier != null && purchaseid == 0) {
+                            $http.get("/Purchase/GetProductBySupplier/?supplier=" + supplier).success(function (data) {
+                                $scope.products = data;
+                            });
+
+                        }
+
+                        if (supplier != null && purchaseid != 0) {
+                            $http.get("/Ims/Purchase/GetProductBySupplier/?supplier=" + supplier + "&purchaseid=" + purchaseid).success(function (data) {
+                                $scope.products = data;
+                            });
+                        }
+                    } else {
+                        $('div.product').empty();
+                    }
+                };
+            }]);
+
+            angular.element($('#supplierproduct')).ready(function () {
+                angular.bootstrap($('#supplierproduct'), ['app']);
+
+            });
+        }
+
+        return {
+            init: function () {
+                handleInputMasks();
+                handleCheckForm();
+                handleDatePickers();
+                handleAngluarTmpl();
+            }
+        }
+
+
+    }();
+
+
+   
+
+    $(function () {
+        
+
+
+        FormComponents.init();
+    });
+</script>
+
+
+
+
