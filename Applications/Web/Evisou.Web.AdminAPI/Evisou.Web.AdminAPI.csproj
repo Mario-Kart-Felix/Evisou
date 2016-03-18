@@ -690,19 +690,19 @@
       <Project>{754c6dab-9ac3-42f3-b6fe-4960cf238053}</Project>
       <Name>Evisou.Crm.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Evious.Framework.BLL\Evisou.Framework.BLL.csproj">
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.BLL\Evisou.Framework.BLL.csproj">
       <Project>{653ee8d0-b8a1-4bf1-ac15-63eee3880e70}</Project>
       <Name>Evisou.Framework.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Evious.Framework.Contract\Evisou.Framework.Contract.csproj">
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Contract\Evisou.Framework.Contract.csproj">
       <Project>{dc181585-d2d9-4748-b425-9a7af7bcab11}</Project>
       <Name>Evisou.Framework.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Evious.Framework.Utility\Evisou.Framework.Utility.csproj">
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Utility\Evisou.Framework.Utility.csproj">
       <Project>{364b7cd6-924a-46c0-9de8-1191ef6910ab}</Project>
       <Name>Evisou.Framework.Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Evious.Framework.Web\Evisou.Framework.Web.csproj">
+    <ProjectReference Include="..\..\Framework\Evisou.Framework.Web\Evisou.Framework.Web.csproj">
       <Project>{21b23e3f-8edd-417f-9a92-9ddef4c938b3}</Project>
       <Name>Evisou.Framework.Web</Name>
     </ProjectReference>
@@ -722,7 +722,7 @@
       <Project>{0d57083b-eed3-42fa-b4d5-7152f200805c}</Project>
       <Name>Evisou.OA.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Evious.Web\Evisou.Web.csproj">
+    <ProjectReference Include="..\Evisou.Web\Evisou.Web.csproj">
       <Project>{ba101daf-547d-4319-a8df-64fc5bd9d3f3}</Project>
       <Name>Evisou.Web</Name>
     </ProjectReference>

@@ -445,7 +445,7 @@ namespace Evisou.Web.AdminApplication.App_Start
 
             #endregion
             #endregion
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 
         }
     }
