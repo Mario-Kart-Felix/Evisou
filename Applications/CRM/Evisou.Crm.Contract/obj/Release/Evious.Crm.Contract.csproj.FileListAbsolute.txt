@@ -1,0 +1,36 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Crm.Contract.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Crm.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\obj\Release\Evious.Crm.Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\obj\Release\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\obj\Release\Evious.Crm.Contract.pdb
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Crm.Contract.dll.config
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Crm.Contract.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Crm.Contract.pdb
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.SqlServer.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.xml
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\EntityFramework.SqlServer.xml
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\obj\Release\Evious.Crm.Contract.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\obj\Release\Evious.Crm.Contract.dll
+D:\project\Evious\Applications\CRM\Evious.Crm.Contract\obj\Release\Evious.Crm.Contract.pdb

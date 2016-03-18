@@ -1,0 +1,1 @@
+D:\project\Evisou\Applications\Web\Evisou.Web.AdminAPI\obj\Debug\Evisou.Web.AdminAPI.csprojResolveAssemblyReference.cache

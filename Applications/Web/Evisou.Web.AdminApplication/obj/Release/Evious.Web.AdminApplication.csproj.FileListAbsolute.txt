@@ -1,0 +1,230 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.AdminApplication.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.AdminApplication.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.AdminApplication.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Module.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Upload.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Web.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\PayPalCoreSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\PayPalMerchantSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Net.Http.Formatting.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Helpers.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.WebHost.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Mvc.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Optimization.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Razor.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Razor.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\WebGrease.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.Extended.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\DevTrends.MvcDonutCaching.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\NPOI.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Castle.Core.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Module.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Upload.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Web.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Net.Http.Formatting.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Helpers.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.WebHost.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Mvc.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Optimization.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Razor.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Razor.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.Extended.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\DevTrends.MvcDonutCaching.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\DevTrends.MvcDonutCaching.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\NPOI.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Service.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Castle.Core.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Http.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Optimization.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.Contract.XmlSerializers.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\obj\Release\Evious.Web.AdminApplication.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\obj\Release\Evious.Web.AdminApplication.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web.AdminApplication\obj\Release\Evious.Web.AdminApplication.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.AdminApplication.dll.config
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.AdminApplication.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.AdminApplication.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.SqlServer.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.BLL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.BLL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Cache.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Config.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Module.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Upload.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.BLL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.BLL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Web.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.BLL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.BLL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Microsoft.Web.Infrastructure.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Newtonsoft.Json.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\PayPalCoreSDK.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\PayPalMerchantSDK.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Net.Http.Formatting.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Helpers.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.WebHost.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Mvc.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Optimization.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Razor.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Deployment.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Razor.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\WebGrease.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.Extended.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\DevTrends.MvcDonutCaching.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Log.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\NPOI.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Service.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\log4net.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\ICSharpCode.SharpZipLib.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Castle.Core.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.BLL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.BLL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Cache.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Config.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Module.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Upload.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.BLL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.BLL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.Web.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.BLL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.BLL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Web.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.SqlServer.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Newtonsoft.Json.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Net.Http.Formatting.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Helpers.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Http.WebHost.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Mvc.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Optimization.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.Razor.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Deployment.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\System.Web.WebPages.Razor.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Account.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Framework.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\EntityFramework.Extended.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Cms.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\DevTrends.MvcDonutCaching.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\DevTrends.MvcDonutCaching.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Log.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Crm.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\NPOI.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.OA.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Core.Service.pdb
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\log4net.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Castle.Core.xml
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\EntityFramework.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Http.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Optimization.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.WebPages.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\bin\Evious.Ims.Contract.XmlSerializers.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\obj\Release\Evious.Web.AdminApplication.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\obj\Release\Evious.Web.AdminApplication.dll
+D:\project\Evious\Applications\Web\Evious.Web.AdminApplication\obj\Release\Evious.Web.AdminApplication.pdb

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="D:\project\Evisou\Applications\Framework\Evisou.Framework.Contract\bin\Debug\Evisou.Framework.Contract.dll">
+   <Modules>
+    <Module Name="evisou.framework.contract.dll">
+     <Namespaces>
+      <Namespace Name="Evisou.Framework.Contract">
+       <Types>
+        <Type Name="BusinessException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2015-07-26 01:56:47Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">向类型 'BusinessException' 中添加对 GetObjectData 的实现。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ModelBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2015-07-26 01:56:47Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="D:\project\Evisou\Applications\Framework\Evisou.Framework.Contract" File="ModelBase.cs" Line="8">'ModelBase.ModelBase()' 包含调用链，该调用链导致调用此类所定义的虚方法。请检查以下调用堆栈，看是否有意外结果: &#xD;&#xA;&#xD;&#xA;ModelBase..ctor()&#xD;&#xA;ModelBase.set_CreateTime(DateTime):Void。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WCFContext" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2015-07-26 01:56:47Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">使用以下签名向 WCFContext 添加构造函数: “protected WCFContext (SerializationInfo info, StreamingContext context)”。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>不要在构造函数中调用可重写的方法</Name>
+   <Description>不应通过构造函数调用类中定义的虚方法。如果某个派生类已重写该虚方法，则将在调用派生类的构造函数前，调用此派生类重写后的方法。</Description>
+   <Resolution Name="Default">{0} 包含调用链，该调用链导致调用此类所定义的虚方法。请检查以下调用堆栈，看是否有意外结果: {1}。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>正确实现 ISerializable</Name>
+   <Description>如果可将类型赋给 ISerializable，则它应实现 GetObjectData。对于非密封类型，其派生类型应可以调用和重写 GetObjectData 方法。</Description>
+   <Resolution Name="Default">向类型 {0} 中添加对 GetObjectData 的实现。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229">
+   <Name>实现序列化构造函数</Name>
+   <Description>该构造函数签名接受与 ISerializable.GetObjectData 所用参数相同的参数(即 SerializationInfo 实例和 StreamingContext 实例)。对于非密封类，该构造函数应为 protected，对于密封类，它应为 private。未能实现序列化构造函数将导致反序列化失败，并引发 SerializationException。</Description>
+   <Resolution Name="CreateMagicConstructor">使用以下签名向 {0} 添加构造函数: “protected {0} (SerializationInfo info, StreamingContext context)”。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182343.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">类别</String>
+  <String Key="Certainty">确定性</String>
+  <String Key="CollapseAll">全部折叠</String>
+  <String Key="CheckId">检查 ID</String>
+  <String Key="Error">错误</String>
+  <String Key="Errors">错误</String>
+  <String Key="ExpandAll">全部展开</String>
+  <String Key="Help">帮助</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">消息</String>
+  <String Key="LocationNotStoredInPdb">[位置未存储在 Pdb 中]</String>
+  <String Key="Project">项目</String>
+  <String Key="Resolution">解析</String>
+  <String Key="Rule">规则</String>
+  <String Key="RuleFile">规则文件</String>
+  <String Key="RuleDescription">规则说明</String>
+  <String Key="Source">源</String>
+  <String Key="Status">状态</String>
+  <String Key="Target">目标</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">代码分析报告</String>
+ </Localized>
+</FxCopReport>

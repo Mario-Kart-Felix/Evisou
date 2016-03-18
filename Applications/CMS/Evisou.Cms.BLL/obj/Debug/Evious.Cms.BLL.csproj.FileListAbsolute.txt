@@ -1,0 +1,68 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.BLL.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.Extended.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.Extended.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\obj\Debug\Evious.Cms.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\obj\Debug\Evious.Cms.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CMS\Evious.Cms.BLL\obj\Debug\Evious.Cms.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.BLL.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.Extended.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Cms.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.Extended.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\obj\Debug\Evious.Cms.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\obj\Debug\Evious.Cms.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.BLL\obj\Debug\Evious.Cms.BLL.pdb

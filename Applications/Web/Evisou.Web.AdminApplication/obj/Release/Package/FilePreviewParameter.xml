@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="test2.evisou.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Vson\\Documents\\Visual\ Studio\ 2013\\Projects\\Evious\\Applications\\Web\\Evious\.Web\.AdminApplication\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Vson\\Documents\\Visual\ Studio\ 2013\\Projects\\Evious\\Applications\\Web\\Evious\.Web\.AdminApplication\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

@@ -1,0 +1,9 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Framework\Evious.Framework.BLL\bin\Debug\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Framework\Evious.Framework.BLL\bin\Debug\Evious.Framework.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Framework\Evious.Framework.BLL\obj\Debug\Evious.Framework.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Framework\Evious.Framework.BLL\obj\Debug\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Framework\Evious.Framework.BLL\obj\Debug\Evious.Framework.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\bin\Debug\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\bin\Debug\Evious.Framework.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\obj\Debug\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\obj\Debug\Evious.Framework.BLL.pdb

@@ -1,0 +1,164 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Web.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Web.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Web.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Account.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Cms.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Upload.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Web.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.OA.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\PayPalCoreSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\PayPalMerchantSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Helpers.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.WebHost.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Mvc.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Razor.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Castle.Core.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\NPOI.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Account.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Cms.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Service.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Upload.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Crm.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Web.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.OA.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Helpers.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.WebHost.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Mvc.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Razor.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Castle.Core.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\NPOI.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Http.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Http.WebHost.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.Contract.XmlSerializers.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\obj\Release\Evious.Web.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\obj\Release\Evious.Web.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Web\Evious.Web\obj\Release\Evious.Web.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Web.dll.config
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Web.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Web.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.SqlServer.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Account.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Cms.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Cache.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Log.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Service.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Upload.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Crm.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Web.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.DAL.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.OA.Contract.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\PayPalCoreSDK.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\PayPalMerchantSDK.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Net.Http.Formatting.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Helpers.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.WebHost.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Mvc.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Razor.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Deployment.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Razor.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Config.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\log4net.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Castle.Core.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\NPOI.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Account.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Cms.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Cache.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Log.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Service.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Upload.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Crm.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Framework.Web.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.DAL.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.OA.Contract.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\EntityFramework.SqlServer.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Net.Http.Formatting.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Helpers.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Http.WebHost.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Mvc.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.Razor.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Deployment.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\System.Web.WebPages.Razor.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Core.Config.pdb
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\log4net.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Castle.Core.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\NPOI.xml
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Helpers.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Http.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Mvc.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.Razor.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.WebPages.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\project\Evious\Applications\Web\Evious.Web\bin\Release\Evious.Ims.Contract.XmlSerializers.dll
+D:\project\Evious\Applications\Web\Evious.Web\obj\Release\Evious.Web.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Web\Evious.Web\obj\Release\Evious.Web.dll
+D:\project\Evious\Applications\Web\Evious.Web\obj\Release\Evious.Web.pdb

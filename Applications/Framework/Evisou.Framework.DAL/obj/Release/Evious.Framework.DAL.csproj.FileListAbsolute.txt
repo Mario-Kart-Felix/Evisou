@@ -1,0 +1,32 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.DAL.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\obj\Release\Evious.Framework.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\obj\Release\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.DAL\obj\Release\Evious.Framework.DAL.pdb
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.DAL.dll.config
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.DAL.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.DAL.pdb
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.xml
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\obj\Release\Evious.Framework.DAL.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\obj\Release\Evious.Framework.DAL.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.DAL\obj\Release\Evious.Framework.DAL.pdb

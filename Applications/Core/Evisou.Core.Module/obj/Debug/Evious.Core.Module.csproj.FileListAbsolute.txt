@@ -1,0 +1,32 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Module.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Module.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\DevTrends.MvcDonutCaching.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\DevTrends.MvcDonutCaching.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\DevTrends.MvcDonutCaching.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\obj\Debug\Evious.Core.Module.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\obj\Debug\Evious.Core.Module.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Module\obj\Debug\Evious.Core.Module.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Module.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Module.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\DevTrends.MvcDonutCaching.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\DevTrends.MvcDonutCaching.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\DevTrends.MvcDonutCaching.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\obj\Debug\Evious.Core.Module.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\obj\Debug\Evious.Core.Module.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Module\obj\Debug\Evious.Core.Module.pdb

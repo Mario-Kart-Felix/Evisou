@@ -1,0 +1,9 @@
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\bin\Release\Evisou.Framework.BLL.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\bin\Release\Evisou.Framework.BLL.pdb
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evisou.Framework.BLL.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evisou.Framework.BLL.pdb
+D:\project\Evisou\Applications\Framework\Evisou.Framework.BLL\bin\Release\Evisou.Framework.BLL.dll
+D:\project\Evisou\Applications\Framework\Evisou.Framework.BLL\bin\Release\Evisou.Framework.BLL.pdb
+D:\project\Evisou\Applications\Framework\Evisou.Framework.BLL\obj\Release\Evisou.Framework.BLL.dll
+D:\project\Evisou\Applications\Framework\Evisou.Framework.BLL\obj\Release\Evisou.Framework.BLL.pdb
+D:\project\Evisou\Applications\Framework\Evisou.Framework.BLL\obj\Release\Evisou.Framework.BLL.csprojResolveAssemblyReference.cache

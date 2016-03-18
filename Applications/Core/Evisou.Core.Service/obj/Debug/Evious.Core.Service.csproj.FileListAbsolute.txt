@@ -1,0 +1,52 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Service.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Castle.Core.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Castle.Core.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\obj\Debug\Evious.Core.Service.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\obj\Debug\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Core\Evious.Core.Service\obj\Debug\Evious.Core.Service.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Service.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Castle.Core.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Castle.Core.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\obj\Debug\Evious.Core.Service.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\obj\Debug\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\obj\Debug\Evious.Core.Service.pdb

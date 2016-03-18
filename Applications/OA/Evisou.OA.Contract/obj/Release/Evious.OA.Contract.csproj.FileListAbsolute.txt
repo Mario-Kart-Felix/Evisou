@@ -1,0 +1,22 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.OA.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.OA.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\obj\Release\Evious.OA.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\obj\Release\Evious.OA.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\OA\Evious.OA.Contract\obj\Release\Evious.OA.Contract.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.OA.Contract.dll
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.OA.Contract.pdb
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\OA\Evious.OA.Contract\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\OA\Evious.OA.Contract\obj\Release\Evious.OA.Contract.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\OA\Evious.OA.Contract\obj\Release\Evious.OA.Contract.dll
+D:\project\Evious\Applications\OA\Evious.OA.Contract\obj\Release\Evious.OA.Contract.pdb

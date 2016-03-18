@@ -1,0 +1,36 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Crm.Contract.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Crm.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\obj\Debug\Evious.Crm.Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\obj\Debug\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\CRM\Evious.Crm.Contract\obj\Debug\Evious.Crm.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Crm.Contract.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Crm.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\obj\Debug\Evious.Crm.Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\obj\Debug\Evious.Crm.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CRM\Evious.Crm.Contract\obj\Debug\Evious.Crm.Contract.pdb

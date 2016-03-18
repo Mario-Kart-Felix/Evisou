@@ -1,0 +1,13 @@
+D:\project\Evious\Applications\Framework\Evious.Framework.Utility\bin\Release\Evisou.Framework.Utility.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.Utility\bin\Release\Evisou.Framework.Utility.pdb
+D:\project\Evious\Applications\Framework\Evious.Framework.Utility\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.Utility\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\Framework\Evious.Framework.Utility\obj\Release\Evisou.Framework.Utility.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.Utility\obj\Release\Evisou.Framework.Utility.pdb
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\bin\Release\Evisou.Framework.Utility.dll
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\bin\Release\Evisou.Framework.Utility.pdb
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\bin\Release\Newtonsoft.Json.dll
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\bin\Release\Newtonsoft.Json.xml
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\obj\Release\Evisou.Framework.Utility.dll
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\obj\Release\Evisou.Framework.Utility.pdb
+D:\project\Evisou\Applications\Framework\Evisou.Framework.Utility\obj\Release\Evisou.Framework.Utility.csprojResolveAssemblyReference.cache

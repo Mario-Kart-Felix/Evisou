@@ -1,0 +1,18 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\obj\Release\Evious.Core.Cache.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\obj\Release\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Cache\obj\Release\Evious.Core.Cache.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Cache.dll
+D:\project\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Cache.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Config.dll
+D:\project\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Cache\bin\Release\Evious.Core.Config.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Cache\obj\Release\Evious.Core.Cache.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Core\Evious.Core.Cache\obj\Release\Evious.Core.Cache.dll
+D:\project\Evious\Applications\Core\Evious.Core.Cache\obj\Release\Evious.Core.Cache.pdb

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication\bin\Evisou.Web.AdminApplication.dll">
+   <Modules>
+    <Module Name="evisou.web.adminapplication.dll">
+     <Namespaces>
+      <Namespace Name="Evisou.Web.AdminApplication">
+       <Types>
+        <Type Name="UploadHandler" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#UploadPartialFile(System.String,System.Web.HttpContext,System.Collections.Generic.List`1&lt;Evisou.Core.Upload.FilesStatus&gt;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-07-26 01:57:31Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication" File="UploadHandler.ashx.cs" Line="219">可以在方法 'UploadHandler.UploadPartialFile(string, HttpContext, List&lt;FilesStatus&gt;)' 中多次释放对象 'fs'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 219</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Evisou.Web.AdminApplication.Areas.Ims.Controllers">
+       <Types>
+        <Type Name="ProductController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#HttpGet(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-07-26 01:57:31Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication\Areas\Ims\Controllers" File="ProductController.cs" Line="56">可以在方法 'ProductController.HttpGet(string)' 中多次释放对象 'myResponseStream'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 56</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#HttpPost(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-07-26 01:57:31Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication\Areas\Ims\Controllers" File="ProductController.cs" Line="39">可以在方法 'ProductController.HttpPost(string, string)' 中多次释放对象 'myResponseStream'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 39</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>不要多次释放对象</Name>
+   <Description>可以多次调用正确实现的 Dispose 方法，而不会引发异常。但是，并不保证所有情况下都会如此。若要避免生成 System.ObjectDisposedException，您不应对一个对象多次调用 Dispose。</Description>
+   <Resolution Name="Default">可以在方法 {1} 中多次释放对象 {0}。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 56</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">类别</String>
+  <String Key="Certainty">确定性</String>
+  <String Key="CollapseAll">全部折叠</String>
+  <String Key="CheckId">检查 ID</String>
+  <String Key="Error">错误</String>
+  <String Key="Errors">错误</String>
+  <String Key="ExpandAll">全部展开</String>
+  <String Key="Help">帮助</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">消息</String>
+  <String Key="LocationNotStoredInPdb">[位置未存储在 Pdb 中]</String>
+  <String Key="Project">项目</String>
+  <String Key="Resolution">解析</String>
+  <String Key="Rule">规则</String>
+  <String Key="RuleFile">规则文件</String>
+  <String Key="RuleDescription">规则说明</String>
+  <String Key="Source">源</String>
+  <String Key="Status">状态</String>
+  <String Key="Target">目标</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">代码分析报告</String>
+ </Localized>
+</FxCopReport>

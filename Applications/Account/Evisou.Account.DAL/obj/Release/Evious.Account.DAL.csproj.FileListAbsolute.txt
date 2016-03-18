@@ -1,0 +1,60 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.DAL.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.Migrations.Initial.resources
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.csproj.GenerateResource.Cache
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.DAL.dll.config
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.DAL.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.DAL.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.Contract.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Config.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Log.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.DAL.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\log4net.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Config.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Core.Log.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.DAL.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Account.Contract.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.xml
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\log4net.xml
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.Migrations.Initial.resources
+D:\project\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.csproj.GenerateResource.Cache
+D:\project\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.dll
+D:\project\Evious\Applications\Account\Evious.Account.DAL\obj\Release\Evious.Account.DAL.pdb

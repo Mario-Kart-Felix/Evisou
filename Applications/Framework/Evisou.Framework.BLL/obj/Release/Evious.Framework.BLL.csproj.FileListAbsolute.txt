@@ -1,0 +1,10 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\bin\Release\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\bin\Release\Evious.Framework.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evious.Framework.BLL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evious.Framework.BLL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evious.Framework.BLL.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\bin\Release\Evious.Framework.BLL.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\bin\Release\Evious.Framework.BLL.pdb
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evious.Framework.BLL.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evious.Framework.BLL.dll
+D:\project\Evious\Applications\Framework\Evious.Framework.BLL\obj\Release\Evious.Framework.BLL.pdb

@@ -1,0 +1,62 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.DAL.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\PayPalMerchantSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\PayPalCoreSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.Migrations.Initial.resources
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.csproj.GenerateResource.Cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious - 副本\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.DAL.dll.config
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\PayPalMerchantSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\PayPalCoreSDK.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Ims.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Ims\Evious.Ims.DAL\obj\Debug\Evious.Ims.DAL.pdb

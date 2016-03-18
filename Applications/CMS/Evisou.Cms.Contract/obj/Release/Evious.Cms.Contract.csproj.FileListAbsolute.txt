@@ -1,0 +1,22 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Cms.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Cms.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\obj\Release\Evious.Cms.Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\obj\Release\Evious.Cms.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\CMS\Evious.Cms.Contract\obj\Release\Evious.Cms.Contract.pdb
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Cms.Contract.dll
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Cms.Contract.pdb
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\obj\Release\Evious.Cms.Contract.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\obj\Release\Evious.Cms.Contract.dll
+D:\project\Evious\Applications\CMS\Evious.Cms.Contract\obj\Release\Evious.Cms.Contract.pdb

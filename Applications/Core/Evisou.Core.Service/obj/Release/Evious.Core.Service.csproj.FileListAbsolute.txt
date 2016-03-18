@@ -1,0 +1,52 @@
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Service.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Castle.Core.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Cache.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Log.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Contract.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Utility.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Newtonsoft.Json.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Config.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.DAL.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\EntityFramework.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\log4net.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Contract.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Utility.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Cache.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Log.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Castle.Core.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Newtonsoft.Json.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Config.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.DAL.pdb
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\EntityFramework.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\log4net.xml
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\bin\Release\zh-Hans\EntityFramework.resources.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\obj\Release\Evious.Core.Service.csprojResolveAssemblyReference.cache
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\obj\Release\Evious.Core.Service.dll
+C:\Users\Vson\Documents\Visual Studio 2013\Projects\Evious\Applications\Core\Evious.Core.Service\obj\Release\Evious.Core.Service.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Service.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Service.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Castle.Core.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Cache.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Log.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Contract.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Utility.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Newtonsoft.Json.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Config.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.DAL.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\EntityFramework.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\log4net.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Contract.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.Utility.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Cache.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Log.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Castle.Core.xml
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Newtonsoft.Json.xml
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Core.Config.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\Evious.Framework.DAL.pdb
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\EntityFramework.xml
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\log4net.xml
+D:\project\Evious\Applications\Core\Evious.Core.Service\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\obj\Release\Evious.Core.Service.csprojResolveAssemblyReference.cache
+D:\project\Evious\Applications\Core\Evious.Core.Service\obj\Release\Evious.Core.Service.dll
+D:\project\Evious\Applications\Core\Evious.Core.Service\obj\Release\Evious.Core.Service.pdb
