@@ -711,6 +711,41 @@ namespace Evisou.Ims.Contract.Model.CK1BFE
             }
             return list;
         }
+        public IEnumerable<Warehouse> GetWarehouseList()
+        {
+            List<Warehouse> list = new List<Warehouse>();
+
+            CK1V3Request request = new CK1V3Request
+            {
+                Category = "outbound",
+                Handler = "misc",
+                Action = "list-all-warehouse",
+                Parameters = new Dictionary<string, string>()
+            };
+
+            string json = ResponseJson(request);
+
+            CK1OutboundExpressResponse response = JsonConvert.DeserializeObject<CK1OutboundExpressResponse>(json);
+
+            try
+            {
+
+                foreach (var service in response.body)
+                {
+                    list.Add(new Warehouse
+                    {
+                        Code = service.Code,
+                        Name = service.Name
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex.InnerException;
+            }
+            return list;
+
+        }
         public IEnumerable<Express> GetOutBoundList(string warehouse)
         {
             List<Express> list = new List<Express>();

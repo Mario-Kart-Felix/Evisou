@@ -72,6 +72,8 @@ namespace Evisou.Ims.Contract
 
 
         IEnumerable<Express> GetDriectExpress(int agentid);
+
+        IEnumerable<Warehouse> GetWarehouseList(int agentid);
         IEnumerable<Express> GetOutboundExpress(int agentid,string warehouse);
 
         ShipOrder AddDispatchOrder(DispatchRequest request);

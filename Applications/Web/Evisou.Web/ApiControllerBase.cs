@@ -6,6 +6,7 @@ using Evisou.Framework.Web;
 using Evisou.Ims.Contract;
 using Evisou.OA.Contract;
 using System;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace Evisou.Web
@@ -64,6 +65,6 @@ namespace Evisou.Web
 
             Log4NetHelper.Error(LoggerType.WebExceptionLog, message, exception);
         }
-
+       
     }
 }

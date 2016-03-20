@@ -15,10 +15,10 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
     <link href="@Url.StaticFile("/assets/admin/pages/css/tasks.css")" rel="stylesheet" type="text/css" />
-    @RenderSection("PageSpecificStyleSheetLevelPluginsIncludes", required: false)
+    @RenderSection("PageLevelPluginsCSS", required: false)
     <!-- END PAGE LEVEL PLUGIN STYLES -->
     <!-- BEGIN PAGE STYLES -->
-    @RenderSection("PageSpecificStyleSheetLevelStylesIncludes", required: false)
+    @RenderSection("PageLevelCSS", required: false)
     <!-- END PAGE STYLES -->
     <!-- BEGIN THEME STYLES -->
     <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->

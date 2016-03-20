@@ -47,6 +47,8 @@ namespace Evisou.Core.Config
             }
         }
 
+       
+
         public SettingConfig SettingConfig
         {
             get

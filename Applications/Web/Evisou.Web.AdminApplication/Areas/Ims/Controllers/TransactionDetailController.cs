@@ -373,6 +373,13 @@ namespace Evisou.Web.AdminApplication.Areas.Ims.Controllers
             return Json(result,
                              JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetWarehouseList(int agentid)
+        {
+            var result = this.ImsService.GetWarehouseList(agentid);
+            return Json(result,
+                             JsonRequestBehavior.AllowGet);
+        }
         public ActionResult Sync()
         {
             ViewBag.PaypalApi = new SelectList(this.ImsService.GetPaypalApiList(), "ID", "PPAccount");

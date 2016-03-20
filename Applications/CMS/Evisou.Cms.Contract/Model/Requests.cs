@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Evisou.Framework.Contract;
+﻿using Evisou.Framework.Contract;
 
 namespace Evisou.Cms.Contract
 {

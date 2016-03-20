@@ -1,4 +1,5 @@
-﻿using Evisou.Cms.Contract;
+﻿using Evisou.Account.Contract;
+using Evisou.Cms.Contract;
 using Evisou.Framework.Contract;
 using Evisou.Framework.Utility;
 using Evisou.Web.AdminApplication.Common;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Evisou.Web.AdminApplication.Areas.Cms.Controllers
 {
+    [Permission(EnumBusinessPermission.CmsManage_Article)]
     public class ArticleController : AdminControllerBase
     {
 

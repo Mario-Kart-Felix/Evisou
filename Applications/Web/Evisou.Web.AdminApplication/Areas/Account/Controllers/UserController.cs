@@ -41,7 +41,7 @@ namespace Evisou.Web.AdminApplication.Areas.Account.Controllers
                                 {
                                     var model = this.AccountService.GetUser(id);
                                     model.IsActive = false;
-                                    this.TryUpdateModel<User>(model);
+                                   // this.TryUpdateModel<User>(model);
                                     this.AccountService.SaveUser(model);
                                 }
                                 break;
@@ -72,23 +72,25 @@ namespace Evisou.Web.AdminApplication.Areas.Account.Controllers
             if (!string.IsNullOrEmpty(request.search))
             {
                 var isLoginNameSearchable = Convert.ToBoolean(Request["columns[0][searchable]"]);
-                var isEmailSearchable = Convert.ToBoolean(Request["columns[1][searchable]"]);
-                var isMoblieNameSearchable = Convert.ToBoolean(Request["columns[2][searchable]"]);
-                var isRoleNameSearchable = Convert.ToBoolean(Request["columns[3][searchable]"]);
+                //var isEmailSearchable = Convert.ToBoolean(Request["columns[1][searchable]"]);
+                //var isMoblieNameSearchable = Convert.ToBoolean(Request["columns[2][searchable]"]);
+                //var isRoleNameSearchable = Convert.ToBoolean(Request["columns[3][searchable]"]);
                 var isActiveNameSearchable = Convert.ToBoolean(Request["columns[4][searchable]"]);
             }
             else if (request.action == "filter")
             {
                 var loginNameFilter = Convert.ToString(Request["loginname"]);
-                var EmailFilter = Convert.ToString(Request["email"]);
-                var MoblieFilter = Convert.ToString(Request["phone"]);
-                var RoleFilter = Convert.ToString(Request["roles"]);
+                //var EmailFilter = Convert.ToString(Request["email"]);
+                //var MoblieFilter = Convert.ToString(Request["phone"]);
+                //var RoleFilter = Convert.ToString(Request["roles"]);
                 var ActiveFilter = Convert.ToString(Request["isactive"]);
 
+               
+
                 var isLoginNameSearchable = string.IsNullOrEmpty(Request["columns[1][searchable]"].ToString()) ? false : true;
-                var isEmailSearchable = string.IsNullOrEmpty(Request["columns[2][searchable]"].ToString()) ? false : true;
-                var isMoblieNameSearchable = string.IsNullOrEmpty(Request["columns[3][searchable]"].ToString()) ? false : true;
-                var isRoleNameSearchable = string.IsNullOrEmpty(Request["columns[4][searchable]"].ToString()) ? false : true;
+                //var isEmailSearchable = string.IsNullOrEmpty(Request["columns[2][searchable]"].ToString()) ? false : true;
+                //var isMoblieNameSearchable = string.IsNullOrEmpty(Request["columns[3][searchable]"].ToString()) ? false : true;
+                //var isRoleNameSearchable = string.IsNullOrEmpty(Request["columns[4][searchable]"].ToString()) ? false : true;
                 var isActiveNameSearchable = false;              
                 if (!string.IsNullOrEmpty(Request["isactive"].ToString()))
                 {
@@ -100,15 +102,15 @@ namespace Evisou.Web.AdminApplication.Areas.Account.Controllers
                     filterUsers = filterUsers.Where(c => c.LoginName.ToLower().Contains(loginNameFilter));
                 }
 
-                if (isEmailSearchable)
-                {
-                    filterUsers = filterUsers.Where(c => c.Email.ToLower().Contains(EmailFilter));
-                }
+                //if (isEmailSearchable)
+                //{
+                //    filterUsers = filterUsers.Where(c => c.Email.ToLower().Contains(EmailFilter));
+                //}
 
-                if (isMoblieNameSearchable)
-                {
-                    filterUsers = filterUsers.Where(c => c.Mobile.ToLower().Contains(MoblieFilter));
-                }
+                //if (isMoblieNameSearchable)
+                //{
+                //  //  filterUsers = filterUsers.Where(c => c.Mobile.ToLower().Contains(MoblieFilter));
+                //}
 
                 
                 if (isActiveNameSearchable)
@@ -179,9 +181,10 @@ namespace Evisou.Web.AdminApplication.Areas.Account.Controllers
 
         public ActionResult Index(UserRequest request)
         {
-            var result = this.AccountService.GetUserList(request);
-           
-            return View(result);
+            // var result = this.AccountService.GetUserList(request);
+
+            // return View(result);
+            return View();
         }
 
     

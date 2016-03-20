@@ -8,69 +8,29 @@
    
 }
 
-@section PageSpecificStyleSheetLevelPluginsIncludes{
+@section PageLevelPluginsCSS{
 @Styles.Render("~/assets/global/plugins/select2/css"
-    , "~/assets/global/plugins/datatables/extensions/Scroller/css/css"
-    , "~/assets/global/plugins/datatables/extensions/ColReorder/css/css"
     , "~/assets/global/plugins/datatables/plugins/bootstrap/css"
-    , "~/assets/global/plugins/bootstrap-editable/bootstrap-editable/css/css"
-    , "~/Assets/global/plugins/bootstrap-editable/inputs-ext/address/css"
     )
-
-   
-    @*<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/Assets/global/plugins/bootstrap-editable/inputs-ext/address/address.css")" />*@
 }
 
-@section PageSpecificStyleSheetLevelStylesIncludes{
+@section PageLevelCSS{
 @Styles.Render("~/assets/global/plugins/bootstrap-datepicker/css/css"
         , "~/assets/global/plugins/bootstrap-datetimepicker/css/css"
         , "~/assets/global/plugins/bootstrap-daterangepicker/css"
         , "~/assets/global/plugins/fancybox/source/css"
        
     )
-@*<link href="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/css/datepicker.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.StaticFile("/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.StaticFile("/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet" type="text/css" />*@
 }
 
-@section PageSpecificJavascriptLevelPluginsIncludes{
+
+
+@section PageLevelPluginScript{
 @Scripts.Render("~/Plugins/TransactionDetail/Index")
-    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/select2/select2.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/bootstrap-daterangepicker/moment/moment-with-locales.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js")"></script>
-    <script src="@Url.StaticFile("/Assets/global/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-daterangepicker/moment.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.2.4.18.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-editable/bootstrap-editable/js/bootstrap-editable.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-editable/inputs-ext/address/address.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/Assets/admin/pages/scripts/association-bootstrap-editor.js")"></script>*@
 }
 
-@section PageSpecificJavascriptLevelScriptsIncludes{
+@section PageLevelScript{
 @Scripts.Render("~/Script/TransactionDetail/Index")
-    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/transaction-x.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/scripts/angular.min.js")"></script>*@
 }
 <script>
     var handleDatePickers = function () {
@@ -196,12 +156,6 @@
     
 </script>
 
-@section JSIncluds{
-    Transaction.init();
-    handleDispatch();
-    handleDatePickers();
-    handleOutPutData();
-}
 
 <div class="row">
     <div class="col-md-12">
@@ -307,7 +261,9 @@
                                     快递服务
                                 </th>
                                 <th width="10%">
-                                    操作
+                                    <a href="javascript:;" class="default search-table">
+                                        搜索 <i class="icon-magnifier"></i>
+                                    </a>
                                 </th>
                             </tr>
                             <tr role="row" class="filter">

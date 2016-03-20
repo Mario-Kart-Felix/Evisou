@@ -1,7 +1,4 @@
-﻿@using Evisou.Framework.Contract
-@using Evisou.Framework.Utility
-@using Evisou.Framework.Web.Controls
-@using Evisou.Ims.Contract.Model;
+﻿
 @using Evisou.Web;
 
 <div class="modal-header">
@@ -32,58 +29,53 @@
             验证成功
         </div>
         <div class="form-horizontal">
-            <div class="form-body">                
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        同步时间: <span class="required">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+            <div class="form-body">  
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            同步时间: <span class="required">
+                                *
                             </span>
-                            <div class="input-icon right">
-                                <i class="fa"></i>
-                                <div class="input-group input-large" id="defaultrange">
-                                    <input type="text" class="form-control text-box single-line input-medium" data-val="true" name="RangeDate" id="RangeDate" data-val-required="选择同步的日期">
-                                   
-                                    <span class="help-block">
-                                        <span class="field-validation-valid" data-valmsg-for="RangeDate" data-valmsg-replace="true"></span>
-                                    </span>
+                        </label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    <div class="input-group input-large" id="defaultrange">
+                                        <input type="text" class="form-control text-box single-line input-medium" data-val="true" name="RangeDate" id="RangeDate" data-val-required="选择同步的日期">
+
+                                        <span class="help-block">
+                                            <span class="field-validation-valid" data-valmsg-for="RangeDate" data-valmsg-replace="true"></span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
+                            <span class="help-inline"></span>
                         </div>
-                        <span class="help-inline"></span>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">
-                        账号： <span class="required">
-                            *
-                        </span>
-                    </label>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="fa fa-cubes"></i>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            账号： <span class="required">
+                                *
                             </span>
-                            <div class="input-icon right">
-                                <i class="fa"></i>
-                                @Html.DropDownList("PaypalApi", ViewBag.PaypalApi as SelectList, null, new { @class = "form-control text-box single-line input-medium select2me" })
+                        </label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-cubes"></i>
+                                </span>
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    @Html.DropDownList("PaypalApi", ViewBag.PaypalApi as SelectList, null, new { @class = "form-control text-box single-line input-medium select2me" })
+                                </div>
                             </div>
+                            <span class="help-inline"></span>
                         </div>
-                        <span class="help-inline"></span>
+
                     </div>
-                    
                 </div>
-
-                
-
-
-            </div>
-            
         </div>
     </div>
 
@@ -93,79 +85,11 @@
     </div>
 
 <script>
+    jQuery(document).ready(function () {
+        Transaction.sync("@Guid.NewGuid().ToString()");
+    });
 
-    var FormComponents = function () {
-        var handleDateRangePickers = function () {
-
-            if (!jQuery().daterangepicker) {
-                return;
-            }
-            
-            $('#defaultrange').daterangepicker({
-                opens: (Metronic.isRTL() ? 'left' : 'right'),
-               // format: 'MM/DD/YYYY',
-                separator: ' to ',
-                startDate: moment().subtract('days', 29),
-                endDate: moment(),
-                minDate: '01/01/2009',
-                maxDate: '12/31/2020',
-                showDropdowns: true,
-                showWeekNumbers: true,
-                timePicker: false,
-                timePickerIncrement: 1,
-                timePicker12Hour: true,
-                ranges: {
-                    '今天': [moment(), moment()],
-                    '昨天': [moment().subtract('days', 1), moment().subtract('days', 1)],
-                    '前七天': [moment().subtract('days', 6), moment()],
-                    '前30天': [moment().subtract('days', 29), moment()],
-                    '这个月': [moment().startOf('month'), moment().endOf('month')],
-                    '前个月': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
-                },
-                buttonClasses: ['btn'],
-                applyClass: 'green',
-                cancelClass: 'default',               
-                locale: {
-                    applyLabel: '应用',
-                    cancelLabel: '取消',
-                    fromLabel: '从',
-                    toLabel: '到',
-                    customRangeLabel: '自定义时间',
-                    daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
-                    monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-                    firstDay: 1
-                }
-            },
-                function (start, end) {
-                     $('#defaultrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                    //$('#defaultrange input').val(start + ' - ' + end);
-                }
-            );
-
-            
-            //Set the initial state of the picker label
-            $('#reportrange span').html(moment().subtract('days', 29).format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
-            $('#RangeDate').val(moment().subtract('days', 29).format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
-            //$('#reportrange span').html(moment().subtract('days', 29) + ' - ' + moment());
-           // $('#RangeDate').val(moment().subtract('days', 29) + ' - ' + moment());
-            // this is very important fix when daterangepicker is used in modal. in modal when daterange picker is opened and mouse clicked anywhere bootstrap modal removes the modal-open class from the body element.
-            // so the below code will fix this issue.
-            $('#reportrange').on('click', function () {               
-                if ($('#Modal').is(":visible") && $('body').hasClass("modal-open") == false) {
-                    $('body').addClass("modal-open");
-                }
-            });
-        };
-
-        return {
-            init: function () {
-                handleDateRangePickers();
-            }
-        }
-    }();
-    
-
-    var uniqueId = "@Guid.NewGuid().ToString()";
+    @*var uniqueId = "@Guid.NewGuid().ToString()";
     var t;
     function getStatus() {      
        var url = "@Url.StaticFile("/Ims/TransactionDetail/GetCurrentProgress/")" + uniqueId;
@@ -180,10 +104,8 @@
                 $('#txtprocesss').text('准备中....');
                 $("#progress").attr("data-percent", "准备中....");
             } else if (data.percentage == 100) {
-            
                 var startdate = moment($('#defaultrange input').val().split('-')[0]).format('YYYY-MM-DD');
                 var enddate = moment(data.enddate).format('YYYY-MM-DD');
-              
                 if (startdate == enddate) {                    
                     window.location.href = '@Url.StaticFile("/Ims/TransactionDetail/Index")';
                 } else {                    
@@ -204,32 +126,30 @@
                 $('#txtprocesss').text("共有:" + data.total + "条," + "正在处理第" + data.number + "条," + "已经同步" + data.percentage + "%," + "最终同步日期:" + data.enddate);
                 $("#progressbar").attr("style", "width:" + data.percentage + "%")
             }
-            
         });
     }
 
 
 
     $(function () {
-        FormComponents.init();
-
         $('#submitbutton').click(function () {
             $.post("@Url.StaticFile("/Ims/TransactionDetail/StartLongRunningProcess")",{ "PaypalApi": $("#PaypalApi").val(), "RangeDate": $('#defaultrange input').val(), id: uniqueId },
                    function () {
                        $('#progress').show();
                        getStatus();
-                      
                    });
         })
 
         $('#cancel').click(function () {
             clearTimeout(t);
         });
-    });
+    });*@
 
 </script>
+
+
 <script type="text/javascript">
-    var text = $('#submitbutton').text();
+    @*var text = $('#submitbutton').text();
     //设定倒数秒数
     var st = 60;
     //显示倒数秒数
@@ -252,6 +172,6 @@
         //每秒执行一次,showTime()
        
     }
-    //执行showTime()
+    //执行showTime()*@
     
 </script>  

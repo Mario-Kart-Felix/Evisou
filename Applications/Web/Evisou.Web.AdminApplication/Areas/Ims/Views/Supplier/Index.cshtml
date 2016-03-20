@@ -8,51 +8,26 @@
    
 }
 
-@section PageSpecificStyleSheetLevelPluginsIncludes{
+@section PageLevelPluginsCSS{
 @Styles.Render(
-    "~/assets/global/plugins/datatables/extensions/Scroller/css/css"
-    , "~/assets/global/plugins/datatables/extensions/ColReorder/css/css"
-    , "~/assets/global/plugins/datatables/plugins/bootstrap/css"
+    "~/assets/global/plugins/datatables/plugins/bootstrap/css"
     )
-    @*<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />*@
 }
 
-@section PageSpecificStyleSheetLevelStylesIncludes{
+@section PageLevelCSS{
 
 }
 
-@section PageSpecificJavascriptLevelPluginsIncludes{
+@section PageLevelPluginScript{
 @Scripts.Render("~/Plugins/Supplier/Index")
-    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>*@
-
-    
 }
 
-@section PageSpecificJavascriptLevelScriptsIncludes{
+@section PageLevelScript{
 @Scripts.Render("~/Script/Supplier/Index")
-    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/supplier-x.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>*@
-}
-
-
-@section JSIncluds{
-    Supplier.init();
 }
 
 <div class="row">  
-
+    
     <div class="col-md-12">
         <div class="block">
             <strong>供应商相关：</strong>
@@ -128,7 +103,9 @@
                                     地址
                                 </th>                               
                                 <th width="10%">
-                                    操作
+                                    <a href="javascript:;" class="default search-table">
+                                        搜索 <i class="icon-magnifier"></i>
+                                    </a>
                                 </th>
                             </tr>
                             <tr role="row" class="filter">

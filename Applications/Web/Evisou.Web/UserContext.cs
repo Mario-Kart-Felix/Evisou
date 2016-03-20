@@ -22,9 +22,7 @@ namespace Evisou.Web
                     if (authCookie.UserToken == Guid.Empty)
                         return null;
 
-                    var aa = authCookie.UserToken;
-
-                    var vv = aa;
+                   
 
                     var loginInfo = ServiceContext.Current.AccountService.GetLoginInfo(authCookie.UserToken);
 

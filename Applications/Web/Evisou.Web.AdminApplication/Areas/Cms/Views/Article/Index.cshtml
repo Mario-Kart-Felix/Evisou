@@ -8,41 +8,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section PageSpecificStyleSheetLevelPluginsIncludes{
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/Assets/global/plugins/jquery-tags-input/jquery.tagsinput.css")" />
-
+@section PageLevelPluginsCSS{
+@Styles.Render(
+    "~/assets/global/plugins/datatables/extensions/Scroller/css/css"
+    , "~/assets/global/plugins/datatables/extensions/ColReorder/css/css"
+    , "~/assets/global/plugins/datatables/plugins/bootstrap/css"
+    
+    )
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("~/Assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css")" />
 }
 
-@section PageSpecificStyleSheetLevelStylesIncludes{
+@section PageLevelCSS{
 <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css")" />
 <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css")"/>
 <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-summernote/summernote.css")"/>
-<link href="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css")" rel="stylesheet" />
-<link href="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css")" rel="stylesheet" />
-<link href="@Url.StaticFile("/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.css")" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css")" />
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css")"  />
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css")" />
+<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.css")" />
 
 }
 
-@section PageSpecificJavascriptLevelPluginsIncludes{
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/select2/select2.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js")"></script>
+@section PageLevelPluginScript{
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/select2/js/select2.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/datatables.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>
 
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-tags-input/jquery.tagsinput.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/ckeditor/ckeditor.js")"></script>
-
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-wysihtml5/locales/bootstrap-wysihtml5.zh-CN.js")"></script>
@@ -50,8 +46,7 @@
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-summernote/summernote.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-summernote/lang/summernote-zh-CN.js")"></script>
-    <script src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
-    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js")"></script>*@
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
 
 <!-- BEGIN:File Upload Plugin JS files-->
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
@@ -89,15 +84,22 @@
 
 }
 
-@section PageSpecificJavascriptLevelScriptsIncludes{
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
+@section PageLevelScript{
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/article-x.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/global/scripts/modalform.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/pages/scripts/cms/article.js")"></script>
 }
-@section JSIncluds{
-    Articles.init();
-}
+<style>
+.bootstrap-tagsinput {
+         width: 500px;
+         height: 90px;
+    }
+.hottag {
+        margin: 2px;
+        padding: 5px;
+        cursor: pointer;
+    }
+</style>
 <div class="row">
 
     <div class="col-md-12">
@@ -128,7 +130,6 @@
                 </div>
             </div>
             <div class="portlet-body">
-
                 <div class="table-container">
                     <div class="table-actions-wrapper">
                         <span>
@@ -159,7 +160,9 @@
                                     内容
                                 </th>
                                 <th width="10%">
-                                    操作
+                                    <a href="javascript:;" class="default search-table">
+                                        搜索 <i class="icon-magnifier"></i>
+                                    </a>
                                 </th>
                             </tr>
                             <tr role="row" class="filter">

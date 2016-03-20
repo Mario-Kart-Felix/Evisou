@@ -178,5 +178,11 @@ namespace Evisou.Web.AdminApplication.Areas.Account.Controllers
             //}
             
         }
+
+        [AuthorizeIgnore]
+        public ActionResult test()
+        {
+            return View();
+        }
     }
 }

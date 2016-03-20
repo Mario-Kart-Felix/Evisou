@@ -12,13 +12,19 @@ namespace Evisou.Web.AdminApplication
             // Web API configuration and services
 
             // Web API routes
-           // config.MapHttpAttributeRoutes();
+            // config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            //config.Routes.MapHttpRoute(
+            //    name: "Ims_DefaultApi",
+            //    routeTemplate: "Ims/api/{controller}/{id}",
+            //    defaults: new { area = "Ims",id = RouteParameter.Optional }
+            //);
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
+
         }
     }
 }

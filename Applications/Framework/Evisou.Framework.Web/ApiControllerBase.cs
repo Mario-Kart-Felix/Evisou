@@ -6,10 +6,15 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Web.Routing;
+using System.Web.Http.Filters;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Http.Controllers;
 
 namespace Evisou.Framework.Web
 {
-    public class ApiControllerBase : ApiController
+    public class ApiControllerBase : ApiController,System.Web.Http.Filters.IActionFilter
     {
         /// <summary>
         /// 操作人，传IP....到后端记录
@@ -33,10 +38,18 @@ namespace Evisou.Framework.Web
             }
         }
 
-        public virtual void ClearOperater()
-        {
-            //TODO
-        }
+        //public virtual void UpdateOperater(ActionExecutingContext filterContext)
+        //{
+        //    if (this.Operater == null)
+        //        return;
+
+        //    WCFContext.Current.Operater = this.Operater;
+        //}
+
+        //public virtual void ClearOperater()
+        //{
+        //    //TODO
+        //}
 
 
         /// <summary>
@@ -50,7 +63,7 @@ namespace Evisou.Framework.Web
                 
                 /*  var exceptionContext = new WebExceptionContext
                 {
-                    IP = Fetch.UserIp,
+                    IP = Fetch.RoleIp,
                     CurrentUrl = Fetch.CurrentUrl,
                     RefUrl = (Request == null || Request.UrlReferrer == null) ? string.Empty : Request.UrlReferrer.AbsoluteUri,
                     IsAjaxRequest = (Request == null) ? false : Request.IsAjaxRequest(),
@@ -66,10 +79,30 @@ namespace Evisou.Framework.Web
             }
         }
 
+        bool IFilter.AllowMultiple
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+       Task<HttpResponseMessage> IActionFilter.ExecuteActionFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func<Task<HttpResponseMessage>> continuation)
+        {
+            var aa = actionContext;
+            var bb = aa;
+          
+            throw new NotImplementedException();
+        }
+
         protected virtual void LogException(Exception exception, WebExceptionContext exceptionContext = null)
         {
             //do nothing!
         }
+        //Task<HttpResponseMessage> IActionFilter.ExecuteActionFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func<Task<HttpResponseMessage>> continuation)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
     /*public class WebExceptionContext

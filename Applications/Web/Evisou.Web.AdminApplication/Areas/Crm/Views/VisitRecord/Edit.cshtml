@@ -263,7 +263,10 @@
     }
 </style>
 <script>
-    var FormComponents = function () {
+    jQuery(document).ready(function () {
+        VisitRecord.form();
+    });
+    @*var FormComponents = function () {
 
 
         var handleCombox = function () {
@@ -342,7 +345,7 @@
                 submitHandler: function (form) {
                     success.show();
                     error.hide();
-                    //form[0].submit(alert('dasdas')); // submit the form
+                    form[0].submit(alert('dasdas')); // submit the form
                 }
             });
 
@@ -365,7 +368,7 @@
                     autoclose: true,
                     dateFormat: 'dd日mm月yy年'
                 });
-                //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+                $('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
             }
 
             /* Workaround to restrict daterange past date select: http://stackoverflow.com/questions/11933173/how-to-restrict-the-selectable-date-ranges-in-bootstrap-datepicker */
@@ -383,7 +386,7 @@
 
     $(function () {
         FormComponents.init();
-    });
+    });*@
 </script>
 
 

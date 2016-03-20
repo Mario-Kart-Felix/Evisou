@@ -1749,6 +1749,20 @@ namespace Evisou.Ims.BLL
             return express;
         }
 
+        public IEnumerable<Warehouse> GetWarehouseList(int agentid)
+        {
+            List<Warehouse> wareshouselist = new List<Warehouse>();
+            switch (agentid)
+            {
+                case 1:
+                    CK1BFE ck1 = new CK1BFE();
+                    wareshouselist = ck1.GetWarehouseList().ToList<Warehouse>();
+                    break;
+
+
+            }
+            return wareshouselist;
+        }
         public IEnumerable<Express> GetOutboundExpress(int agentid, string warehouse)
         {
             List<Express> express = new List<Express>();

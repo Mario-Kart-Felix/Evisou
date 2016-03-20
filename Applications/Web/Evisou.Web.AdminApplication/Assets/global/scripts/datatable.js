@@ -1,4 +1,4 @@
-/***
+﻿/***
 Wrapper/Helper Class for datagrid based on jQuery Datatable Plugin
 ***/
 var Datatable = function() {
@@ -21,7 +21,7 @@ var Datatable = function() {
             $('.table-group-actions > span', tableWrapper).text("");
         }
     };
-   
+
     return {
 
         //main function to initiate the module
@@ -39,10 +39,10 @@ var Datatable = function() {
                 filterApplyAction: "filter",
                 filterCancelAction: "filter_cancel",
                 resetGroupActionInputOnSuccess: true,
-                loadingMessage: '载入中...',
+                loadingMessage: 'Loading...',
                 dataTable: {
-                    "dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r><'table-scrollable't><'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>", // datatable layout
-                    "pageLength":10, // default records per page
+                    "dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r><'table-responsive't><'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>", // datatable layout
+                    "pageLength": 10, // default records per page
                     "language": { // language settings
                         // metronic spesific
                         "metronicGroupActions": "选择了_TOTAL_条记录 :  ",
@@ -62,7 +62,8 @@ var Datatable = function() {
                             "page": "第",
                             "pageOf": "页，共"
                         }
-                    },                    
+                    },
+
                     "orderCellsTop": true,
                     "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
                         'orderable': false,
@@ -82,7 +83,7 @@ var Datatable = function() {
                             $.each(ajaxParams, function(key, value) {
                                 data[key] = value;
                             });
-                            Metronic.blockUI({
+                            App.blockUI({
                                 message: tableOptions.loadingMessage,
                                 target: tableContainer,
                                 overlayColor: 'none',
@@ -92,7 +93,7 @@ var Datatable = function() {
                         },
                         "dataSrc": function(res) { // Manipulate the data returned from the server
                             if (res.customActionMessage) {
-                                Metronic.alert({
+                                App.alert({
                                     type: (res.customActionStatus == 'OK' ? 'success' : 'danger'),
                                     icon: (res.customActionStatus == 'OK' ? 'check' : 'warning'),
                                     message: res.customActionMessage,
@@ -113,10 +114,10 @@ var Datatable = function() {
                             }
 
                             if (tableOptions.onSuccess) {
-                                tableOptions.onSuccess.call(undefined, the);
+                                tableOptions.onSuccess.call(undefined, the, res);
                             }
 
-                            Metronic.unblockUI(tableContainer);
+                            App.unblockUI(tableContainer);
 
                             return res.data;
                         },
@@ -125,7 +126,7 @@ var Datatable = function() {
                                 tableOptions.onError.call(undefined, the);
                             }
 
-                            Metronic.alert({
+                            App.alert({
                                 type: 'danger',
                                 icon: 'warning',
                                 message: tableOptions.dataTable.language.metronicAjaxRequestGeneralError,
@@ -133,7 +134,7 @@ var Datatable = function() {
                                 place: 'prepend'
                             });
 
-                            Metronic.unblockUI(tableContainer);
+                            App.unblockUI(tableContainer);
                         }
                     },
 
@@ -142,8 +143,13 @@ var Datatable = function() {
                             tableInitialized = true; // set table initialized
                             table.show(); // display table
                         }
-                        Metronic.initUniform($('input[type="checkbox"]', table)); // reinitialize uniform checkboxes on each table reload
+                        App.initUniform($('input[type="checkbox"]', table)); // reinitialize uniform checkboxes on each table reload
                         countSelectedRecords(); // reset selected records indicator
+
+                        // callback for ajax data load
+                        if (tableOptions.onDataLoad) {
+                            tableOptions.onDataLoad.call(undefined, the);
+                        }
                     }
                 }
             }, options);
@@ -158,8 +164,8 @@ var Datatable = function() {
             var tmp = $.fn.dataTableExt.oStdClasses;
 
             $.fn.dataTableExt.oStdClasses.sWrapper = $.fn.dataTableExt.oStdClasses.sWrapper + " dataTables_extended_wrapper";
-            $.fn.dataTableExt.oStdClasses.sFilterInput = "form-control input-small input-sm input-inline";
-            $.fn.dataTableExt.oStdClasses.sLengthSelect = "form-control input-xsmall input-sm input-inline";
+            $.fn.dataTableExt.oStdClasses.sFilterInput = "form-control input-xs input-sm input-inline";
+            $.fn.dataTableExt.oStdClasses.sLengthSelect = "form-control input-xs input-sm input-inline";
 
             // initialize a datatable
             dataTable = table.DataTable(options.dataTable);
@@ -179,10 +185,10 @@ var Datatable = function() {
             }
             // handle group checkboxes check/uncheck
             $('.group-checkable', table).change(function() {
-                var set = $('tbody > tr > td:nth-child(1) input[type="checkbox"]', table);
-                var checked = $(this).is(":checked");
+                var set = table.find('tbody > tr > td:nth-child(1) input[type="checkbox"]');
+                var checked = $(this).prop("checked");
                 $(set).each(function() {
-                    $(this).attr("checked", checked);
+                    $(this).prop("checked", checked);
                 });
                 $.uniform.update(set);
                 countSelectedRecords();

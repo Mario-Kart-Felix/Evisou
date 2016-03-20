@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Core", "_Core", "{32EC532B-47DF-4FC1-898B-0D30232A14EC}"
 EndProject
@@ -24,6 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C27065A4-D7D9-4D6E-9F2D-5F6BD00A7A29}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
+		Applications\Web\Evisou.Web.AdminApplication\App_Start\WebApiConfig.cs = Applications\Web\Evisou.Web.AdminApplication\App_Start\WebApiConfig.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Account.DAL", "Applications\Account\Evisou.Account.DAL\Evisou.Account.DAL.csproj", "{3E5C28B7-32F3-466D-96E0-2AC4ABDA2B9E}"
@@ -70,10 +71,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.OA.BLL", "Applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Web.AdminApplication", "Applications\Web\Evisou.Web.AdminApplication\Evisou.Web.AdminApplication.csproj", "{CC7373A0-0445-45BE-887A-89CC761C3D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Web.AdminAPI", "Applications\Web\Evisou.Web.AdminAPI\Evisou.Web.AdminAPI.csproj", "{746B5D02-B508-470C-8DDE-B21ADADECE79}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Web.Admin", "Applications\Web\Evisou.Web.Admin\Evisou.Web.Admin.csproj", "{6B57BD0F-3EF9-4ADB-8A3E-3541635A87A0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Web", "Applications\Web\Evisou.Web\Evisou.Web.csproj", "{BA101DAF-547D-4319-A8DF-64FC5BD9D3F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Framework.Web", "Applications\Framework\Evisou.Framework.Web\Evisou.Framework.Web.csproj", "{21B23E3F-8EDD-417F-9A92-9DDEF4C938B3}"
@@ -85,6 +82,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Framework.Contract", "Applications\Framework\Evisou.Framework.Contract\Evisou.Framework.Contract.csproj", "{DC181585-D2D9-4748-B425-9A7AF7BCAB11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Framework.BLL", "Applications\Framework\Evisou.Framework.BLL\Evisou.Framework.BLL.csproj", "{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Web.AdminAngularJS", "Applications\Web\Evisou.Web.AdminAngularJS\Evisou.Web.AdminAngularJS.csproj", "{EA889E96-A4AA-42C5-A992-80A071466E79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,14 +179,6 @@ Global
 		{CC7373A0-0445-45BE-887A-89CC761C3D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC7373A0-0445-45BE-887A-89CC761C3D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC7373A0-0445-45BE-887A-89CC761C3D49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{746B5D02-B508-470C-8DDE-B21ADADECE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{746B5D02-B508-470C-8DDE-B21ADADECE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{746B5D02-B508-470C-8DDE-B21ADADECE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{746B5D02-B508-470C-8DDE-B21ADADECE79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B57BD0F-3EF9-4ADB-8A3E-3541635A87A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B57BD0F-3EF9-4ADB-8A3E-3541635A87A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B57BD0F-3EF9-4ADB-8A3E-3541635A87A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B57BD0F-3EF9-4ADB-8A3E-3541635A87A0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BA101DAF-547D-4319-A8DF-64FC5BD9D3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BA101DAF-547D-4319-A8DF-64FC5BD9D3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA101DAF-547D-4319-A8DF-64FC5BD9D3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -212,6 +203,10 @@ Global
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA889E96-A4AA-42C5-A992-80A071466E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA889E96-A4AA-42C5-A992-80A071466E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA889E96-A4AA-42C5-A992-80A071466E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA889E96-A4AA-42C5-A992-80A071466E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -239,13 +234,12 @@ Global
 		{0D57083B-EED3-42FA-B4D5-7152F200805C} = {B246C16C-9C9D-4A98-AB5F-9BE252958BBD}
 		{2E7A1EAA-FAB8-4B5F-9A1A-E0757708886C} = {B246C16C-9C9D-4A98-AB5F-9BE252958BBD}
 		{CC7373A0-0445-45BE-887A-89CC761C3D49} = {73BAF842-625A-48AA-81C9-22A358E2E59B}
-		{746B5D02-B508-470C-8DDE-B21ADADECE79} = {73BAF842-625A-48AA-81C9-22A358E2E59B}
-		{6B57BD0F-3EF9-4ADB-8A3E-3541635A87A0} = {73BAF842-625A-48AA-81C9-22A358E2E59B}
 		{BA101DAF-547D-4319-A8DF-64FC5BD9D3F3} = {73BAF842-625A-48AA-81C9-22A358E2E59B}
 		{21B23E3F-8EDD-417F-9A92-9DDEF4C938B3} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
 		{364B7CD6-924A-46C0-9DE8-1191EF6910AB} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
 		{8D3C7012-8D28-419E-B24B-5D5A77782D42} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
 		{DC181585-D2D9-4748-B425-9A7AF7BCAB11} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
+		{EA889E96-A4AA-42C5-A992-80A071466E79} = {73BAF842-625A-48AA-81C9-22A358E2E59B}
 	EndGlobalSection
 EndGlobal

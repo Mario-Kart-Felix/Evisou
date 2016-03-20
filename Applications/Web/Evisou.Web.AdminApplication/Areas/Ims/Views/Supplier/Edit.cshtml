@@ -4,6 +4,21 @@
 @using Evisou.Ims.Contract
 @using Evisou.Ims.Contract.Model
 @model Evisou.Ims.Contract.Model.Supplier
+@*<style>
+    .modal {
+        left: 50%;
+        bottom: auto;
+        right: auto;
+        padding: 0;
+        width: 940px;
+        margin-left: -470px;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.2);
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        background-clip: padding-box;
+    }
+</style>*@
+
 <div class="modal-header">    
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     @{
@@ -68,7 +83,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">
-                                    SKU: <span class="required">
+                                    平台: <span class="required">
                                         *
                                     </span>
                                 </label>
@@ -200,50 +215,80 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="tab_supplierproduct">
-                        <div class="form-body">     
-                            <div class="form-group">    
+                        <div class="form-body">  
+                               
+                            <div class="form-group">
                                 <div class="col-md-12">
-                                    @{
-                                        var products = ViewBag.Products;
-                                        foreach (Product product in products)
-                                        {
-                                            <div class="col-sm-12 col-md-6">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.StaticFile()@product.CoverPicture" title="@product.Sku||@product.Name">
-                                                        <img src="@Url.StaticFile()@product.CoverPicture" alt="@product.Sku||@product.Name" style="width: 100%; height: 150px;"
-                                                             title="@product.Sku||@product.Name">
-                                                    </a>
-                                                    <div class="caption">
-                                                        <h3>@product.Sku</h3>
-                                                        <p>
-                                                            @product.Name
-                                                        </p>
-                                                        <p>
-                                                            <div class="form-group">
-                                                                <label class="col-md-4 control-label">
-                                                                    供应:
-                                                                </label>
-                                                                <div class="col-md-3">
-                                                                    <input class="make-switch" data-on="success" data-off="warning" name="SelectedProduct" type="checkbox" value="@product.ID" data-on-text="是"  data-off-text="否"
-                                                                           @if (Model.Products != null) { var supplierProduct = new HashSet<int>(Model.Products.Select(c => c.ID));  @(Html.Raw(supplierProduct.Contains(product.ID) ? "checked=\"checked\"" : ""))            } />
+                                    <div class="row">
+                                        
+                                        @{
+                                            var products = ViewBag.Products;
+                                            foreach (Product product in products)
+                                            {
+                                                
+                                                <div class="col-md-3 col-sm-3 col-xs-6">
+                                                    <div class="color-demo tooltips">
+                                                        <div class="bg-white bg-font-white bold uppercase">
+                                                            <img src="@Url.StaticFile()@product.CoverPicture" alt="@product.Sku||@product.Name" style="width: 85px; " title="@product.Sku||@product.Name">
+                                                        </div>
+                                                        <div class="color-info bg-white c-font-14 sbold"> @product.Sku 
+                                                        @*<input class="make-switch" 
+                                                               data-on="success" 
+                                                               data-off="warning" 
+                                                               name="SelectedProduct" 
+                                                               type="checkbox" 
+                                                               value="@product.ID" 
+                                                               data-on-text="是"  
+                                                               data-off-text="否"
+                                                               @if (Model.Products != null)
+                                                               { var supplierProduct = new HashSet<int>
+                                                                       (Model.Products.Select(c => c.ID)); 
+                                                                    @(Html.Raw(supplierProduct.Contains(product.ID) ? 
+                                                                    "checked=\"checked\"" : ""))} />*@
+                                                           
+                                                            <input name="SelectedProduct"
+                                                                   type="checkbox"
+                                                                   value="@product.ID"
+                                                                   @if (Model.Products != null) { var supplierProduct = new HashSet<int> (Model.Products.Select(c => c.ID)); @(Html.Raw(supplierProduct.Contains(product.ID) ? "checked=\"checked\"" : "")) } />
 
-                                                                </div>
-                                                            </div>
-                                                        </p>
-                                                        
+                                                        </div>
                                                     </div>
+
                                                 </div>
-                                            </div>
+                                                @*<div class="col-sm-12 col-md-6">
+                        <div class="thumbnail">
+                            <a href="@Url.StaticFile()@product.CoverPicture" title="@product.Sku||@product.Name">
+                                <img src="@Url.StaticFile()@product.CoverPicture" alt="@product.Sku||@product.Name" style="width: 100%; height: 150px;"
+                                     title="@product.Sku||@product.Name">
+                            </a>
+                            <div class="caption">
+                                <h3>@product.Sku</h3>
+                                <p>
+                                    @product.Name
+                                </p>
+                                <p>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">
+                                            供应:
+                                        </label>
+                                        <div class="col-md-3">
+                                            <input class="make-switch" data-on="success" data-off="warning" name="SelectedProduct" type="checkbox" value="@product.ID" data-on-text="是"  data-off-text="否"
+                                                   @if (Model.Products != null) { var supplierProduct = new HashSet<int>(Model.Products.Select(c => c.ID));  @(Html.Raw(supplierProduct.Contains(product.ID) ? "checked=\"checked\"" : ""))            } />
+
+                                        </div>
+                                    </div>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>*@
+                                            }
                                         }
-                                    }
-                                    
-                                    
-                                </div>     
-                                
+                                    </div>
+                            </div>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -307,7 +352,7 @@
                 invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
 
                 },
 
@@ -378,8 +423,6 @@
                 });
             }
         };
-
-
         return {
 
             //main function to initiate the module
@@ -545,18 +588,18 @@
         var initComponents = function () {
             //init datepickers
             $('.date-picker').datepicker({
-                rtl: Metronic.isRTL(),
+                rtl: App.isRTL(),
                 language: 'zh-CN',
                 autoclose: true
             });
 
             //init datetimepickers
             $(".datetime-picker").datetimepicker({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 autoclose: true,
                 language: 'zh-CN',
                 todayBtn: true,
-                pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left"),
+                pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
                 minuteStep: 10
             });
 
@@ -587,13 +630,15 @@
         };
     }();
 
-    $(function () {       
-        Metronic.init();        
-        //ProductsEditComponents.init();
-        //FormFileUpload.init();
-        //FormComponents.init();
-        
+    //$(function () {       
+    //    App.init();        
+    //    //ProductsEditComponents.init();
+    //    //FormFileUpload.init();
+    //    //FormComponents.init();
+    //});
 
+    jQuery(document).ready(function () {
+        Supplier.form();
     });
 </script>
 

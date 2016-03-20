@@ -1,6 +1,4 @@
 ﻿@using Evisou.Web
-@using Evisou.Framework.Contract
-@using Evisou.Framework.Web.Controls
 @using Evisou.Cms.Contract
 @model Channel
 <style>
@@ -24,10 +22,6 @@
         }
     }    
 </div>
-
-
-
-
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
 {
     @Html.ValidationSummary(true)
@@ -39,7 +33,7 @@
                 <div class="col-md-9">
                     <div class="fileinput fileinput-new" data-provides="fileinput">
                         <div class="fileinput-new thumbnail" style="width: 200px; height: 170px;" id="thumbnail">
-                            @if (Model.ID == 0)
+                            @if (string.IsNullOrEmpty(Model.CoverPicture))
                             {
                                 <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
                             }
@@ -93,9 +87,9 @@
                 <label class="control-label col-md-2"><span class="required">*</span>封面：</label>
                 <div class="col-md-6">
                     <div class="input-group">
-                        <span class="input-group-addon">
+                        @*<span class="input-group-addon">
                             <i class="fa fa-picture-o"></i>
-                        </span>
+                        </span>*@
                         <div class="input-icon right ">
                             <i class="fa"></i>
                             @Html.TextBoxFor(m => m.CoverPicture, new { @class = "form-control text-box single-line input-medium", @id = "coverimage" })
@@ -112,7 +106,11 @@
                         <i class="glyphicon glyphicon-trash"></i>
                     </a>
                     <span id="uploadmsg"></span>
-                </div>                
+                </div>  
+                <div class="col-md-4">
+
+
+                </div>              
             </div>
             <div class="form-group">
                 <label class="control-label col-md-2">激活：</label>
@@ -128,10 +126,11 @@
     </div>
 
 }
-
-
 <script>
-    var FormComponents = function () {
+    jQuery(document).ready(function () {
+        Channel.form();
+    });
+    @*var FormComponents = function () {
 
         var handleFancyBox = function () {
             $(".fancybox-button").fancybox({
@@ -142,74 +141,6 @@
         var handleCheckBox = function () {
             $('.switch-chekcbox').bootstrapSwitch();
         };
-
-        var handleCheckForm = function () {
-            var form = $("#mainForm");          
-            var error = $('.alert-danger', form);
-            var success = $('.alert-success', form);
-
-            form.validate({
-                errorElement: 'span', //default input error message container
-                errorClass: 'help-block help-block-error', // default input error message class
-                focusInvalid: false, // do not focus the last invalid input
-                ignore: "",  // validate all fields including form hidden input
-                rules: {
-                    Name: {
-                        minlength: 2,
-                        required: true,
-                    },
-                    Desc: {
-                        minlength: 2,
-                        required: true,
-                    }
-                    
-                },
-
-                invalidHandler: function (event, validator) { //display error alert on form submit
-                    success.hide();
-                    error.show();
-                    Metronic.scrollTo(error, -200);
-
-                },
-
-                errorPlacement: function (error, element) { // render error placement for each input type
-                    var icon = $(element).parent('.input-icon').children('i');
-                    icon.removeClass('fa-check').addClass("fa-warning");
-                    icon.attr("data-original-title", error.text()).tooltip({ 'container': 'body' });
-                },
-
-                highlight: function (element) { // hightlight error inputs
-                    $(element)
-                        .closest('.form-group').removeClass("has-success").addClass('has-error'); // set error class to the control group
-                },
-
-                unhighlight: function (element) { // revert the change done by hightlight
-
-                },
-
-                success: function (label, element) {
-                    var icon = $(element).parent('.input-icon').children('i');
-                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
-                    icon.removeClass("fa-warning").addClass("fa-check");
-                },
-
-                submitHandler: function (form) {
-                    success.show();
-                    error.hide();
-                    //form[0].submit(alert('dasdas')); // submit the form
-                }
-            });
-
-
-            $("#submitbutton").click(function (e) {
-                if (!form.valid()) {
-                    e.preventDefault();
-                }
-
-            });
-        };
-
-
         
 
         var handleUploadInput = function () {
@@ -406,7 +337,7 @@
 
     $(function () {        
         FormComponents.init();
-    });
+    });*@
 
 </script>
 
