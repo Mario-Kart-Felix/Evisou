@@ -19,12 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{73BAF842-625
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ims", "Ims", "{BAF40478-8A1C-4F77-AAAD-3E9666D6A514}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Api", "_Api", "{487BF600-F90D-494B-8A68-E5E9F60C521B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C27065A4-D7D9-4D6E-9F2D-5F6BD00A7A29}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
-		Applications\Web\Evisou.Web.AdminApplication\App_Start\WebApiConfig.cs = Applications\Web\Evisou.Web.AdminApplication\App_Start\WebApiConfig.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Account.DAL", "Applications\Account\Evisou.Account.DAL\Evisou.Account.DAL.csproj", "{3E5C28B7-32F3-466D-96E0-2AC4ABDA2B9E}"
