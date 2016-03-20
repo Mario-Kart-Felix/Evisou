@@ -1,0 +1,396 @@
+﻿
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="block">
+            <strong>用户权限相关：</strong>
+            请编辑其所属角色的权限，用户的权限是其所有角色所拥有的权限汇总！
+        </div>
+
+        <div class="portlet">
+            <div class="portlet-title">
+                <div class="caption">
+                    <a ng-click="customDeleteAction()" class="btn btn-sm default red-stripe delete" >
+                        <i class="fa fa-trash-o"></i>
+                        <span class="hidden-480">
+                            删除
+                        </span>
+                    </a>
+                    <a ng-click="open()" class="btn btn-sm default blue-stripe">
+                        <i class="fa fa-plus"></i>
+                        <span class="hidden-480">
+                            新建
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-container">
+                    <div id="datatable_users_wrapper" class="dataTables_wrapper dataTables_extended_wrapper no-footer">
+                        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><i class="fa-lg fa fa-warning"></i>{{alert.msg}}</uib-alert>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_users_paginate">
+                                    <uib-pagination 
+                                                    template-url="papinationtpl.html" 
+                                                    total-items="totalItems" 
+                                                    items-per-page="PageSize.size" 
+                                                    ng-model="currentPage" 
+
+                                                    ng-change="pageChanged()"></uib-pagination>
+                                </div>
+                                <div class="dataTables_length" id="datatable_users_length">
+                                    <label>
+                                        <span class="seperator">页|</span>每页
+                                        <select class="form-control input-xs input-sm input-inline"  
+                                                ng-model="PageSize" 
+                                                ng-options="z.size for z in pagesizes"
+                                                ng-change="pageSizeChange()">
+                                        </select>
+                                        条记录
+                                    </label>
+                                </div>
+                                <div class="dataTables_info" id="datatable_users_info" role="status" aria-live="polite">
+                                    <span class="seperator">|</span>一共有 {{totalItems}} 条记录
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="table-group-actions pull-right">
+                                    <span></span>
+                                    <select ng-model="customActionModel"
+                                            ng-options="z as z.name for z in customActionData"
+                                            class="table-group-action-input form-control input-inline input-small input-sm"
+                                            name="status">
+                                        <option value="">选择...</option>
+                                    </select>
+                                    <button class="btn btn-sm yellow table-group-action-submit" ng-click="customAction()"><i class="fa fa-check"></i> 提交</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            {{userSelection}}
+                            <table class="table table-striped table-bordered table-hover table-x dataTable no-footer" id="datatable_users" aria-describedby="datatable_users_info" role="grid">
+                                <thead>
+                                    <tr role="row" class="heading">
+                                        <th width="1%" class="sorting_disabled" rowspan="1" colspan="1" aria-label="">
+                                            <checker-switch ng-model="selectAll" ng-change="checkAll()" ></checker-switch>
+                                            <!--<input type="checkbox" ng-model="selectAll" ng-click="checkAll()" ng-init="false"/>-->
+                                        </th>
+                                        <th ng-repeat="tableHeader in tableHeaders" 
+                                            ng-click="changeSorting(tableHeader.label,tableHeader.sorting)" 
+                                            ng-class="setSortIndicator(tableHeader.label,tableHeader.sorting)"
+                                            >
+                                            {{tableHeader.label}}
+                                        </th>
+                                        <th width="10%" class="sorting_disabled" rowspan="1" colspan="1" aria-label="搜索">
+                                            <a href="javascript:;" 
+                                               ng-click="toggleFilter(filter)"
+                                               class="default search-table" >
+                                                搜索
+                                                <i class="icon-magnifier"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                    <tr role="row" class="filter" ng-hide="filter">
+                                        <td rowspan="1" colspan="1"></td>
+                                        <td rowspan="1" colspan="1">
+                                            <input type="text" class="form-control form-filter input-sm" name="loginname" ng-model="LoginName">
+                                        </td>
+                                        <td rowspan="1" colspan="1"></td>
+                                        <td rowspan="1" colspan="1"></td>
+                                        <td rowspan="1" colspan="1"></td>
+                                        <td rowspan="1" colspan="1">
+                                            <select name="isactive" 
+                                                    class="form-control form-filter input-sm" 
+                                                    ng-model="IsActive" 
+                                                    ng-options="z as z.name for z in isActiveData">
+                                                <option value="">选择...</option>
+                                               
+                                            </select>
+                                        </td>
+                                        <td rowspan="1" colspan="1">
+                                            <div class="margin-bottom-5">
+                                                <button ng-click="searchUsers()" class="btn btn-icon-only yellow filter-submit margin-bottom" title="搜索">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                                <button ng-click="resetSearchFieds()" class="btn btn-icon-only red filter-cancel" title="重置">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody block-ui="BlockUI"><!--block-ui="BlockUI" 不能包含checkbox，会使初始值变成undefined-->
+                                    <tr role="row" class="odd" ng-repeat="user in users" ng-class-odd="odd" ng-class-even="even">
+                                        <td style="width: 25px;">
+                                            <checker-switch ng-model="user.selected" value="{{user.ID}}" ng-change="checkOne()"></checker-switch>
+                                           
+                                        </td>
+                                        <td>
+                                            {{user.LoginName}}
+                                        </td>
+                                        <td>
+                                            {{user.Email}}
+                                        </td>
+                                        <td>
+                                            {{user.Mobile}}
+                                        </td>
+                                        <td>
+                                            {{user.Roles}}
+                                        </td>
+                                        <td>
+                                            <span class="label label-sm label-success" ng-class="{true:'label-success',false:'label-danger'}[user.IsActive]">{{user.IsActive}}</span>
+                                        </td>
+                                        <td>
+                                            <a ng-click="open(user.ID)" class="btn btn-xs purple thickbox" title="编辑用户资料"><i class="fa fa-edit"></i>编辑</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_users_paginate">
+                                    <uib-pagination template-url="papinationtpl.html"
+                                                    total-items="totalItems"
+                                                    items-per-page="PageSize.size"
+                                                    ng-model="currentPage"
+                                                    ng-change="pageChanged()"></uib-pagination>
+                                </div>
+                                <div class="dataTables_length" id="datatable_users_length">
+                                    <label>
+                                        <span class="seperator">页|</span>每页
+                                        <select class="form-control input-xs input-sm input-inline"
+                                                ng-model="PageSize"
+                                                ng-options="z.size for z in pagesizes"
+                                                ng-change="pageSizeChange()"></select>
+                                        条记录
+                                    </label>
+                                </div>
+                                <div class="dataTables_info" id="datatable_users_info" role="status" aria-live="polite">
+                                    <span class="seperator">|</span>一共有 {{totalItems}} 条记录
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <!--<div class="table-group-actions pull-right">
+                                    <span>
+                                        <select ng-model="customActionModel"
+                                                ng-options="z as z.name for z in customActionData"
+                                                class="table-group-action-input form-control input-inline input-small input-sm"
+                                                name="status">
+                                            <option value="">选择...</option>
+                                        </select>
+                                    </span>
+                                    <button class="btn btn-sm yellow table-group-action-submit" ng-click="customAction()"><i class="fa fa-check"></i> 提交</button>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div block-ui="BlockUI"> </div>
+   <!-- <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><i class="fa-lg fa fa-warning"></i>{{alert.msg}}</uib-alert>
+       --> <!--block-ui="BlockUI"-->
+        <form id="mainForm" role="form" name="mainForm" class="form-horizontal" ng-submit="submitForm(mainForm.$valid)" novalidate>
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <!--<input type="text" ng-model="aa" />{{aa}}-->
+                    <div class="form-group" ng-class="[
+                             {'has-error':mainForm.LoginName.$invalid && !mainForm.LoginName.$pristine},
+                             {'has-success':mainForm.LoginName.$valid}]">
+                        <label class="control-label col-md-3"><span class="required">*</span>登录名：</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <div class="input-icon right">
+                                    <i class="fa" ng-class="[
+                                           {'fa-warning':mainForm.LoginName.$invalid && !mainForm.LoginName.$pristine},
+                                           {'fa-check':mainForm.LoginName.$valid && !mainForm.LoginName.$pristine}]"></i>
+                                    <input class="form-control text-box single-line input-medium"
+                                           data-val="true"
+                                           data-val-required="登录名少于2个字符"
+                                           id="LoginName"
+                                           name="LoginName"
+                                           type="text"
+                                           value=""
+                                           required
+                                           ng-minlength="2"
+                                           ng-model="LoginName"
+                                           remote-userexist>
+                                </div>
+                            </div>
+                            <span class="help-inline">
+                                <span class="help-block" ng-hide="flg()"> {{msg}} </span>
+                                <!--<span class="help-block" ng-show="mainForm.LoginName.$invalid && !mainForm.LoginName.$pristine"> 登录名少于2个字符 </span>-->
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-group" ng-class="[
+                             {'has-error':mainForm.Password.$invalid && !mainForm.Password.$pristine},
+                             {'has-success':mainForm.Password.$valid}]">
+                        <label class="control-label col-md-3"><span class="required">*</span>密码：</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-dot-circle-o"></i>
+                                </span>
+                                <div class="input-icon right">
+                                    <i class="fa" ng-class="[
+                                           {'fa-warning':mainForm.Password.$invalid && !mainForm.Password.$pristine},
+                                           {'fa-check':mainForm.Password.$valid}]"></i>
+                                    <input class="form-control text-box single-line input-medium"
+                                           data-val="true"
+                                           data-val-required="Password 字段是必需的。"
+                                           id="Password"
+                                           name="Password"
+                                           type="text"
+                                           value=""
+                                           required
+                                           ng-readonly="false"
+                                           ng-model="Password">
+                                </div>
+                            </div>
+                            <span class="help-inline">默认密码6个1</span>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="[
+                             {'has-error':mainForm.Email.$invalid && !mainForm.Email.$pristine},
+                             {'has-success':mainForm.Email.$valid}]">
+                        <label class="control-label col-md-3">邮箱：</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <div class="input-icon right">
+                                    <i class="fa" ng-class="[
+                                           {'fa-warning':mainForm.Email.$invalid && !mainForm.Email.$pristine},
+                                           {'fa-check':mainForm.Email.$valid && !mainForm.Email.$pristine}]"></i>
+                                    <input class="form-control text-box single-line input-medium"
+                                           data-val="true"
+                                           data-val-regex="电子邮件地址无效"
+                                           type="email"
+                                           id="Email"
+                                           name="Email"
+                                           value=""
+                                           required
+                                           ng-model="Email">
+                                </div>
+                            </div>
+                            <span class="help-inline">
+                                <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="[
+                             {'has-error':mainForm.Mobile.$invalid && !mainForm.Mobile.$pristine},
+                             {'has-success':mainForm.Mobile.$valid}]">
+                        <label class="control-label col-md-3">手机：</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                                <div class="input-icon right">
+                                    <i class="fa" ng-class="[
+                                           {'fa-warning':mainForm.Mobile.$invalid && !mainForm.Mobile.$pristine},
+                                           {'fa-check':mainForm.Mobile.$valid && !mainForm.Mobile.$pristine}]"></i>
+                                    <input class="form-control text-box single-line input-medium"
+                                           data-val="true"
+                                           data-val-regex="不是有效的手机号码"
+                                           data-val-regex-pattern="^[1-9]{1}\d{10}$"
+                                           id="Mobile"
+                                           name="Mobile"
+                                           type="number"
+                                           value=""
+                                           required
+                                           ng-maxlength="11"
+                                           ng-minlength="11"
+                                           ng-model="Mobile">
+                                </div>
+                            </div>
+                            <span class="help-inline"><span class="field-validation-valid" data-valmsg-for="Mobile" data-valmsg-replace="true"></span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">激活：</label>
+                        <div class="col-md-4">
+                            <toggle-switch ng-model="IsActive">
+                            </toggle-switch>
+                            <!--<checker-switch ng-model="IsActive"></checker-switch>-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">角色：</label>
+                        <div class="col-md-9">
+                            <label ng-repeat="Role in Roles">
+                                <checker-switch value="{{Role.ID}}" ng-model="Role.selected"></checker-switch>
+                                <!--<input type="checkbox" value="{{Role.ID}}" ng-model="Role.selected"/>-->
+                                {{Role.Name}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <per>{{user|json}}</per>
+            </div>
+            <div class="modal-footer">
+                <button class="btn blue btn-sm default" ng-disabled="mainForm.$invalid" ng-click="ok()">
+                    <i class="fa fa-check"></i>提交
+                </button>
+                <button class="btn btn-sm default" ng-click="cancel()">撤销</button>
+            </div>
+        </form>
+   
+</script>
+<script id="papinationtpl.html" type="text/ng-template">
+    <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_users_paginate">
+        <div class="pagination-panel">
+            第
+            <span ng-if="boundaryLinks">
+                <a ng-click="selectPage(1)" class="btn btn-sm default prev " ng-class="{disabled: noPrevious()}" title="First Page">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </span>
+            <span ng-if="directionLinks">
+                <a ng-click="selectPage(page - 1)" class="btn btn-sm default prev " ng-class="{disabled: noPrevious()}" title="Previous Page">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </span>
+
+            <input type="text"
+                   ng-model="currentPage"
+                   class="pagination-panel-input form-control input-sm input-inline input-mini"
+                   maxlenght="5"
+                   style="text-align:center; margin: 0 5px;">
+            <span ng-if="directionLinks">
+                <a class="btn btn-sm default next " ng-class="{disabled: noNext()}" ng-click="selectPage(page + 1)" title="Next Page">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </span>
+            <span ng-if="boundaryLinks">
+                <a ng-click="changePage(totalPages)" class="btn btn-sm default next " ng-class="{disabled: noNext()}" title="Last Page">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </span>
+            页，共
+            <span class="pagination-panel-total">{{totalPages }}</span>
+        </div>
+
+    </div>
+</script>
+
+<div>
+    <pre> {{time}}</pre>
+</div>

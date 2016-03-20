@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>test</h2>
+<div id="test">
+    
+    <div  ng-app="myApp" ng-controller='testCtrl'>
+
+        <ul id="test2" class="page-sidebar-menu" >
+            <li class="sidebar-search-wrapper" >
+                <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+                <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+                <form class="sidebar-search sidebar-search-bordered" action="#" method="POST">
+                    <a href="javascript:;" class="remove">
+                        <i class="icon-close"></i>
+                    </a>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <a href="javascript:;" class="btn submit">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                        </span>
+                    </div>
+                </form>
+                <!-- END RESPONSIVE QUICK SEARCH FORM -->
+            </li>
+            <li class="nav-item" ng-repeat="x in menugroup">
+                <a href="{{x.Url}}" title="" class="nav-link nav-toggle">
+                    <i class="{{x.Icon}}"></i>
+                    <span class="title">{{x.Name}} </span>
+
+
+                    <span class='arrow'></span>
+
+                </a>
+
+                <ul class="sub-menu" ng-repeat="j in x.AdminMenuArray">
+
+                    <li class="nav-item">
+                        <a href="{{j.Url}} " title="{{j.Info}} " class="nav-link">
+                            <i class="{{j.Icon}} "></i>
+                            <span class="title">{{j.Name}} </span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+            <li></li>
+        </ul>
+    </div>
+    
+</div>
+<div id="test3">
+
+    <hr/>
+</div>
+@section PageLevelScript{
+    <script src="/Assets/global/plugins/angularjs/angular.min.js"></script>
+
+}
+@section PageLevelPluginScript{
+    
+    <script>
+        $(function () {
+            var app = angular.module('myApp', []);
+            app.controller('testCtrl', function ($scope, $http) {
+               
+                    $http.get("http://localhost:46088/api/account/auth").success(function (data) {
+                        $scope.menugroup = data.AdminMenuGroups;
+                       // console.log(data.AdminMenuGroups)
+                    });
+                
+                
+            });
+
+            // var uri = 'http://localhost:46088/api/ims/product';
+            //var uri = 'http://localhost:46088/api/account/auth';
+            //$.getJSON(uri).done(function (data) {
+            //    //$('#test3').prepend("Some prepended text.");
+          
+            //    for (var i = 0; i < data.AdminMenuGroups.length; i++)
+            //    {
+            //        var lihtml = '<li class="item" id='+i+'>' + data.AdminMenuGroups[i].Name + '</li>';
+            //        $('#test3').prepend(lihtml);
+            //        if (data.AdminMenuGroups[i].AdminMenuArray.length > 0)
+            //        {
+            //            $("li.item").prepend('<ul></ul>')
+            //            for (var j = 0; j < data.AdminMenuGroups[i].AdminMenuArray.length; j++)
+            //            {
+            //                $("li.item>ul").prepend('<li class="subitem">' + data.AdminMenuGroups[i].AdminMenuArray[j].Name + '</li>')
+            //            }
+            //        }
+            //    }
+            //});
+
+
+            //$.getJSON(uri).done(function (data) {
+            //   // console.log(data.AdminMenuGroups.length);
+            //    //  $("#list").append('<li class="item">' + data[0].ReturnMessage + '</li>')
+            //    for (var i = 0; i < data.AdminMenuGroups.length;i++)
+            //    {
+            //        $("#list").append('<li class="item">' + data.AdminMenuGroups[i].Name + '</li>')
+            //        if (data.AdminMenuGroups[i].AdminMenuArray.length > 0)
+            //        {
+                        
+            //            for (var j = 0; j < data.AdminMenuGroups[i].AdminMenuArray.length; j++)
+            //            {
+                            
+            //                $(".sub:last").append('<li class="subitem">' + data.AdminMenuGroups[i].AdminMenuArray[j].Name + '</li>')
+            //            }
+            //        }
+                    
+            //        console.log(data.AdminMenuGroups[i]);
+            //    }
+                
+            //})
+        })
+    </script>
+    }

@@ -1,0 +1,1224 @@
+﻿@using Evisou.Framework.Contract
+@using Evisou.Framework.Web.Controls
+@using Evisou.Framework.Utility;
+@using Evisou.Ims.Contract.Model
+@using Evisou.Web
+@model Evisou.Ims.Contract.Model.PayPalTransaction
+<style>
+    .form .form-section {
+        margin: 30px 0px 25px 0px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eee;
+    }
+    .popover-content {
+        padding: 9px 14px;
+        padding-left: 30px;
+        padding-right: 30px;       
+    }
+    .modal {
+        width: 940px;
+        margin-left: -470px;
+    }
+
+    
+</style>
+<div id="form_wizard_1">
+    <form action="#" class="form-horizontal" id="submit_form" method="POST">
+
+        <div class="form-wizard">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="ModalLabel">发货</h4> 
+            </div>            
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="alert alert-danger display-none">
+                        <button class="close" data-dismiss="alert"></button>
+                        表单有错误,请检查
+                    </div>
+                    <div class="alert alert-success display-none">
+                        <button class="close" data-dismiss="alert"></button>
+                        Your form validation is successful!
+                    </div> 
+                    <ul class="nav nav-pills nav-justified steps">
+                        <li>
+                            <a href="#tab1" data-toggle="tab" class="step">
+                                <span class="number">
+                                    1
+                                </span>
+                                <span class="desc">
+                                    <i class="fa fa-check"></i> 准备下单
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tab2" data-toggle="tab" class="step">
+                                <span class="number">
+                                    2
+                                </span>
+                                <span class="desc">
+                                    <i class="fa fa-check"></i> 选择快递
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tab3" data-toggle="tab" class="step active">
+                                <span class="number">
+                                    3
+                                </span>
+                                <span class="desc">
+                                    <i class="fa fa-check"></i> 填写快递资料
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#tab4" data-toggle="tab" class="step">
+                                <span class="number">
+                                    4
+                                </span>
+                                <span class="desc">
+                                    <i class="fa fa-check"></i> 确认订单
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="bar" class="progress progress-striped" role="progressbar">
+                        <div class="progress-bar progress-bar-success">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        @*<h3 class="block">订单详细</h3>*@
+                        <div class="form-body">                            
+                            <h3 class="form-section" >订单详细</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">交易ID:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Html.DisplayFor(m => m.TransactionId)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">交易时间:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PaymentDate.ToCnDataString()                                               
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">AMT:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                              @Model.CurrencyCode  @Model.GrossAmount
+                                                @*@Html.DisplayFor(m => m.PaymentInfo.GrossAmount)*@
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Fee AMT:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                               @Model.CurrencyCode  @Model.FeeAmount
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <h3 class="form-section" >客户信息</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">收货人:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerAddressName  
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">电邮:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.Receiver
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">州/省:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                              @Model.PayerStateOrProvince
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">国家:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                               @Model.PayerCountryName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <h3 class="form-section" >送货地址</h3>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="portlet-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="20%">
+                                                                收件人
+                                                            </th>
+                                                            <th width="20%">
+                                                                街道1
+                                                            </th>
+                                                            <th width="20%">
+                                                                街道2
+                                                            </th>
+                                                            <th width="10%">
+                                                                城市
+                                                            </th>
+                                                            <th width="10%">
+                                                                省/州
+                                                            </th>
+                                                            <th width="10%">
+                                                                邮编
+                                                            </th>
+                                                            <th width="10%">
+                                                                国家
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                                        
+                                                        <tr>
+                                                            <td>
+                                                              @Model.PayerAddressName
+                                                            </td>
+                                                            <td>
+                                                                @Model.PayerAddressStreet1
+                                                            </td>
+                                                            <td>
+                                                                @Model.PayerAddressStreet2
+                                                            </td>
+                                                            <td>@Model.PayerCityName</td>
+                                                            <td>@Model.PayerStateOrProvince</td>
+                                                            <td>@Model.PayerPostalCode</td>
+                                                            <td>@Model.PayerCountryName </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!--/span-->                                
+                            </div>
+                            <h3 class="form-section" >商品
+                            </h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            图片
+                                                        </th>
+                                                        <th>
+                                                            SKU
+                                                        </th>
+                                                        <th>
+                                                            数量
+                                                        </th>
+                                                        <th>
+                                                            尺寸
+                                                        </th>
+                                                        <th>
+                                                            重量
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="PaymentItem">
+                                                    @{Html.RenderAction("PaymentItemList", "TransactionDetail", new { id = Model.ID }); }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        @*<h3 class="block">Provide your profile details</h3>*@
+                        <div class="form-body" id="expressctrl">
+
+                            <div class="form-group">
+                                <label class="control-label col-md-4">
+                                    物流代理：
+                                    <span class="required">
+                                    </span>
+                                </label>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("agent", null, "", new { @class = "form-control select2me text-box single-line spinner input-medium", @id = "agent" })
+                                </div>
+                            </div>
+                            <div class="form-group" id="typegroup">
+                                <label class="control-label col-md-4">
+                                    发货类型：
+                                    <span class="required">
+                                    </span>
+                                </label>
+                                <div class="col-md-8">
+                                    @*@Html.DropDownList("type", null, "", new { @class = "form-control select2me text-box single-line input-medium ", @id = "type",})*@
+                                    @Html.DropDownList("type", null, "", new { @class = "form-control select2me text-box single-line input-medium", @id = "type", })
+                                </div>
+                            </div>
+                            <div class="form-group" id="warehousegroup">
+                                <label class="control-label col-md-4">
+                                    选择仓库：
+                                    <span class="required">
+                                    </span>
+                                </label>
+                                <div class="col-md-8">
+                                    @Html.DropDownList("warehouse", null, "", new { @class = "form-control select2me text-box single-line input-medium", @id = "warehouse", })
+                                </div>
+                            </div>
+                            <div class="form-group" id="expressgroup">
+                                <label class="control-label col-md-4">
+                                    快递方式：
+                                    <span class="required">
+                                    </span>
+                                </label>
+                                <div class="col-md-8">
+                                    <select class="form-control select2me text-box single-line input-medium" id="express" name="express">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <div class="form-body">
+                            <h3 class="form-section">收件人信息</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">收货人:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerAddressName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">街道:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerAddressStreet1
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">街道2:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                               @Model.PayerAddressStreet2
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">城市:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerCityName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">州/省:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                               @Model.PayerStateOrProvince
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">邮编:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                               @Model.PayerPostalCode
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">国家名称:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerCountry
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">电邮:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.Receiver
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+
+                            <div id="expressdetail" >
+                                <h3 class="form-section">附加</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">申报名称:</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="goodsDescription" id="goodsDescription" placeholder="申报名称">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">申报数量:</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="goodsQuantity" id="goodsQuantity" placeholder="申报数量">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">申报价值</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="goodsDeclareWorth" id="goodsDeclareWorth" placeholder="（单位美元 USD)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6" id="ck1_weight">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4">重量</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" name="goodsWeight" id="goodsWeight" placeholder="重量(出口易要填)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <div class="row" id="ck1_packing">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">尺寸(出口易要填)</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group input-large input-daterange">
+                                                    <span class="input-group-addon">
+                                                        长
+                                                    </span>
+                                                    <input class="form-control " placeholder="长" name="length" id="length">
+                                                    <span class="input-group-addon">
+                                                        宽
+                                                    </span>
+                                                    <input class="form-control " placeholder="宽" name="width" id="width">
+                                                    <span class="input-group-addon">
+                                                        高
+                                                    </span>
+                                                    <input class="form-control" placeholder="高" name="height" id="height">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">订单产品中文描述</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="detailDescriptionCN" name="detailDescriptionCN" rows="3" placeholder="订单产品中文描述" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="form-section">详细物品</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            图片
+                                                        </th>
+                                                        <th>
+                                                            SKU
+                                                        </th>
+                                                        <th>
+                                                            数量
+                                                        </th>
+                                                        <th>
+                                                           尺寸
+                                                        </th>
+                                                        <th>
+                                                            重量
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @{
+
+                                                        foreach (var item in Model.PayPalTransactionPaymentItems)
+                                                        {
+                                                            if (item.Association != null)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="@item.Association.Product.CoverPicture">
+                                                                            <img src="@item.Association.Product.CoverPicture" width="100" />
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>
+                                                                        @item.Association.Product.Sku
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="label label-sm label-success">
+                                                                            @item.PaymentItemQuantity
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>@item.Association.Product.PackingSize.Length*@item.Association.Product.PackingSize.Width*@item.Association.Product.PackingSize.Height</td>
+                                                                    <td>@item.Association.Product.PackWeight</td>
+                                                                </tr>
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab4">                      
+                        <div class="form-body">
+                            <h3 class="form-section">地址信息</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">收货人:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.Receiver
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">街道:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                               @Model.PayerAddressStreet1
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">街道2:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerAddressStreet2
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">城市:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerCityName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">州/省:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerStateOrProvince
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">邮编:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerPostalCode
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">国家名称:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.PayerCountryName
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">电邮:</label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static">
+                                                @Model.Receiver
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+                            <h3 class="form-section">快递信息</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="20%">
+                                                            物流代理
+                                                        </th>
+                                                        <th width="20%">
+                                                            发货类型
+                                                        </th>
+                                                        <th width="20%">
+                                                            选择仓库
+                                                        </th>
+                                                        <th width="40%">
+                                                            快递方式
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="form-control-static" >
+                                                                <span class="red" id="showagent"></span>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="form-control-static" >
+                                                                <span class="red" id="showtype"></span>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="form-control-static" >
+                                                                <span class="red" id="showwarehouse"></span>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="form-control-static" >
+                                                                <span class="red" id="showexpress"></span>
+                                                            </span>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/span-->
+                            </div>
+
+                            <h3 class="form-section">物品信息</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            图片
+                                                        </th>
+                                                        <th>
+                                                            SKU
+                                                        </th>
+                                                        <th>
+                                                            数量
+                                                        </th>
+                                                        <th>
+                                                            尺寸
+                                                        </th>
+                                                        <th>
+                                                            重量
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @{
+
+                                                        foreach (var item in Model.PayPalTransactionPaymentItems)
+                                                        {
+                                                            if (item.Association != null)
+                                                            {
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="@item.Association.Product.CoverPicture">
+                                                                            <img src="@item.Association.Product.CoverPicture" width="100" />
+                                                                        </a>
+                                                                    </td>
+                                                                    <td>
+                                                                        @item.Association.Product.Sku
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="label label-sm label-success">
+                                                                            @item.PaymentItemQuantity
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>@item.Association.Product.PackingSize.Length*@item.Association.Product.PackingSize.Width*@item.Association.Product.PackingSize.Height</td>
+                                                                    <td>@item.Association.Product.PackWeight</td>
+                                                                </tr>
+                                                            }
+
+                                                        }
+
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="col-md-offset-3 col-md-9">
+                    <a href="javascript:;" class="btn default button-previous">
+                        <i class="m-icon-swapleft"></i> 返回
+                    </a>
+                    <a href="javascript:;" class="btn blue button-next">
+                        继续 <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                    <a href="javascript:;" class="btn green button-submit" data-dismiss="modal">
+                        提交 <i class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+                @*<button type="submit" id="submitbutton" class="btn blue btn-sm default"><i class="fa fa-check"></i> 提交</button>
+                <button type="button" class="btn btn-sm default" id="cancel" data-dismiss="modal">撤销</button>*@
+            </div>
+        </div>
+    </form>
+</div>
+    <script>
+        function deleteExpress() {
+            $("#express").select2('data', null);
+            $("#express option").each(function () {
+                $("#express option").remove();
+            })
+        }
+    var FormWizard = function () {
+        var initEditables = function () {
+            //set editable mode based on URL parameter
+            if (App.getURLParameter('mode') == 'inline') {
+                $.fn.editable.defaults.mode = 'inline';
+                $('#inline').attr("checked", true);
+                jQuery.uniform.update('#inline');
+            } else {
+                $('#inline').attr("checked", false);
+                jQuery.uniform.update('#inline');
+            }
+
+           
+           // console.log($(".country"));
+            //global settings 
+            $.fn.editable.defaults.inputclass = 'form-control';
+           // $.fn.editable.defaults.url = '/post';
+
+           
+            @*$('.association').editable({
+                url: '/Ims/Association/Create',
+                success: function () {
+                    $('#PaymentItem').load('/Ims/TransactionDetail/PaymentItemList/@Model.ID');
+                    //alert('sadsadadsa');
+                },
+                display: function (value) {
+                    if (!value) {
+                        $(this).html('请匹配');
+                        return;
+                    }                   
+                }
+            });*@
+        }
+
+        return {
+            //main function to initiate the module
+            init: function () {
+                initEditables();
+
+                function format(state) {
+                    if (!state.id) return state.text; // optgroup
+                    return "<img class='flag' src='../../assets/global/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+                }
+                $("#country_list").select2({
+                    placeholder: "Select",
+                    allowClear: true,
+                    formatResult: format,
+                    formatSelection: format,
+                    escapeMarkup: function (m) {
+                        return m;
+                    }
+                });
+
+                $('#typegroup').hide();
+                $('#warehousegroup').hide();
+                $('#expressgroup').hide();
+                $('#expressdetail').hide();
+                var dispatchorder = {};
+                dispatchorder.transactiondetailid = "@Model.ID";
+
+                $('#agent').select2({
+                    placeholder: "选择物流代理",
+                    allowClear: true,
+                    language: "zh-CN",
+                }).on("change", function (data) {
+                    $('#showagent').text($('#agent').select2('data').text);                   
+                    $("#type").select2('data', null);
+                    $('typegroup').hide(function () {
+                        deleteExpress();
+                    });
+                    $('#warehousegroup').hide();
+                    $('#expressgroup').hide();
+                    switch ($('#agent').select2('data')[0].id) {
+                        case "1":
+                           
+                            $('#type').find('option[value=1]').removeAttr('disabled');
+                            $("#typegroup").show();
+                            dispatchorder.agent = $('#agent').select2('data')[0].id;
+
+                            $('#ck1_packing').show();
+                            $('#ck1_weight').show();
+                            break;
+
+                        case "2":
+                            $('#type').find('option[value=1]').attr('disabled', 'disabled');
+                            $("#typegroup").show();
+                            dispatchorder.agent = $('#agent').select2('data')[0].id;
+                            $('#ck1_packing').hide();
+                            $('#ck1_weight').hide();
+                            break;
+                            
+                        default:
+                            $("#typegroup").hide();
+                            $('#warehousegroup').hide();
+                            $('#expressgroup').hide();
+                            break;
+                    }
+                });
+
+                $('#type').select2({
+                    placeholder: "发货类型",
+                    allowClear: true,
+                    language: "zh-CN",
+                }).on("change", function (e) {
+                    $("#warehouse").select2('data', null);
+                    deleteExpress();
+                    if ($('#type').select2('data')[0].id) {
+                        
+                        $('#showtype').text($('#type').select2('data').text);
+                        dispatchorder.type = $('#type').select2('data')[0].id;
+                        switch ($('#type').select2('data')[0].id) {
+                            case "1":
+                                $('#warehousegroup').show(function () {
+                                    $.getJSON("/Ims/TransactionDetail/GetWarehouseList/?agentid=" + dispatchorder.agent, null,
+                                        function (data) {
+                                        $("<option value=''></option>").appendTo($('#warehouse'));
+                                        $.each(data, function (i, n) {
+                                            $("<option value=" + n.Code + ">" + n.Code + '---' + n.Name + "</option>").appendTo($('#warehouse'));
+                                        });
+                                    });
+                                });
+                                $('#expressdetail').hide();
+                                
+                                break;
+                            case "2":
+                                $("#expressdetail").show(function () {
+
+                                });
+                                $('#expressgroup').show(
+                                    function () {
+                                        $.ajax({
+                                            type: "GET",
+                                            cache: false,
+                                            delay: 250,
+                                            url: "/Ims/TransactionDetail/GetExpressList/?agentid=" + dispatchorder.agent,
+                                            beforeSend: function () {
+                                                //$('#express').select2({
+                                                //    placeholder: "代理",
+                                                //});
+                                            },                                           
+                                            success: function (data) {
+                                                $("<option value=''></option>").appendTo($('#express'));
+                                                $.each(data, function (i, n) {
+                                                    $("<option value=" + n.Code + ">" + n.Code + '---' + n.Name + "</option>").appendTo($('#express'));
+                                                });
+                                            }
+                                        });
+                                    }
+                                   );
+                                $('#expressdetail').show();
+                                $('#warehousegroup').hide();
+                                break;
+                        }
+                    } else {
+                        $('#warehousegroup').hide();
+                        $('#expressgroup').hide(function () {
+                            deleteExpress();
+                        });
+                    }
+                });
+
+                $('#warehouse').select2({
+                    placeholder: "选择仓库",
+                    allowClear: true,
+                    language: "zh-CN",
+                }).on("change", function (e) {
+                    $('#showwarehouse').text($('#warehouse').select2('data').text);
+                    deleteExpress();
+                   
+                    if ($('#warehouse').select2('data')[0].id) {
+                        $("#express").select2('data', null);
+                        dispatchorder.warehouse = $('#warehouse').select2('data')[0].id;
+                        $.getJSON("/Ims/TransactionDetail/GetOutboundExpressList/?agentid=" + dispatchorder.agent + "&warehouse=" + $('#warehouse').select2('data')[0].id,
+                            null,
+                            function (data) {
+                                console.log($('#express').select2('data'));
+                            $('#express').select2('data', null)
+                            $("<option value=''></option>").appendTo($('#express'));
+                            $.each(data, function (i, n) {
+                                $("<option value=" + n.Code + ">" + n.Code + '---' + n.Name + "</option>").appendTo($('#express'));
+                            });
+                        });
+                        $('#expressgroup').show();
+                    } else {
+                        $('#expressgroup').hide();
+                    }
+                });
+
+                $('#express').select2({
+                    placeholder: "快递方式",
+                    allowClear: true,
+                }).on("change", function (e) {
+                    $('#showexpress').text($('#express').select2('data').text);
+                    dispatchorder.express = $('#express').select2('data')[0].id;
+                });
+
+                
+                var form = $('#submit_form');
+                var error = $('.alert-danger', form);
+                var success = $('.alert-success', form);
+
+                form.validate({
+                    doNotHideMessage: true, //this option enables to show the error/success messages on tab switch.
+                    errorElement: 'span', //default input error message container
+                    errorClass: 'help-block help-block-error', // default input error message class
+                    focusInvalid: false, // do not focus the last invalid input
+                    rules: {
+                        agent: {
+                            required: true
+                        },
+                        type: {
+                            required: true
+                        },
+                        express: {
+                            required: true
+                        },
+                    },
+
+                    //messages: { // custom messages for radio buttons and checkboxes
+                    //    'payment[]': {
+                    //        required: "Please select at least one option",
+                    //        minlength: jQuery.validator.format("Please select at least one option")
+                    //    }
+                    //},
+
+                    errorPlacement: function (error, element) { // render error placement for each input type
+                       
+                    },
+
+                    invalidHandler: function (event, validator) { //display error alert on form submit
+                        success.hide();
+                        error.show();
+                        App.scrollTo(error, -200);
+                    },
+
+                    highlight: function (element) { // hightlight error inputs
+                        $(element)
+                            .closest('.form-group').removeClass('has-success').addClass('has-error'); // set error class to the control group
+                    },
+
+                    unhighlight: function (element) { // revert the change done by hightlight
+                        $(element)
+                            .closest('.form-group').removeClass('has-error'); // set error class to the control group
+                    },
+
+                    
+
+                    submitHandler: function (form) {
+                        success.show();
+                        error.hide();
+                        //add here some ajax code to submit your form or just call form.submit() if you want to submit the form without ajax
+                    }
+
+                });
+
+                var handleTitle = function (tab, navigation, index) {
+                    var total = navigation.find('li').length;
+                    var current = index + 1;
+                    // set wizard title
+                    $('.step-title', $('#form_wizard_1')).text('Step ' + (index + 1) + ' of ' + total);
+                    // set done steps
+                    jQuery('li', $('#form_wizard_1')).removeClass("done");
+                    var li_list = navigation.find('li');
+                    for (var i = 0; i < index; i++) {
+                        jQuery(li_list[i]).addClass("done");
+                    }
+
+                    if (current == 1) {
+                        $('#form_wizard_1').find('.button-previous').hide();
+                    } else {
+                        $('#form_wizard_1').find('.button-previous').show();
+                    }
+
+                    if (current >= total) {
+                        $('#form_wizard_1').find('.button-next').hide();
+                        $('#form_wizard_1').find('.button-submit').show();
+                        
+                    } else {
+                        $('#form_wizard_1').find('.button-next').show();
+                        $('#form_wizard_1').find('.button-submit').hide();
+                    }
+                    App.scrollTo($('.page-title'));
+                }
+
+                // default form wizard
+                $('#form_wizard_1').bootstrapWizard({
+                    'nextSelector': '.button-next',
+                    'previousSelector': '.button-previous',
+                    onTabClick: function (tab, navigation, index, clickedIndex) {
+                        return false;
+                        
+                        success.hide();
+                        error.hide();
+                        if (form.valid() == false) {
+                            return false;
+                        }
+                        handleTitle(tab, navigation, clickedIndex);
+                       
+                    },
+                    onNext: function (tab, navigation, index) {
+                        success.hide();
+                        error.hide();
+
+                        if (form.valid() == false) {
+                            return false;
+                        }
+
+                        handleTitle(tab, navigation, index);
+                    },
+                    onPrevious: function (tab, navigation, index) {
+                        success.hide();
+                        error.hide();
+
+                        handleTitle(tab, navigation, index);
+                    },
+                    onTabShow: function (tab, navigation, index) {
+                        var total = navigation.find('li').length;
+                        var current = index + 1;
+                        var $percent = (current / total) * 100;
+                        $('#form_wizard_1').find('.progress-bar').css({
+                            width: $percent + '%'
+                        });
+                    }
+                });
+
+                $('#form_wizard_1').find('.button-previous').hide();
+                $('#form_wizard_1 .button-submit').click(function () {
+                    var postdata = {};
+                    switch (dispatchorder.agent) {
+                        case "1"://ck1                                        
+                            var postdata = {
+                                "Express": dispatchorder.express,
+                                "Agent": dispatchorder.agent,
+                                "ID": dispatchorder.transactiondetailid,
+                                "Type": dispatchorder.type,
+                                "Warehouse": dispatchorder.warehouse,
+                                "goodsDescription": $("#goodsDescription").val(),
+                                "goodsQuantity": $("#goodsQuantity").val(),
+                                "goodsDeclareWorth": $("#goodsDeclareWorth").val(),
+                                "detailDescriptionCN": $("#detailDescriptionCN").val(),
+                                "goodsWeight": $("#goodsWeight").val(),
+                                "size": $("#size").val(),
+                                "Length": $("#length").val(),
+                                "Width": $("#width").val(),
+                                "Height": $("#height").val()
+                            };
+                            break;
+
+                        case "2"://sfc
+                            var postdata = {
+                                "Express": dispatchorder.express,
+                                "Agent": dispatchorder.agent,
+                                "ID": dispatchorder.transactiondetailid,
+                                "Type": dispatchorder.type,
+                                "Warehouse": dispatchorder.warehouse,
+                                "goodsDescription": $("#goodsDescription").val(),
+                                "goodsQuantity": $("#goodsQuantity").val(),
+                                "goodsDeclareWorth": $("#goodsDeclareWorth").val(),
+                                "detailDescriptionCN": $("#detailDescriptionCN").val(),
+                                "goodsWeight": $("#goodsWeight").val()
+
+                            };
+                            break;
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        cache: false,
+                        data: postdata,
+                        url: "@Url.StaticFile("/Ims/TransactionDetail/Dispatch")", 
+                        success: function (data) {
+                            if (data.Message) {
+                                alert(data.Message);
+                            }
+                            window.location.href="@Url.StaticFile("/Ims/TransactionDetail/Index")"
+                        }
+                    });
+
+                   // alert('Finished! Hope you like it :)');
+                }).hide();
+            }
+
+        };
+
+    }();
+
+
+    </script>
+
+    <script>
+        $(function () {
+
+            $('.form-section').css({
+                "margin": "30px 0px 25px 0px",
+                "padding-bottom": "5px",
+                "border-bottom": "1px solid #eee"
+            })
+
+            //$('.modal.container').css({
+            //    "width": "940px",
+            //    "margin-left": "-470px"
+            //})
+            FormWizard.init();
+
+        })
+    </script>
