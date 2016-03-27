@@ -60,7 +60,7 @@
 <script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js")"></script>
 <!-- The File Upload user interface plugin -->
 @*<script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js")"></script>*@
->><!-- The main application script -->
+<!-- The main application script -->
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
 <!--[if (gte IE 8)&(lt IE 10)]>
     <script src="@Url.StaticFile("/assets/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js")"></script>
@@ -69,16 +69,11 @@
 }
 
 @section PageSpecificJavascriptLevelScriptsIncludes{
-<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/channel-x.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/admin/pages/scripts/cms/channel.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>  
 }
-
-@section JSIncluds{
-    Channel.init();
-}
-
 
 <div class="row">
     <div class="col-md-12">
@@ -173,7 +168,9 @@
                                     </th>
 
                                     <th width="10%">
-                                        操作
+                                        <a href="javascript:;" class="default search-table">
+                                            搜索 <i class="icon-magnifier"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 <tr role="row" class="filter">

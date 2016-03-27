@@ -69,7 +69,7 @@ var UIAlertDialogApi = function () {
         
         $('#alert_show').click(function(){
 
-            Metronic.alert({
+            App.alert({
                 container: $('#alert_container').val(), // alerts parent container(by default placed after the page breadcrumbs)
                 place: $('#alert_place').val(), // append or prepent in container 
                 type: $('#alert_type').val(),  // alert's type

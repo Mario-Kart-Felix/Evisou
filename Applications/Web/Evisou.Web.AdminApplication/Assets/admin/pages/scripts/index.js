@@ -127,7 +127,7 @@
         
         //main function
         init: function () {            
-            Metronic.addResizeHandler(function () {
+            App.addResizeHandler(function () {
                 jQuery('.vmaps').each(function () {
                     var map = jQuery(this);
                     map.width(map.parent().width());
@@ -239,7 +239,7 @@
                 };
             } else {
                 $('#calendar').removeClass("mobile");
-                if (Metronic.isRTL()) {
+                if (App.isRTL()) {
                     h = {
                         right: 'title',
                         center: '',
@@ -478,7 +478,7 @@
 
 
             // IE8 Fix: function.bind polyfill
-            if (Metronic.isIE8() && !Function.prototype.bind) {
+            if (App.isIE8() && !Function.prototype.bind) {
                 Function.prototype.bind = function (oThis) {
                     if (typeof this !== "function") {
                         // closest thing possible to the ECMAScript 5 internal IsCallable function
@@ -504,21 +504,21 @@
                 animate: 1000,
                 size: 75,
                 lineWidth: 3,
-                barColor: Metronic.getBrandColor('yellow')
+                barColor: App.getBrandColor('yellow')
             });
 
             $('.easy-pie-chart .number.visits').easyPieChart({
                 animate: 1000,
                 size: 75,
                 lineWidth: 3,
-                barColor: Metronic.getBrandColor('green')
+                barColor: App.getBrandColor('green')
             });
 
             $('.easy-pie-chart .number.bounce').easyPieChart({
                 animate: 1000,
                 size: 75,
                 lineWidth: 3,
-                barColor: Metronic.getBrandColor('red')
+                barColor: App.getBrandColor('red')
             });
 
             $('.easy-pie-chart-reload').click(function () {
@@ -609,7 +609,7 @@
 
                 var name = $(this).text(); // get clicked user's full name
                 input.val('@' + name + ':'); // set it into the input field
-                Metronic.scrollTo(input); // scroll to input if needed
+                App.scrollTo(input); // scroll to input if needed
             });
 
             btn.click(handleClick);
@@ -628,7 +628,7 @@
             }
 
             $('#dashboard-report-range').daterangepicker({
-                opens: (Metronic.isRTL() ? 'right' : 'left'),
+                opens: (App.isRTL() ? 'right' : 'left'),
                  format: 'MM/DD/YYYY',
                // separator: ' to ',
                 startDate: moment().subtract('days', 29),

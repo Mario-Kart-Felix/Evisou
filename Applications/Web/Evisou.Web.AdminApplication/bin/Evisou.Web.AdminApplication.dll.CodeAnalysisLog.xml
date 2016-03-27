@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="14.0">
  <Targets>
-  <Target Name="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication\bin\Evisou.Web.AdminApplication.dll">
+  <Target Name="D:\项目\例子\Evisou\Applications\Web\Evisou.Web.AdminApplication\bin\Evisou.Web.AdminApplication.dll">
    <Modules>
     <Module Name="evisou.web.adminapplication.dll">
      <Namespaces>
@@ -12,8 +12,8 @@
          <Members>
           <Member Name="#UploadPartialFile(System.String,System.Web.HttpContext,System.Collections.Generic.List`1&lt;Evisou.Core.Upload.FilesStatus&gt;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-07-26 01:57:31Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication" File="UploadHandler.ashx.cs" Line="219">可以在方法 'UploadHandler.UploadPartialFile(string, HttpContext, List&lt;FilesStatus&gt;)' 中多次释放对象 'fs'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 219</Issue>
+            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-03-21 04:57:36Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\项目\例子\Evisou\Applications\Web\Evisou.Web.AdminApplication" File="UploadHandler.ashx.cs" Line="219">可以在方法 'UploadHandler.UploadPartialFile(string, HttpContext, List&lt;FilesStatus&gt;)' 中多次释放对象 'fs'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 219</Issue>
             </Message>
            </Messages>
           </Member>
@@ -27,15 +27,15 @@
          <Members>
           <Member Name="#HttpGet(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-07-26 01:57:31Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication\Areas\Ims\Controllers" File="ProductController.cs" Line="56">可以在方法 'ProductController.HttpGet(string)' 中多次释放对象 'myResponseStream'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 56</Issue>
+            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-03-21 04:57:36Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\项目\例子\Evisou\Applications\Web\Evisou.Web.AdminApplication\Areas\Ims\Controllers" File="ProductController.cs" Line="56">可以在方法 'ProductController.HttpGet(string)' 中多次释放对象 '(HttpWebResponse)(HttpWebRequest)WebRequest.Create(string.Concat("http://", HttpContext.Current.Request.Url.Host, ":", HttpContext.Current.Request.Url.Port, HttpContext.Current.Request.ApplicationPath, "UploadHandler.ashx", ..., postDataStr)).GetResponse().GetResponseStream()'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 56</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#HttpPost(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-07-26 01:57:31Z" FixCategory="DependsOnFix">
-             <Issue Certainty="75" Level="Warning" Path="D:\project\Evisou\Applications\Web\Evisou.Web.AdminApplication\Areas\Ims\Controllers" File="ProductController.cs" Line="39">可以在方法 'ProductController.HttpPost(string, string)' 中多次释放对象 'myResponseStream'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 39</Issue>
+            <Message TypeName="不要多次释放对象" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-03-21 04:57:36Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\项目\例子\Evisou\Applications\Web\Evisou.Web.AdminApplication\Areas\Ims\Controllers" File="ProductController.cs" Line="39">可以在方法 'ProductController.HttpPost(string, string)' 中多次释放对象 '(HttpWebResponse)(HttpWebRequest)WebRequest.Create(Url).GetResponse().GetResponseStream()'。若要避免生成 System.ObjectDisposedException，不应对一个对象多次调用 Dispose。: Lines: 39</Issue>
             </Message>
            </Messages>
           </Member>

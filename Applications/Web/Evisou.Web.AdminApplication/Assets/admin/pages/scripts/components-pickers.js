@@ -4,7 +4,7 @@ var ComponentsPickers = function () {
 
         if (jQuery().datepicker) {
             $('.date-picker').datepicker({
-                rtl: Metronic.isRTL(),
+                rtl: App.isRTL(),
                 orientation: "left",
                 autoclose: true
             });
@@ -49,7 +49,7 @@ var ComponentsPickers = function () {
         }
 
         $('#defaultrange').daterangepicker({
-                opens: (Metronic.isRTL() ? 'left' : 'right'),
+                opens: (App.isRTL() ? 'left' : 'right'),
                 format: 'MM/DD/YYYY',
                 separator: ' to ',
                 startDate: moment().subtract('days', 29),
@@ -63,7 +63,7 @@ var ComponentsPickers = function () {
         );        
 
         $('#defaultrange_modal').daterangepicker({
-                opens: (Metronic.isRTL() ? 'left' : 'right'),
+                opens: (App.isRTL() ? 'left' : 'right'),
                 format: 'MM/DD/YYYY',
                 separator: ' to ',
                 startDate: moment().subtract('days', 29),
@@ -85,7 +85,7 @@ var ComponentsPickers = function () {
         });
 
         $('#reportrange').daterangepicker({
-                opens: (Metronic.isRTL() ? 'left' : 'right'),
+                opens: (App.isRTL() ? 'left' : 'right'),
                 startDate: moment().subtract('days', 29),
                 endDate: moment(),
                 minDate: '01/01/2012',
@@ -137,27 +137,27 @@ var ComponentsPickers = function () {
 
         $(".form_datetime").datetimepicker({
             autoclose: true,
-            isRTL: Metronic.isRTL(),
+            isRTL: App.isRTL(),
             format: "dd MM yyyy - hh:ii",
-            pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left")
+            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left")
         });
 
         $(".form_advance_datetime").datetimepicker({
-            isRTL: Metronic.isRTL(),
+            isRTL: App.isRTL(),
             format: "dd MM yyyy - hh:ii",
             autoclose: true,
             todayBtn: true,
             startDate: "2013-02-14 10:00",
-            pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left"),
+            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
             minuteStep: 10
         });
 
         $(".form_meridian_datetime").datetimepicker({
-            isRTL: Metronic.isRTL(),
+            isRTL: App.isRTL(),
             format: "dd MM yyyy - HH:ii P",
             showMeridian: true,
             autoclose: true,
-            pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left"),
+            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
             todayBtn: true
         });
 

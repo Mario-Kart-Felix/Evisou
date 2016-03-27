@@ -182,9 +182,13 @@
     </div>
 
 }
-
-
 <script>
+    jQuery(document).ready(function () {
+        Agent.form();
+    });
+</script>
+
+@*<script>
     var FormComponents = function () {
 
         var handleInputMasks = function () {
@@ -241,7 +245,7 @@
                 invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
 
                 },
 
@@ -295,7 +299,7 @@
     $(function () {
         FormComponents.init();
     });
-</script>
+</script>*@
 
 
 

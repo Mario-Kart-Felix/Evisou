@@ -22,85 +22,7 @@
 @section PageSpecificJavascriptLevelScriptsIncludes{
    @Scripts.Render("~/Script/User/Myprofile")
 }
-<script>    
 
-    var Upload = function () {
-        var f = '';        
-        var ajaxUpload = function () {
-            var oMyForm = new FormData();
-            oMyForm.append("subfolder", "account");//
-            oMyForm.append("files[]", $("#img")[0].files[0]);
-            oMyForm.append("Filename", $("#img")[0].files[0].name);
-            $.ajax({
-                type: 'POST',
-                url: "@Url.StaticFile()/UploadHandler.ashx",
-                data: oMyForm,//new FormData(formCol[0]),
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    f = $.parseJSON(data).files[0].deleteUrl;
-                    $('#avatar').attr('src', $.parseJSON(data).files[0].url);
-                    $('#myavatar').val($.parseJSON(data).files[0].url);
-                }
-            });
-        };
-       
-        var handleUpload = function () {
-            var oavator = $('#avatar').attr('src');
-            $('.fileinput').on('change.bs.fileinput', function (e) {               
-                if (f == '') {
-                    ajaxUpload()
-                } else {
-                    $.ajax({
-                        xhrFields: { withCredentials: true },
-                        url: f,
-                        type: 'DELETE',
-                        success: function (data) {                            
-                            f = "";
-                            $('#avatar').attr('src', oavator);
-                            $('#myavatar').val("");
-                            ajaxUpload();
-                        }
-                    })
-                }
-            })
-
-            $('.fileinput').on('clear.bs.fileinput', function (e) {
-                $.ajax({
-                    xhrFields: { withCredentials: true },
-                    url: f,
-                    type: 'DELETE',
-                    success: function (data) {                       
-                        f = "";
-                        $('#avatar').attr('src', oavator);
-                        $('#myavatar').val("");
-
-                    }
-                })
-            })
-
-            $('.fileinput').on('reset.bs.fileinput', function (e) {
-                  alert('345454355345435');
-            })
-        };
-
-        return {
-            init: function () {
-                handleUpload();
-            }
-        };
-
-    }();
-
-
-
-
-</script>
-
-@section JSIncluds{
-   Upload.init();
-   Profile.init();
-}
 <!-- BEGIN PAGE CONTENT-->
 <div>
 <div class="row margin-top-20">
@@ -527,7 +449,7 @@
                                             </thead>
                                             <tr>
                                                 <td class="fit">
-                                                    <img class="user-pic" src="../../assets/admin/layout3/img/avatar4.jpg">
+                                                    <img class="user-pic" src="../../assets/admin/layout/img/avatar4.jpg">
                                                 </td>
                                                 <td>
                                                     <a href="#" class="primary-link">Brain</a>
@@ -547,7 +469,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="fit">
-                                                    <img class="user-pic" src="../../assets/admin/layout3/img/avatar5.jpg">
+                                                    <img class="user-pic" src="../../assets/admin/layout/img/avatar5.jpg">
                                                 </td>
                                                 <td>
                                                     <a href="#" class="primary-link">Nick</a>
@@ -567,7 +489,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="fit">
-                                                    <img class="user-pic" src="../../assets/admin/layout3/img/avatar6.jpg">
+                                                    <img class="user-pic" src="../../assets/admin/layout/img/avatar6.jpg">
                                                 </td>
                                                 <td>
                                                     <a href="#" class="primary-link">Tim</a>
@@ -587,7 +509,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="fit">
-                                                    <img class="user-pic" src="../../assets/admin/layout3/img/avatar7.jpg">
+                                                    <img class="user-pic" src="../../assets/admin/layout/img/avatar7.jpg">
                                                 </td>
                                                 <td>
                                                     <a href="#" class="primary-link">Tom</a>
@@ -1293,7 +1215,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar4.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar4.jpg">
                                                         <a href="" class="item-name primary-link">Nick Larson</a>
                                                         <span class="item-label">3 hrs ago</span>
                                                     </div>
@@ -1306,7 +1228,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar3.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar3.jpg">
                                                         <a href="" class="item-name primary-link">Mark</a>
                                                         <span class="item-label">5 hrs ago</span>
                                                     </div>
@@ -1319,7 +1241,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar6.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar6.jpg">
                                                         <a href="" class="item-name primary-link">Nick Larson</a>
                                                         <span class="item-label">8 hrs ago</span>
                                                     </div>
@@ -1332,7 +1254,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar7.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar7.jpg">
                                                         <a href="" class="item-name primary-link">Nick Larson</a>
                                                         <span class="item-label">12 hrs ago</span>
                                                     </div>
@@ -1345,7 +1267,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar9.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar9.jpg">
                                                         <a href="" class="item-name primary-link">Richard Stone</a>
                                                         <span class="item-label">2 days ago</span>
                                                     </div>
@@ -1358,7 +1280,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar8.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar8.jpg">
                                                         <a href="" class="item-name primary-link">Dan</a>
                                                         <span class="item-label">3 days ago</span>
                                                     </div>
@@ -1371,7 +1293,7 @@
                                             <div class="item">
                                                 <div class="item-head">
                                                     <div class="item-details">
-                                                        <img class="item-pic" src="../../assets/admin/layout3/img/avatar2.jpg">
+                                                        <img class="item-pic" src="../../assets/admin/layout/img/avatar2.jpg">
                                                         <a href="" class="item-name primary-link">Larry</a>
                                                         <span class="item-label">4 hrs ago</span>
                                                     </div>
@@ -1954,7 +1876,7 @@
                                         </thead>
                                         <tr>
                                             <td class="fit">
-                                                <img class="user-pic" src="../../assets/admin/layout3/img/avatar4.jpg">
+                                                <img class="user-pic" src="../../assets/admin/layout/img/avatar4.jpg">
                                             </td>
                                             <td>
                                                 <a href="#" class="primary-link">Brain</a>
@@ -1974,7 +1896,7 @@
                                         </tr>
                                         <tr>
                                             <td class="fit">
-                                                <img class="user-pic" src="../../assets/admin/layout3/img/avatar5.jpg">
+                                                <img class="user-pic" src="../../assets/admin/layout/img/avatar5.jpg">
                                             </td>
                                             <td>
                                                 <a href="#" class="primary-link">Nick</a>
@@ -1994,7 +1916,7 @@
                                         </tr>
                                         <tr>
                                             <td class="fit">
-                                                <img class="user-pic" src="../../assets/admin/layout3/img/avatar6.jpg">
+                                                <img class="user-pic" src="../../assets/admin/layout/img/avatar6.jpg">
                                             </td>
                                             <td>
                                                 <a href="#" class="primary-link">Tim</a>
@@ -2014,7 +1936,7 @@
                                         </tr>
                                         <tr>
                                             <td class="fit">
-                                                <img class="user-pic" src="../../assets/admin/layout3/img/avatar7.jpg">
+                                                <img class="user-pic" src="../../assets/admin/layout/img/avatar7.jpg">
                                             </td>
                                             <td>
                                                 <a href="#" class="primary-link">Tom</a>
@@ -2720,7 +2642,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar4.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar4.jpg">
                                                     <a href="" class="item-name primary-link">Nick Larson</a>
                                                     <span class="item-label">3 hrs ago</span>
                                                 </div>
@@ -2733,7 +2655,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar3.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar3.jpg">
                                                     <a href="" class="item-name primary-link">Mark</a>
                                                     <span class="item-label">5 hrs ago</span>
                                                 </div>
@@ -2746,7 +2668,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar6.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar6.jpg">
                                                     <a href="" class="item-name primary-link">Nick Larson</a>
                                                     <span class="item-label">8 hrs ago</span>
                                                 </div>
@@ -2759,7 +2681,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar7.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar7.jpg">
                                                     <a href="" class="item-name primary-link">Nick Larson</a>
                                                     <span class="item-label">12 hrs ago</span>
                                                 </div>
@@ -2772,7 +2694,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar9.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar9.jpg">
                                                     <a href="" class="item-name primary-link">Richard Stone</a>
                                                     <span class="item-label">2 days ago</span>
                                                 </div>
@@ -2785,7 +2707,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar8.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar8.jpg">
                                                     <a href="" class="item-name primary-link">Dan</a>
                                                     <span class="item-label">3 days ago</span>
                                                 </div>
@@ -2798,7 +2720,7 @@
                                         <div class="item">
                                             <div class="item-head">
                                                 <div class="item-details">
-                                                    <img class="item-pic" src="../../assets/admin/layout3/img/avatar2.jpg">
+                                                    <img class="item-pic" src="../../assets/admin/layout/img/avatar2.jpg">
                                                     <a href="" class="item-name primary-link">Larry</a>
                                                     <span class="item-label">4 hrs ago</span>
                                                 </div>

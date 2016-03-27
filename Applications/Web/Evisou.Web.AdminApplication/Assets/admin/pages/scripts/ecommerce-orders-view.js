@@ -46,7 +46,7 @@ var EcommerceOrdersView = function () {
                 grid.getDataTable().ajax.reload();
                 grid.clearAjaxParams();
             } else if (action.val() == "") {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'Please select an action',
@@ -54,7 +54,7 @@ var EcommerceOrdersView = function () {
                     place: 'prepend'
                 });
             } else if (grid.getSelectedRowsCount() === 0) {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'No record selected',
@@ -181,7 +181,7 @@ var EcommerceOrdersView = function () {
                 grid.getDataTable().ajax.reload();
                 grid.clearAjaxParams();
             } else if (action.val() == "") {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'Please select an action',
@@ -189,7 +189,7 @@ var EcommerceOrdersView = function () {
                     place: 'prepend'
                 });
             } else if (grid.getSelectedRowsCount() === 0) {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'No record selected',
@@ -203,15 +203,15 @@ var EcommerceOrdersView = function () {
     var initPickers = function () {
         //init date pickers
         $('.date-picker').datepicker({
-            rtl: Metronic.isRTL(),
+            rtl: App.isRTL(),
             autoclose: true
         });
 
         $(".datetime-picker").datetimepicker({
-            isRTL: Metronic.isRTL(),
+            isRTL: App.isRTL(),
             autoclose: true,
             todayBtn: true,
-            pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left"),
+            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
             minuteStep: 10
         });
     }

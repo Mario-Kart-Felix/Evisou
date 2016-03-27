@@ -5,7 +5,7 @@ var ComponentsKnobDials = function () {
         
         init: function () {
             //knob does not support ie8 so skip it
-            if (!jQuery().knob || Metronic.isIE8()) {
+            if (!jQuery().knob || App.isIE8()) {
                 return;
             }
 

@@ -119,7 +119,7 @@ var Branch = function () {
                 grid.clearAjaxParams();
                 
             } else if (action.val() == "") {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: '请选择动作',
@@ -127,7 +127,7 @@ var Branch = function () {
                     place: 'prepend'
                 });
             } else if (grid.getSelectedRowsCount() === 0) {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: '没有选择的记录',

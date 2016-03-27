@@ -31,7 +31,7 @@ var Inbox = function () {
                 if (Layout.fixContentHeight) {
                     Layout.fixContentHeight();
                 }
-                Metronic.initUniform();
+                App.initUniform();
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
@@ -78,7 +78,7 @@ var Inbox = function () {
                 loading.hide();
                 content.html(res);
                 Layout.fixContentHeight();
-                Metronic.initUniform();
+                App.initUniform();
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
@@ -145,7 +145,7 @@ var Inbox = function () {
 
                 $('.inbox-wysihtml5').focus();
                 Layout.fixContentHeight();
-                Metronic.initUniform();
+                App.initUniform();
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
@@ -185,7 +185,7 @@ var Inbox = function () {
                 initFileupload();
                 initWysihtml5();
                 Layout.fixContentHeight();
-                Metronic.initUniform();
+                App.initUniform();
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
@@ -217,7 +217,7 @@ var Inbox = function () {
                 loading.hide();
                 content.html(res);
                 Layout.fixContentHeight();
-                Metronic.initUniform();
+                App.initUniform();
             },
             error: function(xhr, ajaxOptions, thrownError)
             {
@@ -317,9 +317,9 @@ var Inbox = function () {
             });
 
             //handle loading content based on URL parameter
-            if (Metronic.getURLParameter("a") === "view") {
+            if (App.getURLParameter("a") === "view") {
                 loadMessage();
-            } else if (Metronic.getURLParameter("a") === "compose") {
+            } else if (App.getURLParameter("a") === "compose") {
                 loadCompose();
             } else {
                $('.inbox-nav > li.inbox > a').click();

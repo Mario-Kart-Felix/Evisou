@@ -75,7 +75,7 @@
 <script>
     var handleDatePickers = function () {
         $('#defaultrange').daterangepicker({
-            opens: (Metronic.isRTL() ? 'left' : 'right'),
+            opens: (App.isRTL() ? 'left' : 'right'),
             // format: 'MM/DD/YYYY',
             separator: ' to ',
             startDate: moment().subtract('days', 29),
@@ -135,7 +135,130 @@
         if (jQuery().datepicker) {
             $('.date-picker').datepicker({
                 language: 'zh-CN',
-                rtl: Metronic.isRTL(),
+                rtl: App.isRTL(),
+                orientation: "left",
+                autoclose: true,
+                dateFormat: 'dd日mm月yy年'
+            });
+            //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+        }
+    }
+
+    var handleDispatch = function () {
+        $('#datatable_transaction').on('click', '.ajax-order-submit-dispatch', function (e) {
+            e.preventDefault();
+            id = e.currentTarget.id;
+            $.post(
+                 "@Url.StaticFile("/Ims/TransactionDetail/SubmitDispatchOrder")",
+                   { "id": id },
+                   function (data) {
+                       if (data.message) {
+                           alert(data.message);
+                       }
+                       window.location.href = "@Url.StaticFile("/Ims/TransactionDetail/Index")";
+                   });
+        });
+    }
+
+    var handleOutPutData = function () {
+
+        $('ul.dropdown-menu>li>a').hover(function () {
+            var ids = new Array();
+            $.each($('tbody > tr > td:nth-child(1) input[type="checkbox"]'), function (key, value) {
+                ids[key] = $(value).val();
+            });
+            var type = $(this).attr('data-type');
+            switch (type)
+            {
+                case "excel":
+                    $(this).attr("href", "/Ims/TransactionDetail/DataExport/?ids="
+                        + encodeURIComponent(ids)
+                        + "&type="+type);
+                    break;
+                case "csv":
+                    $(this).attr("href", "/Ims/TransactionDetail/DataExport/?ids="
+                        + encodeURIComponent(ids)
+                        + "&type=" + type);
+                    break;
+                case "xml":
+                    $(this).attr("href", "/Ims/TransactionDetail/DataExport/?ids="
+                       + encodeURIComponent(ids)
+                       + "&type=" + type);
+                    break;
+                case "print":
+                    $("#datatable_transaction").jqprint();
+                    break;
+
+            }
+        });
+    }
+
+
+</script>
+@*<script>
+    var handleDatePickers = function () {
+        $('#defaultrange').daterangepicker({
+            opens: (App.isRTL() ? 'left' : 'right'),
+            // format: 'MM/DD/YYYY',
+            separator: ' to ',
+            startDate: moment().subtract('days', 29),
+            endDate: moment(),
+            minDate: '01/01/2009',
+            maxDate: '12/31/2020',
+            showDropdowns: true,
+            showWeekNumbers: true,
+            timePicker: false,
+            timePickerIncrement: 1,
+            timePicker12Hour: true,
+            ranges: {
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                '前七天': [moment().subtract('days', 6), moment()],
+                '前30天': [moment().subtract('days', 29), moment()],
+                '这个月': [moment().startOf('month'), moment().endOf('month')],
+                '前个月': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+            },
+            buttonClasses: ['btn'],
+            applyClass: 'green',
+            cancelClass: 'default',
+            locale: {
+                applyLabel: '应用',
+                cancelLabel: '取消',
+                fromLabel: '从',
+                toLabel: '到',
+                customRangeLabel: '自定义时间',
+                daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                firstDay: 1
+            }
+        },
+                function (start, end) {
+                    $('#defaultrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                    //$('#defaultrange input').val(start + ' - ' + end);
+                }
+            );
+
+        function format(state) {
+            if (!state.id) return state.text; // optgroup
+            return "<img class='flag' src='../../assets/global/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+        }
+
+        $("#country_list").select2({
+            placeholder: "Select",
+            allowClear: true,
+            formatResult: format,
+            formatSelection: format,
+            escapeMarkup: function (m) {
+                return m;
+            }
+        });
+
+
+
+        if (jQuery().datepicker) {
+            $('.date-picker').datepicker({
+                language: 'zh-CN',
+                rtl: App.isRTL(),
                 orientation: "left",
                 autoclose: true,
                 dateFormat: 'dd日mm月yy年'
@@ -197,11 +320,11 @@
 </script>
 
 @section JSIncluds{
-    Transaction.init();
+   
     handleDispatch();
     handleDatePickers();
     handleOutPutData();
-}
+}*@
 
 <div class="row">
     <div class="col-md-12">
@@ -307,7 +430,9 @@
                                     快递服务
                                 </th>
                                 <th width="10%">
-                                    操作
+                                    <a href="javascript:;" class="default search-table">
+                                        搜索 <i class="icon-magnifier"></i>
+                                    </a>
                                 </th>
                             </tr>
                             <tr role="row" class="filter">

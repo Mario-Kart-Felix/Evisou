@@ -5,7 +5,7 @@ var UIGeneral = function () {
             return;
         }
 
-        if (Metronic.isIE8() == true) {
+        if (App.isIE8() == true) {
             return; // pulsate plugin does not support IE8 and below
         }
 

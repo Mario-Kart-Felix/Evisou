@@ -9,7 +9,7 @@ var ComponentsjQueryUISliders = function () {
 
              // vertical range sliders
             $("#slider-range").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 range: true,
                 values: [17, 67],
                 slide: function (event, ui) {
@@ -19,7 +19,7 @@ var ComponentsjQueryUISliders = function () {
             
             // snap inc
             $("#slider-snap-inc").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 value: 100,
                 min: 0,
                 max: 1000,
@@ -33,7 +33,7 @@ var ComponentsjQueryUISliders = function () {
 
             // range slider
             $("#slider-range").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 range: true,
                 min: 0,
                 max: 500,
@@ -48,7 +48,7 @@ var ComponentsjQueryUISliders = function () {
             //range max
 
             $("#slider-range-max").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 range: "max",
                 min: 1,
                 max: 10,
@@ -62,7 +62,7 @@ var ComponentsjQueryUISliders = function () {
 
             // range min
             $("#slider-range-min").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 range: "min",
                 value: 37,
                 min: 1,
@@ -76,7 +76,7 @@ var ComponentsjQueryUISliders = function () {
 
             // vertical slider
             $("#slider-vertical").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 orientation: "vertical",
                 range: "min",
                 min: 0,
@@ -90,7 +90,7 @@ var ComponentsjQueryUISliders = function () {
 
             // vertical range sliders
             $("#slider-range-vertical").slider({
-                isRTL: Metronic.isRTL(),
+                isRTL: App.isRTL(),
                 orientation: "vertical",
                 range: true,
                 values: [17, 67],

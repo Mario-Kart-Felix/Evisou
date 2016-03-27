@@ -9,7 +9,7 @@ var Todo = function () {
         
         // init datepicker
         $('.todo-taskbody-due').datepicker({
-            rtl: Metronic.isRTL(),
+            rtl: App.isRTL(),
             orientation: "left",
             autoclose: true
         });
@@ -21,7 +21,7 @@ var Todo = function () {
     }
 
     var _handleProjectListMenu = function() {
-        if (Metronic.getViewPort().width <= 992) {
+        if (App.getViewPort().width <= 992) {
             $('.todo-project-list-content').addClass("collapse");
         } else {
             $('.todo-project-list-content').removeClass("collapse").css("height", "auto");
@@ -36,7 +36,7 @@ var Todo = function () {
             _initComponents();     
             _handleProjectListMenu();
 
-            Metronic.addResizeHandler(function(){
+            App.addResizeHandler(function(){
                 _handleProjectListMenu();    
             });       
         }

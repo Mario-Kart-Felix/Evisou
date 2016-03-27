@@ -7,7 +7,7 @@ var Search = function () {
                 $('.date-picker').datepicker();
             }
 
-            Metronic.initFancybox();
+            App.initFancybox();
         }
 
     };

@@ -1,7 +1,7 @@
 /**
 Core script to handle the entire theme and core functions
 **/
-var Metronic = function() {
+var App = function() {
 
     // IE mode
     var isRTL = false;
@@ -50,7 +50,7 @@ var Metronic = function() {
         }
     };
 
-    // runs callback functions set by Metronic.addResponsiveHandler().
+    // runs callback functions set by App.addResponsiveHandler().
     var _runResizeHandlers = function() {
         // reinitialize other subscribed elements
         for (var i = 0; i < resizeHandlers.length; i++) {
@@ -118,7 +118,7 @@ var Metronic = function() {
                 $('body').removeClass('page-portlet-fullscreen');
                 portlet.children('.portlet-body').css('height', 'auto');
             } else {
-                var height = Metronic.getViewPort().height -
+                var height = App.getViewPort().height -
                     portlet.children('.portlet-title').outerHeight() -
                     parseInt(portlet.children('.portlet-body').css('padding-top')) -
                     parseInt(portlet.children('.portlet-body').css('padding-bottom'));
@@ -136,7 +136,7 @@ var Metronic = function() {
             var url = $(this).attr("data-url");
             var error = $(this).attr("data-error-display");
             if (url) {
-                Metronic.blockUI({
+                App.blockUI({
                     target: el,
                     animate: true,
                     overlayColor: 'none'
@@ -147,11 +147,11 @@ var Metronic = function() {
                     url: url,
                     dataType: "html",
                     success: function(res) {
-                        Metronic.unblockUI(el);
+                        App.unblockUI(el);
                         el.html(res);
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
-                        Metronic.unblockUI(el);
+                        App.unblockUI(el);
                         var msg = 'Error on reloading the content. Please check your connection and try again.';
                         if (error == "toastr" && toastr) {
                             toastr.error(msg);
@@ -168,13 +168,13 @@ var Metronic = function() {
                 });
             } else {
                 // for demo purpose
-                Metronic.blockUI({
+                App.blockUI({
                     target: el,
                     animate: true,
                     overlayColor: 'none'
                 });
                 window.setTimeout(function() {
-                    Metronic.unblockUI(el);
+                    App.unblockUI(el);
                 }, 1000);
             }
         });
@@ -247,7 +247,7 @@ var Metronic = function() {
     // Handles Bootstrap Accordions.
     var handleAccordions = function() {
         $('body').on('shown.bs.collapse', '.accordion.scrollable', function(e) {
-            Metronic.scrollTo($(e.target));
+            App.scrollTo($(e.target));
         });
     };
 
@@ -376,7 +376,7 @@ var Metronic = function() {
 
     // Handles scrollable contents using jQuery SlimScroll plugin.
     var handleScrollers = function() {
-        Metronic.initSlimScroll('.scroller');
+        App.initSlimScroll('.scroller');
     };
 
     // Handles Image Preview using jQuery Fancybox plugin
@@ -504,7 +504,7 @@ var Metronic = function() {
             _runResizeHandlers();
         },
 
-        // wrMetronicer function to scroll(focus) to an element
+        // wrApper function to scroll(focus) to an element
         scrollTo: function(el, offeset) {
             var pos = (el && el.size() > 0) ? el.offset().top : 0;
 
@@ -594,10 +594,10 @@ var Metronic = function() {
 
         // function to scroll to the top
         scrollTop: function() {
-            Metronic.scrollTo();
+            App.scrollTo();
         },
 
-        // wrMetronicer function to  block element(indicate loading)
+        // wrApper function to  block element(indicate loading)
         blockUI: function(options) {
             options = $.extend(true, {}, options);
             var html = '';
@@ -650,7 +650,7 @@ var Metronic = function() {
             }
         },
 
-        // wrMetronicer function to  un-block element(finish loading)
+        // wrApper function to  un-block element(finish loading)
         unblockUI: function(target) {
             if (target) {
                 $(target).unblock({
@@ -692,12 +692,12 @@ var Metronic = function() {
                 icon: "" // put icon before the message
             }, options);
 
-            var id = Metronic.getUniqueID("Metronic_alert");
+            var id = App.getUniqueID("App_alert");
 
-            var html = '<div id="' + id + '" class="Metronic-alerts alert alert-' + options.type + ' fade in">' + (options.close ? '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>' : '') + (options.icon !== "" ? '<i class="fa-lg fa fa-' + options.icon + '"></i>  ' : '') + options.message + '</div>';
+            var html = '<div id="' + id + '" class="App-alerts alert alert-' + options.type + ' fade in">' + (options.close ? '<button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>' : '') + (options.icon !== "" ? '<i class="fa-lg fa fa-' + options.icon + '"></i>  ' : '') + options.message + '</div>';
 
             if (options.reset) {
-                $('.Metronic-alerts').remove();
+                $('.App-alerts').remove();
             }
 
             if (!options.container) {
@@ -719,7 +719,7 @@ var Metronic = function() {
             }
 
             if (options.focus) {
-                Metronic.scrollTo($('#' + id));
+                App.scrollTo($('#' + id));
             }
 
             if (options.closeInSeconds > 0) {
@@ -745,7 +745,7 @@ var Metronic = function() {
             }
         },
 
-        //wrMetronicer function to update/sync jquery uniform checkbox & radios
+        //wrApper function to update/sync jquery uniform checkbox & radios
         updateUniform: function(els) {
             $.uniform.update(els); // update the uniform checkbox & radios UI after the actual input control state changed
         },

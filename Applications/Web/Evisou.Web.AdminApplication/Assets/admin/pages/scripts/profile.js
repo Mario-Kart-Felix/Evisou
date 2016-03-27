@@ -13,7 +13,7 @@ var Profile = function() {
         initMiniCharts: function() {
 
             // IE8 Fix: function.bind polyfill
-            if (Metronic.isIE8() && !Function.prototype.bind) {
+            if (App.isIE8() && !Function.prototype.bind) {
                 Function.prototype.bind = function(oThis) {
                     if (typeof this !== "function") {
                         // closest thing possible to the ECMAScript 5 internal IsCallable function

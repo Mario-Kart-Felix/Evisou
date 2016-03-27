@@ -96,7 +96,7 @@ var FormEditable = function () {
     var initEditables = function () {
 
         //set editable mode based on URL parameter
-        if (Metronic.getURLParameter('mode') == 'inline') {
+        if (App.getURLParameter('mode') == 'inline') {
             $.fn.editable.defaults.mode = 'inline';
             $('#inline').attr("checked", true);
             jQuery.uniform.update('#inline');
@@ -160,7 +160,7 @@ var FormEditable = function () {
         });
 
         $('#vacation').editable({
-            rtl : Metronic.isRTL() 
+            rtl : App.isRTL() 
         });
 
         $('#dob').editable({
@@ -168,7 +168,7 @@ var FormEditable = function () {
         });
 
         $('#event').editable({
-            placement: (Metronic.isRTL() ? 'left' : 'right'),
+            placement: (App.isRTL() ? 'left' : 'right'),
             combodate: {
                 firstItem: 'name'
             }
@@ -181,7 +181,7 @@ var FormEditable = function () {
                 if (v && v.getDate() == 10) return 'Day cant be 10!';
             },
             datetimepicker: {
-                rtl : Metronic.isRTL(),
+                rtl : App.isRTL(),
                 todayBtn: 'linked',
                 weekStart: 1
             }
@@ -192,7 +192,7 @@ var FormEditable = function () {
         });
 
         $('#note').editable({
-            showbuttons : (Metronic.isRTL() ? 'left' : 'right')
+            showbuttons : (App.isRTL() ? 'left' : 'right')
         });
 
         $('#pencil').click(function (e) {
@@ -228,7 +228,7 @@ var FormEditable = function () {
         });
 
         $('#fruits').on('shown', function(e, reason) {
-            Metronic.initUniform();
+            App.initUniform();
         });
 
         $('#tags').editable({

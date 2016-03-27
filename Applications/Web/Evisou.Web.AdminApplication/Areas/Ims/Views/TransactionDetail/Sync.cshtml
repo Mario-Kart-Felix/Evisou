@@ -93,6 +93,11 @@
     </div>
 
 <script>
+    jQuery(document).ready(function () {
+        Transaction.sync("@Guid.NewGuid().ToString()");
+    });
+</script>
+@*<script>
 
     var FormComponents = function () {
         var handleDateRangePickers = function () {
@@ -102,7 +107,7 @@
             }
             
             $('#defaultrange').daterangepicker({
-                opens: (Metronic.isRTL() ? 'left' : 'right'),
+                opens: (App.isRTL() ? 'left' : 'right'),
                // format: 'MM/DD/YYYY',
                 separator: ' to ',
                 startDate: moment().subtract('days', 29),
@@ -254,4 +259,4 @@
     }
     //执行showTime()
     
-</script>  
+</script>*@  

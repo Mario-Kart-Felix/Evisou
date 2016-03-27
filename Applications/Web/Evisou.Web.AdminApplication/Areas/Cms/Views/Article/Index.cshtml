@@ -92,11 +92,8 @@
 @section PageSpecificJavascriptLevelScriptsIncludes{
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/article-x.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Assets/admin/pages/scripts/cms/article.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>
-}
-@section JSIncluds{
-    Articles.init();
 }
 <div class="row">
 
@@ -159,7 +156,9 @@
                                     内容
                                 </th>
                                 <th width="10%">
-                                    操作
+                                    <a href="javascript:;" class="default search-table">
+                                        搜索 <i class="icon-magnifier"></i>
+                                    </a>
                                 </th>
                             </tr>
                             <tr role="row" class="filter">

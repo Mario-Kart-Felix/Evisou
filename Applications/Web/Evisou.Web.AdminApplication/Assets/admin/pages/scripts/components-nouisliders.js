@@ -7,7 +7,7 @@ var ComponentsNoUiSliders = function () {
             // slider 
 
             $('#slider_0').noUiSlider({
-                direction: (Metronic.isRTL() ? "rtl" : "ltr"),
+                direction: (App.isRTL() ? "rtl" : "ltr"),
                 start: 40,
                 connect: "lower",
                 range: {
@@ -18,7 +18,7 @@ var ComponentsNoUiSliders = function () {
 
             // slider 1
             $("#slider_1").noUiSlider({
-                direction: (Metronic.isRTL() ? "rtl" : "ltr"),
+                direction: (App.isRTL() ? "rtl" : "ltr"),
                 start: [20, 80],
                 range: {
                     min: 0,
@@ -30,7 +30,7 @@ var ComponentsNoUiSliders = function () {
 
             // slider 2
             $('#slider_2').noUiSlider({
-                direction: (Metronic.isRTL() ? "rtl" : "ltr"),
+                direction: (App.isRTL() ? "rtl" : "ltr"),
                 range: {
                     min: -20,
                     max: 40
@@ -58,7 +58,7 @@ var ComponentsNoUiSliders = function () {
 
             // slider 3
             $("#slider_3").noUiSlider({
-                direction: (Metronic.isRTL() ? "rtl" : "ltr"),
+                direction: (App.isRTL() ? "rtl" : "ltr"),
                 start: [20, 80],
                 range: {
                     min: 0,
@@ -81,7 +81,7 @@ var ComponentsNoUiSliders = function () {
 
             // slider 4
             $("#slider_4").noUiSlider({
-                direction: (Metronic.isRTL() ? "rtl" : "ltr"),
+                direction: (App.isRTL() ? "rtl" : "ltr"),
                 start: [20, 80],
                 range: {
                     min: 0,

@@ -126,8 +126,12 @@
 
 }
 
-
 <script>
+    jQuery(document).ready(function () {
+        Association.form();
+    });
+</script>
+@*<script>
     var FormComponents = function () {        
       
 
@@ -199,7 +203,7 @@
                 invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
 
                 },
 
@@ -253,7 +257,7 @@
         
         FormComponents.init();
     });
-</script>
+</script>*@
 
 
 

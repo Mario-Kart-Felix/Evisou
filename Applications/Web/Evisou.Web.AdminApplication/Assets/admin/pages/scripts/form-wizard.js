@@ -114,7 +114,7 @@ var FormWizard = function () {
                 invalidHandler: function (event, validator) { //display error alert on form submit   
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
                 },
 
                 highlight: function (element) { // hightlight error inputs
@@ -195,7 +195,7 @@ var FormWizard = function () {
                     $('#form_wizard_1').find('.button-next').show();
                     $('#form_wizard_1').find('.button-submit').hide();
                 }
-                Metronic.scrollTo($('.page-title'));
+                App.scrollTo($('.page-title'));
             }
 
             // default form wizard

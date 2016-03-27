@@ -47,6 +47,11 @@ namespace Evisou.Core.Log
             });
 
             this.SaveChanges();
+            
+        }
+
+        public void AuditLogsDispose()
+        {
             this.Dispose();
         }
     }

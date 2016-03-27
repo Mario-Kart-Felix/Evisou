@@ -204,10 +204,14 @@
                                          
 
 
-
-
-
 <script>
+    jQuery(document).ready(function () {
+        Purchase.form(@Model.ID);
+    });
+</script> 
+
+
+@*<script>
     var FormComponents = function () {
 
         var handleInputMasks = function () {           
@@ -222,7 +226,7 @@
             if (jQuery().datepicker) {
                 $('.date-picker').datepicker({
                     language: 'zh-CN',
-                    rtl: Metronic.isRTL(),
+                    rtl: App.isRTL(),
                     orientation: "left",
                     autoclose: true,
                     dateFormat: 'dd日mm月yy年'
@@ -268,7 +272,7 @@
                 invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
                     console.log(validator);
                 },
 
@@ -366,7 +370,7 @@
 
         FormComponents.init();
     });
-</script>
+</script>*@
 
 
 

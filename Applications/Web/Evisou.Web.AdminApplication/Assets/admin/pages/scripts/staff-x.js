@@ -129,7 +129,7 @@ var Staff = function () {
                 grid.clearAjaxParams();
                 
             } else if (action.val() == "") {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: '请选择动作',
@@ -137,7 +137,7 @@ var Staff = function () {
                     place: 'prepend'
                 });
             } else if (grid.getSelectedRowsCount() === 0) {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: '没有选择的记录',
@@ -152,7 +152,7 @@ var Staff = function () {
         if (jQuery().datepicker) {
             $('.date-picker').datepicker({
                 language:'zh-CN',
-                rtl: Metronic.isRTL(),
+                rtl: App.isRTL(),
                 orientation: "left",               
                 autoclose: true,
                

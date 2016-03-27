@@ -42,11 +42,6 @@
     <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>*@  
 }
 
-@section JSIncluds{
-    Users.init();
-   
-}
-
 
 <div class="row">
     <div class="col-md-12">
@@ -147,7 +142,9 @@
                                     </th>
 
                                     <th width="10%">
-                                        操作
+                                        <a href="javascript:;" class="default search-table">
+                                            搜索 <i class="icon-magnifier"></i>
+                                        </a>
                                     </th>
                                 </tr>
                                 <tr role="row" class="filter">

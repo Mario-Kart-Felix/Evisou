@@ -103,6 +103,11 @@
 
 
 <script>
+    jQuery(document).ready(function () {
+        PaypalApi.form();
+    });
+</script>
+@*<script>
     var FormComponents = function () {        
         var handleCheckBox = function () {
             $('.switch-chekcbox').bootstrapSwitch();
@@ -151,7 +156,7 @@
                 invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
 
                 },
 
@@ -206,7 +211,7 @@
         
         FormComponents.init();
     });
-</script>
+</script>*@
 
 
 

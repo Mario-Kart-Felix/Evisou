@@ -176,7 +176,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Level/Script").Include(
                       "~/assets/global/plugins/jquery-idle-timeout/jquery.idletimeout.js"
                       , "~/assets/global/plugins/jquery-idle-timeout/jquery.idletimer.js"
-                      ,"~/assets/global/scripts/metronic.js",
+                      ,"~/assets/global/scripts/app.js",
                       "~/assets/global/scripts/jquery.jqprint-0.3.js",
                       "~/assets/admin/layout/scripts/layout.js",
                       "~/assets/admin/layout/scripts/quick-sidebar.js",
@@ -219,7 +219,8 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/TransactionDetail/Index").Include(
                       "~/assets/global/scripts/datatable.js"                      
                       ,"~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/transaction-x.js"
+                      , "~/Assets/admin/pages/scripts/ims/transactiondetail.js"
+
                       ));
         
             #endregion
@@ -241,7 +242,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/Agent/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/agent-x.js"
+                      , "~/Assets/admin/pages/scripts/ims/agent.js"
                       ));
 
             #endregion
@@ -263,7 +264,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/Association/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/association-x.js"
+                      , "~/Assets/admin/pages/scripts/ims/association.js"
                       ));
 
             #endregion
@@ -307,7 +308,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/Product/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/product-x.js"
+                       , "~/Assets/admin/pages/scripts/ims/product.js"
                       ));
 
             #endregion
@@ -328,7 +329,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/PaypalApi/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/paypalapi-x.js"
+                       , "~/Assets/admin/pages/scripts/ims/paypalapi.js"
                       ));
 
             #endregion
@@ -352,7 +353,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/Purchase/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/purchase-x.js"
+                      , "~/Assets/admin/pages/scripts/ims/purchase.js"
                       , "~/Assets/global/scripts/angular.min.js"
                       ));
 
@@ -377,8 +378,8 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/Supplier/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/supplier-x.js"
-                     
+                       , "~/Assets/admin/pages/scripts/ims/supplier.js"
+
                       ));
 
             #endregion
@@ -402,8 +403,8 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/User/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/users-x.js"
-                      
+                      , "~/Assets/admin/pages/scripts/account/users.js"
+
                       ));
 
             #endregion
@@ -418,8 +419,8 @@ namespace Evisou.Web.AdminApplication.App_Start
                      ));
 
             bundles.Add(new ScriptBundle("~/Script/User/Myprofile").Include(                   
-                     "~/assets/admin/layout/scripts/modalform.js"                    
-
+                     "~/assets/admin/layout/scripts/modalform.js"
+                    , "~/Assets/admin/pages/scripts/account/myprofile.js"
                      ));
             #endregion
 
@@ -440,7 +441,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             bundles.Add(new ScriptBundle("~/Script/Role/Index").Include(
                       "~/assets/global/scripts/datatable.js"
                       , "~/assets/admin/layout/scripts/modalform.js"
-                      , "~/assets/admin/pages/scripts/roles-x.js"
+                      , "~/Assets/admin/pages/scripts/account/roles.js"
                       ));
 
             #endregion

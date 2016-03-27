@@ -96,17 +96,14 @@ namespace Evisou.Framework.DAL
                     continue;
 
                 var operaterName = WCFContext.Current.Operater.Name;
+                var tableAttr = dbEntry.Entity.GetType().GetCustomAttributes(typeof(TableAttribute), false).SingleOrDefault() as TableAttribute;
+                string tableName = tableAttr != null ? tableAttr.Name : dbEntry.Entity.GetType().Name;
+                var moduleName = dbEntry.Entity.GetType().FullName.Split('.').Skip(1).FirstOrDefault();
 
-                Task.Factory.StartNew(() =>
-                {
-                    var tableAttr = dbEntry.Entity.GetType().GetCustomAttributes(typeof(TableAttribute), false).SingleOrDefault() as TableAttribute;
-                    string tableName = tableAttr != null ? tableAttr.Name : dbEntry.Entity.GetType().Name;
-                    var moduleName = dbEntry.Entity.GetType().FullName.Split('.').Skip(1).FirstOrDefault();
-
-                    this.AuditLogger.WriteLog(dbEntry.Entity.ID, operaterName, moduleName, tableName, dbEntry.State.ToString(), dbEntry.Entity);
-                });
+                this.AuditLogger.WriteLog(dbEntry.Entity.ID, operaterName, moduleName, tableName, dbEntry.State.ToString(), dbEntry.Entity);
+               
             }
-
+            this.AuditLogger.AuditLogsDispose();
         }
     }
 }

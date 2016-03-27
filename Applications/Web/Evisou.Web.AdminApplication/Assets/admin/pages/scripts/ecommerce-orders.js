@@ -3,7 +3,7 @@ var EcommerceOrders = function () {
     var initPickers = function () {
         //init date pickers
         $('.date-picker').datepicker({
-            rtl: Metronic.isRTL(),
+            rtl: App.isRTL(),
             autoclose: true
         });
     }
@@ -52,7 +52,7 @@ var EcommerceOrders = function () {
                 grid.getDataTable().ajax.reload();
                 grid.clearAjaxParams();
             } else if (action.val() == "") {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'Please select an action',
@@ -60,7 +60,7 @@ var EcommerceOrders = function () {
                     place: 'prepend'
                 });
             } else if (grid.getSelectedRowsCount() === 0) {
-                Metronic.alert({
+                App.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'No record selected',

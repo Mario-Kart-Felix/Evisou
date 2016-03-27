@@ -5,7 +5,7 @@ var ChartsFlotcharts = function() {
 
         init: function() {
 
-            Metronic.addResizeHandler(function() {
+            App.addResizeHandler(function() {
                 Charts.initPieCharts();
             });
 

@@ -181,7 +181,7 @@
                 invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
-                    Metronic.scrollTo(error, -200);
+                    App.scrollTo(error, -200);
 
                 },
 
@@ -226,7 +226,7 @@
             if (jQuery().datepicker) {
                 $('.date-picker').datepicker({
                     language: 'zh-CN',
-                    rtl: Metronic.isRTL(),
+                    rtl: App.isRTL(),
                     orientation: "left",
                     autoclose: true,
                     dateFormat: 'dd日mm月yy年'
