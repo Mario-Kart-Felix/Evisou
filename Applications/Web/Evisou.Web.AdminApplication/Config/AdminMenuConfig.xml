@@ -5,7 +5,7 @@
     </AdminMenuGroup>
     <AdminMenuGroup name="系统管理" icon="icon-settings">
       <AdminMenuArray>
-        <AdminMenu name="用户简介" url="/Account/User/MyProfile" info="添加修改删除简介" permission="AccountManage_User_Profile" icon="icon-user-following"/>
+        <!--<AdminMenu name="用户简介" url="/Account/User/MyProfile" info="添加修改删除简介" permission="AccountManage_User_Profile" icon="icon-user-following"/>-->
         <AdminMenu name="用户管理" url="/Account/User/Index" info="添加修改删除用户" permission="AccountManage_User" icon="icon-user"/>
         <AdminMenu name="角色管理" url="/Account/Role/Index" info="添加修改删除角色" permission="AccountManage_Role" icon="icon-users"/>
       </AdminMenuArray>
@@ -22,7 +22,7 @@
       <AdminMenuArray>
         <AdminMenu name="员工管理" url="/OA/Staff/Index" info="添加修改删除员工信息" permission="OAManage_Staff" icon="icon-user-follow"/>
         <AdminMenu name="部门管理" url="/OA/Branch/Index" info="添加修改删除部门信息" permission="OAManage_Branch" icon="icon-folder"/>
-        <AdminMenu name="组织结构管理" url="/OA/Org/Index" info="管理部门从属关系及员工所属部门" permission="OAManage_Org" icon="icon-link"/>
+        <!--<AdminMenu name="组织结构管理" url="/OA/Org/Index" info="管理部门从属关系及员工所属部门" permission="OAManage_Org" icon="icon-link"/>-->
       </AdminMenuArray>
     </AdminMenuGroup>
 
@@ -31,8 +31,8 @@
         <AdminMenu name="来访来电" url="/Crm/VisitRecord/Index" info="添加修改删除来访来电" permission="CrmManage_VisitRecord" icon="icon-screen-smartphone"/>
         <AdminMenu name="客户管理" url="/Crm/Customer/Index" info="添加修改删除客户" permission="CrmManage_Customer" icon="icon-user-following"/>
         <AdminMenu name="项目管理" url="/Crm/Project/Index" info="添加修改删除项目" permission="CrmManage_Project" icon="icon-film"/>
-        <AdminMenu name="业绩统计" url="/Crm/Analysis/Index" info="查看业绩统计" permission="CrmManage_Analysis" icon="icon-note"/>
-        <AdminMenu name="来电统计" url="/Crm/Analysis/VisitStatistics" info="查看来电统计" permission="CrmManage_Analysis" icon="icon-share-alt"/>
+        <!--<AdminMenu name="业绩统计" url="/Crm/Analysis/Index" info="查看业绩统计" permission="CrmManage_Analysis" icon="icon-note"/>
+        <AdminMenu name="来电统计" url="/Crm/Analysis/VisitStatistics" info="查看来电统计" permission="CrmManage_Analysis" icon="icon-share-alt"/>-->
       </AdminMenuArray>
     </AdminMenuGroup>
     

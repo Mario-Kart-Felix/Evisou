@@ -160,6 +160,22 @@
             }
         });
     }
+    var handleDatePickers = function () {
+
+        if (jQuery().datepicker) {
+            $('.date-picker').datepicker({
+                language: 'zh-CN',
+                rtl: App.isRTL(),
+                orientation: "left",
+                autoclose: true,
+
+            });
+            //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+        }
+
+        /* Workaround to restrict daterange past date select: http://stackoverflow.com/questions/11933173/how-to-restrict-the-selectable-date-ranges-in-bootstrap-datepicker */
+    }
+
     var handleFilter = function () {
         $('tr.filter').hide();
         $('a.search-table').click(function () {
@@ -168,11 +184,49 @@
     }
     var handleDateRangePickers = function () {
 
-        if (!jQuery().daterangepicker) {
-            return;
-        }
 
-        $('#defaultrange').daterangepicker({
+
+        //$('#defaultrange_modal').daterangepicker({
+        //    opens: (App.isRTL() ? 'left' : 'right'),
+        //    format: 'MM/DD/YYYY',
+        //    separator: ' to ',
+        //    startDate: moment().subtract('days', 29),
+        //    endDate: moment(),
+        //    minDate: '01/01/2009',
+        //    maxDate: '12/31/2020',
+        //    ranges: {
+        //        '今天': [moment(), moment()],
+        //        '昨天': [moment().subtract('days', 1), moment().subtract('days', 1)],
+        //        '前七天': [moment().subtract('days', 6), moment()],
+        //        '前30天': [moment().subtract('days', 29), moment()],
+        //        '这个月': [moment().startOf('month'), moment().endOf('month')],
+        //        '前个月': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+        //    },
+        //    buttonClasses: ['btn'],
+        //    applyClass: 'green',
+        //    cancelClass: 'default',
+        //    locale: {
+        //        applyLabel: '应用',
+        //        cancelLabel: '取消',
+        //        fromLabel: '从',
+        //        toLabel: '到',
+        //        customRangeLabel: '自定义时间',
+        //        daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+        //        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+        //        firstDay: 1
+        //    }
+        //},
+        //    function (start, end) {
+        //        $('#defaultrange_modal input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        //    }
+        //);
+
+   
+        //if (!jQuery().daterangepicker) {
+        //    return;
+        //}
+
+        $('#rangepicker').daterangepicker({
             opens: 'left',//(App.isRTL() ? 'left' : 'right'),
             // format: 'MM/DD/YYYY',
             separator: ' to ',
@@ -208,15 +262,15 @@
             }
         },
             function (start, end) {
-                $('#defaultrange input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                //$('#defaultrange input').val(start + ' - ' + end);
+                $('#rangepicker input').val(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+              
             }
         );
 
 
         //Set the initial state of the picker label
         $('#reportrange span').html(moment().subtract('days', 29).format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
-        $('#RangeDate').val(moment().subtract('days', 29).format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+        //$('#RangeDate').val(moment().subtract('days', 29).format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
         //$('#reportrange span').html(moment().subtract('days', 29) + ' - ' + moment());
         // $('#RangeDate').val(moment().subtract('days', 29) + ' - ' + moment());
         // this is very important fix when daterangepicker is used in modal. in modal when daterange picker is opened and mouse clicked anywhere bootstrap modal removes the modal-open class from the body element.
@@ -256,7 +310,7 @@
             $.post(rootUrl + "/Ims/TransactionDetail/StartLongRunningProcess",
                 {
                     "PaypalApi": $("#PaypalApi").val(),
-                    "RangeDate": $('#defaultrange input').val(), id: uniqueId
+                    "RangeDate": $('#rangepicker input').val(), id: uniqueId
                 },
                 function () {
                     $('#progress').show();
@@ -284,17 +338,17 @@
                 $('#txtprocesss').text('准备中....');
                 $("#progress").attr("data-percent", "准备中....");
             } else if (data.percentage == 100) {
-                var startdate = moment($('#defaultrange input').val().split('-')[0]).format('YYYY-MM-DD');
+                var startdate = moment($('#rangepicker input').val().split('-')[0]).format('YYYY-MM-DD');
                 var enddate = moment(data.enddate).format('YYYY-MM-DD');
                 if (startdate == enddate) {
                     window.location.href = rootUrl + "/Ims/TransactionDetail/Index"; //'@Url.StaticFile("/Ims/TransactionDetail/Index")';
                 } else {
                     clearTimeout(t);
                     $('.table-x').DataTable().ajax.reload();
-                    var start = $('#defaultrange input').val().split('-')[0];
-                    var end = moment(data.enddate).format('MMMM D, YYYY');//$('#defaultrange input').val().split('-')[1];
+                    var start = $('#rangepicker input').val().split('-')[0];
+                    var end = moment(data.enddate).format('MMMM D, YYYY');//$('#rangepicker input').val().split('-')[1];
                     var datarange = start + '-' + end;
-                    $('#defaultrange input').val(datarange);
+                    $('#rangepicker input').val(datarange);
                     $('#txtprocesss').text(' ');
                     $("#progressbar").attr("style", "width:0%")
                     $('#submitbutton').removeAttr("disabled");
@@ -314,7 +368,7 @@
             $.post(rootUrl+"/Ims/TransactionDetail/StartLongRunningProcess",
                         {
                             "PaypalApi": $("#PaypalApi").val(),
-                            "RangeDate": $('#defaultrange input').val(), id: uniqueId
+                            "RangeDate": $('#rangepicker input').val(), id: uniqueId
                         },
                    function () {
                        $('#progress').show();
@@ -392,7 +446,7 @@
             $('#expressgroup').hide();
             switch ($('#agent').select2('data')[0].id) {
                 case "1":
-                    console.log('sadsadada' + $('#agent').select2('data')[0].id);
+                    //console.log('sadsadada' + $('#agent').select2('data')[0].id);
                     $('#type').find('option[value=1]').removeAttr('disabled');
                     $("#typegroup").show();
                     dispatchorder.agent = $('#agent').select2('data')[0].id;
@@ -402,7 +456,7 @@
                     break;
 
                 case "2":
-                    console.log('11111xxxxx' + $('#agent').select2('data')[0].id);
+                   // console.log('11111xxxxx' + $('#agent').select2('data')[0].id);
                     $('#type').find('option[value=1]').attr('disabled', 'disabled');
                     $("#typegroup").show();
                     dispatchorder.agent = $('#agent').select2('data')[0].id;
@@ -707,7 +761,8 @@
 
         //main function to initiate the module
         init: function () {
-            handleFilter();            
+            handleFilter();
+            handleDatePickers();
             handleTransaction();
         },
         sync: function (uniqueId) {

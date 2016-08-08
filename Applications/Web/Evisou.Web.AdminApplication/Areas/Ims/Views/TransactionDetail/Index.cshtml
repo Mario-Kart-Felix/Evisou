@@ -9,7 +9,7 @@
 }
 
 @section PageLevelPluginsCSS{
-@Styles.Render("~/assets/global/plugins/select2/css"
+@Styles.Render("~/assets/global/plugins/select2/css/select2"
     , "~/assets/global/plugins/datatables/plugins/bootstrap/css"
     )
 }
@@ -32,7 +32,9 @@
 @section PageLevelScript{
 @Scripts.Render("~/Script/TransactionDetail/Index")
 }
-<script>
+
+
+@*<script>
     var handleDatePickers = function () {
         $('#defaultrange').daterangepicker({
             opens: (Metronic.isRTL() ? 'left' : 'right'),
@@ -154,7 +156,7 @@
     }
 
     
-</script>
+</script>*@
 
 
 <div class="row">
@@ -270,8 +272,8 @@
                                 <td></td>
                                 <td>
                                     <div class="input-group input-medium" id="defaultrange">
-                                        <input type="text" class="form-control form-filter input-sm" data-val="true" name="OrderDateRange" id="OrderDateRange" data-val-required="选择同步的日期">
-
+                                        <input type="text" class="form-control form-filter input-sm date-picker" data-val="true" name="OrderDateRange" id="OrderDateRange" data-val-required="选择同步的日期">
+                                       
                                         <span class="help-block">
                                             <span class="field-validation-valid" data-valmsg-for="OrderDateRange" data-valmsg-replace="true"></span>
                                         </span>

@@ -1,4 +1,5 @@
-﻿using Evisou.Ims.Contract.Model;
+﻿using Evisou.Framework.Contract;
+using Evisou.Ims.Contract.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,18 +11,18 @@ namespace Evisou.Web.AdminApplication.Areas.Ims.WebApiModels
 {
     public class ProductsApiModel : TransactionalInformation
     {
-        public List<Product> Products;
-        public Product Product;
+        public IEnumerable<ProductDTO> Products;
+        public ProductDTO Product;
 
         public ProductsApiModel()
         {
-            Product = new Product();
-            Products = new List<Product>();
+            Product = new ProductDTO();
+            Products = new List<ProductDTO>();
         }
 
      }
 
-    public class ProductDTO
+    public class ProductDTO : ModelBase
     {
         [DisplayName("产品SKU")]
         [Required]
@@ -61,7 +62,7 @@ namespace Evisou.Web.AdminApplication.Areas.Ims.WebApiModels
 
     }
 
-    public class ProductInquiryDTO
+    public class ProductInquiryDTO : InquiryDTO
     {
         public string Sku { get; set; }
 

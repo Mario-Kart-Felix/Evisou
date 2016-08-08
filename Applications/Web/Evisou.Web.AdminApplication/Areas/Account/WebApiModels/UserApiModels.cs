@@ -25,6 +25,8 @@ namespace Evisou.Web.AdminApplication.Areas.Account.WebApiModels
         public int ID { get; set; }
         public string LoginName { get; set; }
 
+        public string Password { get; set; }
+
         public string Mobile { get; set; }
 
         public string Email { get; set; }
@@ -36,29 +38,36 @@ namespace Evisou.Web.AdminApplication.Areas.Account.WebApiModels
         public string ProfileImg { get; set; }
         public bool IsActive { get; set; }
         public string Roles { get; set; }
-
+        public List<RoleDTO> RoleList { get; set; }
         public List<int> IDs { get; set; }
+        public List<int> RoleIds { get; set; }
 
 
     }
+    public class LoginUserDTO
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
 
-    public class UserInquiryDTO
+        public string VerifyCode { get; set; }
+    }
+    public class UserInquiryDTO: InquiryDTO
     {
         public int ID { get; set; }
         public string LoginName { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
         public bool? IsActive { get; set; }
-        public int PageSize { get; set; }
-        public int CurrentPageNumber { get; set; }
-        public string SortDirection { get; set; }
-        public string SortExpression { get; set; }
+        
 
         public string CustomActionType { get; set; }
 
         public string CustomActionName { get; set; }
 
         public List<int> IDs { get; set; }
+        public List<int> RoleIds { get; set; }
+        public int Draw { get; set; }
 
+        public int Start{ get; set; }
     }
 }

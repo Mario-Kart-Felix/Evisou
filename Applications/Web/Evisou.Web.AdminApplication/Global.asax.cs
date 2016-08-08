@@ -59,6 +59,8 @@ namespace Evisou.Web.AdminApplication
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            WebApiConfig.RegisterHandlers(GlobalConfiguration.Configuration.MessageHandlers);
+           
             AuthConfig.RegisterAuth();
 
 

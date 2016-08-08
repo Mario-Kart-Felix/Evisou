@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Script.Serialization;
 using Evisou.Ims.BLL;
+using Evisou.Web.AdminApplication.Common;
 
 namespace Evisou.Web.AdminApplication
 {
@@ -110,9 +111,10 @@ namespace Evisou.Web.AdminApplication
 
         public void ProcessRequest(HttpContext context)
         {
+           
             context.Response.AddHeader("Pragma", "no-cache");
             context.Response.AddHeader("Cache-Control", "private, no-cache");
-
+            
             HandleMethod(context);
         }
 
@@ -233,33 +235,64 @@ namespace Evisou.Web.AdminApplication
                 string subFolder = string.Empty;
                 string fileFolder = string.Empty;
                 string filePath = string.Empty; 
-                string thumbnailFilePath= string.Empty; 
+                string thumbnailFilePath= string.Empty;
                 #region 上传文件
-                var disposition = context.Request.ServerVariables["HTTP_CONTENT_DISPOSITION"];
-                if (disposition != null)
-                {
-                    // HTML5上传
-                    file = context.Request.BinaryRead(context.Request.TotalBytes);
-                    localFileName = Regex.Match(disposition, "filename=\"(.+?)\"").Groups[1].Value;// 读取原始文件名
-                }
-                else
-                {
-                    HttpFileCollection filecollection = context.Request.Files;
-                    HttpPostedFile postedfile = filecollection.Get(i);
+                //var disposition = context.Request.ServerVariables["HTTP_CONTENT_DISPOSITION"];
+                //if (disposition != null)
+                //{
+                //    // HTML5上传
+                //    //file = context.Request.BinaryRead(context.Request.TotalBytes);
+                //    //localFileName = Regex.Match(disposition, "filename=\"(.+?)\"").Groups[1].Value;// 读取原始文件名
 
-                    // 读取原始文件名
-                    localFileName = Path.GetFileName(postedfile.FileName);
+                //    HttpFileCollection filecollection = context.Request.Files;
+                //    HttpPostedFile postedfile = filecollection.Get(i);
 
-                    // 初始化byte长度.
-                    file = new Byte[postedfile.ContentLength];
+                //    // 读取原始文件名
+                //    localFileName = Path.GetFileName(postedfile.FileName);
 
-                    // 转换为byte类型
-                    System.IO.Stream stream = postedfile.InputStream;
-                    stream.Read(file, 0, postedfile.ContentLength);
-                    stream.Close();
+                //    // 初始化byte长度.
+                //    file = new Byte[postedfile.ContentLength];
 
-                    filecollection = null;
-                }
+                //    // 转换为byte类型
+                //    System.IO.Stream stream = postedfile.InputStream;
+                //    stream.Read(file, 0, postedfile.ContentLength);
+                //    stream.Close();
+
+                //    filecollection = null;
+                //}
+                //else
+                //{
+                //    HttpFileCollection filecollection = context.Request.Files;
+                //    HttpPostedFile postedfile = filecollection.Get(i);
+
+                //    // 读取原始文件名
+                //    localFileName = Path.GetFileName(postedfile.FileName);
+
+                //    // 初始化byte长度.
+                //    file = new Byte[postedfile.ContentLength];
+
+                //    // 转换为byte类型
+                //    System.IO.Stream stream = postedfile.InputStream;
+                //    stream.Read(file, 0, postedfile.ContentLength);
+                //    stream.Close();
+
+                //    filecollection = null;
+                //}
+                HttpFileCollection filecollection = context.Request.Files;
+                HttpPostedFile postedfile = filecollection.Get(i);
+
+                // 读取原始文件名
+                localFileName = Path.GetFileName(postedfile.FileName);
+
+                // 初始化byte长度.
+                file = new Byte[postedfile.ContentLength];
+
+                // 转换为byte类型
+                System.IO.Stream stream = postedfile.InputStream;
+                stream.Read(file, 0, postedfile.ContentLength);
+                stream.Close();
+
+                filecollection = null;
 
                 var ext = localFileName.Substring(localFileName.LastIndexOf('.') + 1).ToLower();
 
@@ -310,12 +343,13 @@ namespace Evisou.Web.AdminApplication
                     if (ImageExt.Contains(ext))                   
                         ThumbnailService.HandleImmediateThumbnail(filePath); 
                     this.OnUploaded(context, filePath);
-                }
-                string virtualPatchFile = filePath.Substring(filePath.IndexOf("\\upload", StringComparison.OrdinalIgnoreCase)).Replace("\\", "/");
-                string fullName = GetUrlFileName(virtualPatchFile);
-               // this.ServerPatch = virtualPatchFile.Replace(fullName, string.Empty);
-                statuses.Add(new FilesStatus(fullName, file.Length, filePath));
-                
+
+                    string virtualPatchFile = filePath.Substring(filePath.IndexOf("\\upload", StringComparison.OrdinalIgnoreCase)).Replace("\\", "/");
+                    string fullName = GetUrlFileName(virtualPatchFile);
+                    // this.ServerPatch = virtualPatchFile.Replace(fullName, string.Empty);
+                    statuses.Add(new FilesStatus(fullName, file.Length, filePath));
+                };
+
                 file = null;
                 #endregion
 

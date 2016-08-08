@@ -14,11 +14,11 @@ namespace Evisou.Web.AdminApplication.Areas.OA
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            //context.MapRoute(
-            //    "OA_default",
-            //    "OA/{controller}/{action}/{id}",
-            //    new { action = "Default", id = UrlParameter.Optional }
-            //);
+            context.MapRoute(
+                "OA_default",
+                "OA/{controller}/{action}/{id}",
+                new { action = "Default", id = UrlParameter.Optional }
+            );
         }
     }
 }

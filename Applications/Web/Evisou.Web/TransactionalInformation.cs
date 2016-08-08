@@ -9,14 +9,22 @@ namespace Evisou.Web
 {
     public class TransactionalInformation
     {
+        public int Draw { get; set; }
+
+        public int RecordsTotal { get; set; }
+
+        public int RecordsFiltered { get; set; }
+
         public bool ReturnStatus { get; set; }
         public List<String> ReturnMessage { get; set; }
+
         public Hashtable ValidationErrors;
         public int TotalRecords { get; set; }
         public int TotalPages { get; set; }
         public int TotalRows { get; set; }
         public int PageSize { get; set; }
        
+
         public Boolean IsAuthenicated { get; set; }
 
         public TransactionalInformation()
@@ -24,7 +32,6 @@ namespace Evisou.Web
             ReturnMessage = new List<String>();
             ReturnStatus = true;
             ValidationErrors = new Hashtable();
-            TotalPages = 0;
             TotalPages = 0;
             PageSize = 0;
             IsAuthenicated = false;

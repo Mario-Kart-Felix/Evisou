@@ -4,24 +4,20 @@
 }
 
 @section PageLevelPluginsCSS{
-@Styles.Render(
-    "~/assets/global/plugins/datatables/extensions/Scroller/css/css"
-    , "~/assets/global/plugins/datatables/extensions/ColReorder/css/css"
-    , "~/assets/global/plugins/datatables/plugins/bootstrap/css"
-     
-    )
+@Styles.Render("~/assets/global/plugins/datatables/plugins/bootstrap/css")
 }
 
 
 @section PageLevelPluginScript{
+    <script src="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js" type="text/javascript"></script>
 @Scripts.Render("~/Plugins/User/Index")
+
 }
 
 @section PageLevelScript{
 @Scripts.Render("~/Script/User/Index")
 }
 <div class="row">
-
     <div class="col-md-12">
         <div class="block">
             <strong>用户权限相关：</strong>

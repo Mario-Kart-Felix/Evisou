@@ -12,6 +12,10 @@ using Evisou.Core.Cache;
 using Evisou.Core.Config;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity;
+using Evisou.Framework.Web;
+using System.IO;
+using System.Web;
+using System.Net.Http;
 
 namespace Evisou.Account.BLL
 {
@@ -23,7 +27,6 @@ namespace Evisou.Account.BLL
 
         public LoginInfo GetLoginInfo(Guid token)
         {
-          
             return CacheHelper.Get<LoginInfo>(string.Format(_LoginInfoKeyFormat, token), () =>
             {
                 using (var dbContext = new AccountDbContext())
@@ -185,6 +188,53 @@ namespace Evisou.Account.BLL
             }
         }
 
+        public HttpResponseMessage UserDataExport(List<int> ids, string type)
+        {
+            HttpResponseMessage response =new HttpResponseMessage();
+            using (var dbContext = new AccountDbContext())
+            {
+
+               
+                List<object> AccountList = new List<object>(); ;
+                ids.ForEach(c =>
+                {
+                    var Tra = dbContext.Users
+                        .Select(s => new {
+                            s.ID,
+                            s.LoginName,
+                            s.Email,
+                            s.Mobile,
+                            s.IsActive,
+                          
+                        })
+                        .Where(a => a.ID == c).FirstOrDefault();
+                    AccountList.Add(Tra);
+                });
+
+                IList<object> paymenttransactionlist = AccountList;
+                var dataset = IListDataSet.ToDataSet(paymenttransactionlist);
+                string[] oldcols = { "LoginName", "Email", "Mobile", "IsActive" };
+                string[] newcols = { "登录名", "邮箱", "电话", "激活" };
+               
+                switch (type)
+                {
+                    case "excel":
+                        response = NPOIHelper.ExportByHttpResponseMessage(dataset.Tables[0], "用户数据", "用户数据" + DateTime.Now.ToString("yyyyMMddHHmmss"), oldcols, newcols);
+                        break;
+                    case "csv":
+                        response = CSVFileHelper.ExportByHttpResponseMessage(dataset.Tables[0], "用户数据", "用户数据" + DateTime.Now.ToString("yyyyMMddHHmmss"), oldcols, newcols);
+                        break;
+                    case "xml":
+                        XMLHelper.ExportByHttpResponseMessage(dataset.Tables[0], "用户数据", "用户数据" + DateTime.Now.ToString("yyyyMMddHHmmss"), oldcols, newcols);
+                        break;
+
+
+                }
+            }
+
+            return response;
+        }
+
         public Role GetRole(int id)
         {
             using (var dbContext = new AccountDbContext())
@@ -232,7 +282,50 @@ namespace Evisou.Account.BLL
                 dbContext.SaveChanges();
             }
         }
+        public HttpResponseMessage RoleDataExport(List<int> ids, string type)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            using (var dbContext = new AccountDbContext())
+            {
 
+
+                List<object> RoleList = new List<object>(); ;
+                ids.ForEach(c =>
+                {
+                    var Tra = dbContext.Roles
+                        .Select(s => new {
+                            s.ID,
+                            s.Name,
+                            s.Info,
+                            s.BusinessPermissionString,
+                        })
+                        .Where(a => a.ID == c).FirstOrDefault();
+                    RoleList.Add(Tra);
+                });
+
+                IList<object> list = RoleList;
+                var dataset = IListDataSet.ToDataSet(list);
+                string[] oldcols = { "Name", "Info", "BusinessPermissionString" };
+                string[] newcols = { "角色名", "描述", "权限" };
+                string SheetName = "角色数据";
+                switch (type)
+                {
+                    case "excel":
+                        response = NPOIHelper.ExportByHttpResponseMessage(dataset.Tables[0], SheetName, SheetName + DateTime.Now.ToString("yyyyMMddHHmmss"), oldcols, newcols);
+                        break;
+                    case "csv":
+                        response = CSVFileHelper.ExportByHttpResponseMessage(dataset.Tables[0], SheetName, SheetName + DateTime.Now.ToString("yyyyMMddHHmmss"), oldcols, newcols);
+                        break;
+                    case "xml":
+                        XMLHelper.ExportByHttpResponseMessage(dataset.Tables[0], SheetName, SheetName + DateTime.Now.ToString("yyyyMMddHHmmss"), oldcols, newcols);
+                        break;
+
+
+                }
+            }
+
+            return response;
+        }
         public Guid SaveVerifyCode(string verifyCodeText)
         {
             if (string.IsNullOrWhiteSpace(verifyCodeText))

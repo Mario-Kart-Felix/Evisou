@@ -8,19 +8,25 @@
 }
 
 @section PageLevelPluginsCSS{
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
+    @*<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/select2/select2.css")" />
     <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css")" />
     <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css")" />
-    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")" />*@
+@Styles.Render(
+    "~/assets/global/plugins/datatables/extensions/Scroller/css/css"
+    , "~/assets/global/plugins/datatables/extensions/ColReorder/css/css"
+    , "~/assets/global/plugins/datatables/plugins/bootstrap/css"
+
+    )
 
 }
 
 @section PageLevelCSS{
-<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/css/datepicker.css")" />
+@*<link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/css/datepicker.css")" />*@
 }
 
 @section PageLevelPluginScript{
-    ><script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/select2/select2.min.js")"></script>
+    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/select2/select2.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js")"></script>
@@ -31,16 +37,24 @@
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
-    <script type ="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js")"></script>
+    <script type ="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js")"></script>*@
+<script type="text/javascript" src="@Url.StaticFile("/Assets/global/plugins/select2/js/select2.min.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/datatables.min.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/jquery.validate.min.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/additional-methods.min.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js")"></script>
 
 
 
 }
 
 @section PageLevelScript{
-    <script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
+    @*<script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/assets/admin/pages/scripts/staff-x.js")"></script>
-    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/assets/admin/layout/scripts/modalform.js")"></script>*@
+<script type="text/javascript" src="@Url.StaticFile("/assets/global/scripts/datatable.js")"></script>
+<script type="text/javascript" src="@Url.StaticFile("/Assets/global/scripts/modalform.js")"></script>
 }
 
 

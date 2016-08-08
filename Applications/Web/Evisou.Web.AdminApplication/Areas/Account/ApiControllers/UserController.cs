@@ -10,53 +10,22 @@ using System.Net.Http;
 using System.Web.Http;
 using Evisou.Web;
 using System.Linq.Expressions;
+using System.Net.Http.Headers;
+using System.Web;
+using System.Text;
 
 namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
 {
-   
-     [WebApiPermission(EnumBusinessPermission.AccountManage_User)]
+
+    //[RoutePrefix("api/account/user")]
+    [WebApiPermission(EnumBusinessPermission.AccountManage_User)]
     public class UserController : AdminApiControllerBase
     {
+        [HttpGet]
         public HttpResponseMessage Get([FromUri] UserInquiryDTO userInquiryDTO)
         {
 
-            switch (userInquiryDTO.CustomActionType)
-            {
-                case "GROUP_ACTION":
-
-                    switch (userInquiryDTO.CustomActionName)
-                    {
-                        case "delete":
-                            this.AccountService.DeleteUser(userInquiryDTO.IDs);
-                            break;
-                        case "freeze":
-                            foreach (var id in userInquiryDTO.IDs)
-                            {
-                                var model = this.AccountService.GetUser(id);
-                                model.IsActive = false;
-                                this.AccountService.SaveUser(model);
-                            }
-                            break;
-
-                        case "active":
-                            foreach (var id in userInquiryDTO.IDs)
-                            {
-                                var model = this.AccountService.GetUser(id);
-                                model.IsActive = true;
-                                this.AccountService.SaveUser(model);
-                            }
-                            break;
-                    }
-                    break;
-
-                case "DELETE":
-                    this.AccountService.DeleteUser(userInquiryDTO.IDs);
-                    break;
-            }
-        
-
-
-        TransactionalInformation transaction = new TransactionalInformation();
+            TransactionalInformation transaction = new TransactionalInformation();
             var allUsers = this.AccountService.GetUserList(null);
             IEnumerable<User> filterUsers = allUsers;
             if (!string.IsNullOrEmpty(userInquiryDTO.LoginName))
@@ -67,16 +36,25 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
                 filterUsers = filterUsers.Where(c => c.Email.Contains(userInquiryDTO.Email));
             if (userInquiryDTO.IsActive!=null)
                 filterUsers = filterUsers.Where(c => c.IsActive == userInquiryDTO.IsActive);
-
-
+            if (userInquiryDTO.RoleIds!=null)
+                filterUsers = filterUsers.Where(c => {
+                    if (c.Roles.Where(r => userInquiryDTO.RoleIds.Contains(r.ID)).ToList().Count != 0)
+                        return true;
+                    else
+                        return false;
+                });
+            
             int start = (userInquiryDTO.CurrentPageNumber - 1) * userInquiryDTO.PageSize;
             var sortDirection = userInquiryDTO.SortDirection;
             var sortExpression = userInquiryDTO.SortExpression;
 
 
-           
 
-            filterUsers = filterUsers.Skip(start).Take(userInquiryDTO.PageSize);
+            if (userInquiryDTO.PageSize > 0)
+            {
+                filterUsers = filterUsers.Skip(start).Take(userInquiryDTO.PageSize);
+            }
+            
             UserApiModels userWebApi = new UserApiModels();
             List<UserDTO> UserList = new List<UserDTO>();
 
@@ -89,7 +67,8 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
                     Email = user.Email,
                     Mobile = user.Mobile,
                     IsActive = user.IsActive,
-                    Roles = StringUtil.CutString(string.Join(",", user.Roles.Select(r => r.Name)), 40)
+                    Roles = StringUtil.CutString(string.Join(",", user.Roles.Select(r => r.Name)), 40),
+                    RoleIds = user.Roles.Select(r => r.ID).ToList()
                 });
             };
 
@@ -122,6 +101,11 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
                     break;
 
             }
+            UserDTO UserDto = new UserDTO();
+            List<RoleDTO> RoleList = new List<RoleDTO>();
+            this.AccountService.GetRoleList(null).ToList().ForEach(c => RoleList.Add(new RoleDTO { ID = c.ID, Name = c.Name, Info = c.Info }));
+            UserDto.RoleList = RoleList;
+            userWebApi.User = UserDto;
 
             userWebApi.Users = Result;
             userWebApi.TotalRecords = allUsers.Count();
@@ -131,11 +115,12 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
             return Request.CreateResponse(HttpStatusCode.OK, userWebApi);
         }
 
-        public HttpResponseMessage GetUser(int UserID)
+        [HttpGet]
+        public HttpResponseMessage GetUser([FromUri] int UserID)
         {
             TransactionalInformation transaction = new TransactionalInformation();
             var model = this.AccountService.GetUser(UserID);
-            var roles = this.AccountService.GetRoleList();
+
             UserApiModels userWebApi = new UserApiModels();
             userWebApi.User = new UserDTO
             {
@@ -143,17 +128,29 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
                 Email = model.Email,
                 Mobile = model.Mobile,
                 IsActive = model.IsActive,
-                Roles= StringUtil.CutString(string.Join(",", model.Roles.Select(r => r.Name)), 40)
+                Roles = StringUtil.CutString(string.Join(",", model.Roles.Select(r => r.Name)), 40),
+                RoleIds = model.Roles.Select(r => r.ID).ToList()
             };
 
-            
+            List<RoleDTO> RoleList = new List<RoleDTO>();
+            this.AccountService.GetRoleList(null).ToList().ForEach(c => RoleList.Add(new RoleDTO { ID = c.ID, Name = c.Name, Info = c.Info }));
+            userWebApi.User.RoleList = RoleList;
+
             userWebApi.ReturnMessage = transaction.ReturnMessage;
             userWebApi.ReturnStatus = transaction.ReturnStatus;
 
-           // this.ViewBag.RoleIds = new SelectList(roles, "ID", "Name", string.Join(",", model.Roles.Select(r => r.ID)));
+            // this.ViewBag.RoleIds = new SelectList(roles, "ID", "Name", string.Join(",", model.Roles.Select(r => r.ID)));
             return Request.CreateResponse(HttpStatusCode.OK, userWebApi);
         }
 
+        [HttpGet]
+        public HttpResponseMessage ExportUser([FromUri]  List<int> UserIDs, [FromUri] string DataType)
+        {
+           
+            HttpResponseMessage response = new HttpResponseMessage();
+            response=this.AccountService.UserDataExport(UserIDs, DataType);
+            return response;
+        }
 
         [HttpPost]
         public HttpResponseMessage Post([FromBody] UserDTO userDTO)
@@ -173,7 +170,8 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
                 this.AccountService.SaveUser(model);
                 transaction.ReturnStatus = true;
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 transaction.ReturnMessage = new List<string>();
                 string errorMessage = ex.Message;
                 transaction.ReturnStatus = false;
@@ -192,22 +190,134 @@ namespace Evisou.Web.AdminApplication.Areas.Account.ApiControllers
             userWebApi.IsAuthenicated = true;
             userWebApi.ReturnStatus = transaction.ReturnStatus;
             userWebApi.ReturnMessage.Add("注册成功");
-           
-       
 
-            return Request.CreateResponse(HttpStatusCode.OK,userWebApi);
+
+
+            return Request.CreateResponse(HttpStatusCode.OK, userWebApi);
+        }
+
+        [HttpPut]
+        public HttpResponseMessage Put([FromBody] UserDTO userDTO)
+        {
+            var model = this.AccountService.GetUser(userDTO.ID);
+            model.Password = userDTO.Password;
+            model.Password = Encrypt.MD5(model.Password);
+            model.Email = userDTO.Email;
+            model.Mobile = userDTO.Mobile;
+            model.IsActive = userDTO.IsActive;
+            model.RoleIds = userDTO.IDs;
+            UserApiModels userWebApi = new UserApiModels();
+            TransactionalInformation transaction = new TransactionalInformation();
+            try
+            {
+                this.AccountService.SaveUser(model);
+                transaction.ReturnStatus = true;
+            }
+            catch (Exception ex)
+            {
+                transaction.ReturnMessage = new List<string>();
+                string errorMessage = ex.Message;
+                transaction.ReturnStatus = false;
+                transaction.ReturnMessage.Add(errorMessage);
+            }
+
+            if (transaction.ReturnStatus == false)
+            {
+                userWebApi.ReturnMessage = transaction.ReturnMessage;
+                userWebApi.ReturnStatus = transaction.ReturnStatus;
+                userWebApi.ValidationErrors = transaction.ValidationErrors;
+                var badResponse = Request.CreateResponse<UserApiModels>(HttpStatusCode.BadRequest, userWebApi);
+                return badResponse;
+            }
+
+            userWebApi.IsAuthenicated = true;
+            userWebApi.ReturnStatus = transaction.ReturnStatus;
+            userWebApi.ReturnMessage.Add("修改成功");
+
+
+
+            return Request.CreateResponse(HttpStatusCode.OK, userWebApi);
+           
         }
 
         [HttpPatch]
-        [HttpPut]
-        public HttpResponseMessage Put()
+        public HttpResponseMessage Patch([FromBody] List<UserDTO> Users)
         {
-            return Request.CreateResponse(HttpStatusCode.OK);
+            
+            UserApiModels userWebApi = new UserApiModels();
+            TransactionalInformation transaction = new TransactionalInformation();
+            try
+            {
+                Users.ForEach(c =>
+                {
+                    var model = this.AccountService.GetUser(c.ID);
+                    model.LoginName = c.LoginName;
+                    model.Email = c.Email;
+                    model.Mobile = c.Mobile;
+                    model.IsActive = c.IsActive;
+                    model.RoleIds = c.RoleIds; //model.Roles.Select(r=>r.ID).ToList();
+                    this.AccountService.SaveUser(model);
+                });
+               
+                transaction.ReturnStatus = true;
+            }
+            catch (Exception ex)
+            {
+                transaction.ReturnMessage = new List<string>();
+                string errorMessage = ex.Message;
+                transaction.ReturnStatus = false;
+                transaction.ReturnMessage.Add(errorMessage);
+            }
+
+            if (transaction.ReturnStatus == false)
+            {
+                userWebApi.ReturnMessage = transaction.ReturnMessage;
+                userWebApi.ReturnStatus = transaction.ReturnStatus;
+                userWebApi.ValidationErrors = transaction.ValidationErrors;
+                var badResponse = Request.CreateResponse<UserApiModels>(HttpStatusCode.BadRequest, userWebApi);
+                return badResponse;
+            }
+
+            userWebApi.IsAuthenicated = true;
+            userWebApi.ReturnStatus = transaction.ReturnStatus;
+            userWebApi.ReturnMessage.Add("修改成功");
+
+
+
+            return Request.CreateResponse(HttpStatusCode.OK, userWebApi);
         }
 
-        public HttpResponseMessage Delete()
+        [HttpDelete]
+        public HttpResponseMessage Delete([FromUri] List<int> UserID)
         {
-            return Request.CreateResponse(HttpStatusCode.OK);
+            UserApiModels userWebApi = new UserApiModels();
+            TransactionalInformation transaction = new TransactionalInformation();
+            try
+            {
+                this.AccountService.DeleteUser(UserID);
+                transaction.ReturnStatus = true;
+            }
+            catch (Exception ex)
+            {
+                transaction.ReturnMessage = new List<string>();
+                string errorMessage = ex.Message;
+                transaction.ReturnStatus = false;
+                transaction.ReturnMessage.Add(errorMessage);
+            }
+
+            if (transaction.ReturnStatus == false)
+            {
+                userWebApi.ReturnMessage = transaction.ReturnMessage;
+                userWebApi.ReturnStatus = transaction.ReturnStatus;
+                userWebApi.ValidationErrors = transaction.ValidationErrors;
+                var badResponse = Request.CreateResponse<UserApiModels>(HttpStatusCode.BadRequest, userWebApi);
+                return badResponse;
+            }
+
+            userWebApi.IsAuthenicated = true;
+            userWebApi.ReturnStatus = transaction.ReturnStatus;
+            userWebApi.ReturnMessage.Add("删除成功");
+            return Request.CreateResponse(HttpStatusCode.OK, userWebApi);
         }
     }
 }

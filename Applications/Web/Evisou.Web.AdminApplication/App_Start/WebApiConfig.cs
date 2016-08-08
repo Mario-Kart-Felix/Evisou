@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Evisou.Web.AdminApplication.Handler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace Evisou.Web.AdminApplication
@@ -26,5 +29,13 @@ namespace Evisou.Web.AdminApplication
             //);
 
         }
+        public static void RegisterHandlers(System.Collections.ObjectModel.Collection<DelegatingHandler> handlers)
+        {
+            handlers.Add(new CorsMessageHandler());
+        }
+
+        
     }
+
+    
 }

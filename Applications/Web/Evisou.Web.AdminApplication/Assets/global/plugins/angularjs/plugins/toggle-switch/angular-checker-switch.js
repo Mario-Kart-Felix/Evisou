@@ -19,7 +19,7 @@
             },
             template: '<div class="checker">'+
                         '<span ng-class="{\'\': !model, \'checked\': model}" >' +
-                        //'<input type="checkbox" name="id[]" value="7">'+
+                        
                         '</span>' +
                        '</div>',
             compile: function (element, attrs) {

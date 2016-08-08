@@ -22,8 +22,8 @@ namespace Evisou.Account.Contract
         [EnumTitle("管理角色")]
         AccountManage_Role = 102,
 
-        [EnumTitle("用户简介")]
-        AccountManage_User_Profile = 103,
+       // [EnumTitle("用户简介")]
+       // AccountManage_User_Profile = 103,
 
         [EnumTitle("CMS管理文章")]
         CmsManage_Article = 201,
@@ -51,8 +51,8 @@ namespace Evisou.Account.Contract
         [EnumTitle("OA管理部门")]
         OAManage_Branch = 402,
 
-        [EnumTitle("组织结构管理")]
-        OAManage_Org = 403,
+        //[EnumTitle("组织结构管理")]
+        //OAManage_Org = 403,
 
         [EnumTitle("IMS管理产品")]
         ImsManage_Product = 501,

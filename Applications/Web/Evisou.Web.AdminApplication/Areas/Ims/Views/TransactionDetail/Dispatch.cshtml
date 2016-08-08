@@ -810,16 +810,15 @@
     </form>
 </div>
 
-    <script>
-        jQuery(document).ready(function () {
-            Transaction.dispatch(@Model.ID);
-        });
-        $(function () {
 
-            $('.form-section').css({
-                "margin": "30px 0px 25px 0px",
-                "padding-bottom": "5px",
-                "border-bottom": "1px solid #eee"
-            })
-        })
-    </script>
+
+<script>
+jQuery(document).ready(function () {
+    Transaction.dispatch(@Model.ID);
+    $('.form-section').css({
+        "margin": "30px 0px 25px 0px",
+        "padding-bottom": "5px",
+        "border-bottom": "1px solid #eee"
+    })
+});
+</script>

@@ -25,9 +25,8 @@ namespace Evisou.Core.Upload
             var subFolder = m.Groups[3].Value;
             var fileName = m.Groups[4].Value;
             var ext = m.Groups[5].Value;
-
-            foreach (var pair in UploadConfigContext.ThumbnailConfigDic
-                .Where(t => t.Key.StartsWith(folder.ToLower() + "_") && t.Value.Timming == timming))
+            var aa = UploadConfigContext.ThumbnailConfigDic.Where(t => t.Key.StartsWith(folder.ToLower() + "_") && t.Value.Timming == timming);
+            foreach (var pair in UploadConfigContext.ThumbnailConfigDic.Where(t => t.Key.StartsWith(folder.ToLower() + "_") && t.Value.Timming == timming))
             {
                 var size = pair.Value;
 

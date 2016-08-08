@@ -155,7 +155,7 @@ EvisouApp.service('ajaxService', ['$http', 'blockUI', function ($http,blockUI) {
                 }
                 errorFunction(response);
             });
-        }, 1000);
+        }, 0);
 
     }
 
@@ -169,7 +169,7 @@ EvisouApp.service('ajaxService', ['$http', 'blockUI', function ($http,blockUI) {
               //  blockUI.stop();
                 errorFunction(response);
             });
-        }, 1000);
+        }, 0);
 
     }
 
@@ -184,7 +184,7 @@ EvisouApp.service('ajaxService', ['$http', 'blockUI', function ($http,blockUI) {
                 if (response.IsAuthenicated == false) { window.location = "/index.html"; }
                 errorFunction(response);
             });
-        }, 1000);
+        }, 0);
 
     }
 
@@ -200,7 +200,7 @@ EvisouApp.service('ajaxService', ['$http', 'blockUI', function ($http,blockUI) {
                 if (response.IsAuthenicated == false) { window.location = "/index.html"; }
                 errorFunction(response);
             });
-        }, 1000);
+        }, 0);
 
     }
 

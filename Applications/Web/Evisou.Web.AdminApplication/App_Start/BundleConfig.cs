@@ -15,6 +15,16 @@ namespace Evisou.Web.AdminApplication.App_Start
         {
 
             #region /css/layout
+            bundles.Add(new StyleBundle("~/Assets/Global/Plugins/LayoutCSS").Include(
+               // "~/Assets/global/plugins/font-awesome/css/font-awesome.min.css"
+               // , "~/Assets/global/plugins/simple-line-icons/simple-line-icons.min.css"
+                 "~/assets/global/plugins/bootstrap/css/bootstrap.min.css"
+                , "~/Assets/global/plugins/uniform/css/uniform.default.css"
+                , "~/Assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
+                , "~/Assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css"
+                , "~/Assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css"
+                ));
+
 
             bundles.Add(new StyleBundle("~/Assets/global/plugins/font-awesome/css/css").Include(
                 "~/Assets/global/plugins/font-awesome/css/font-awesome.min.css"
@@ -42,6 +52,11 @@ namespace Evisou.Web.AdminApplication.App_Start
                       "~/Assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css"
                      ));
 
+            //bundles.Add(new StyleBundle("~/Theme/Global/Styles").Include(
+            //    "`/assets/global/css/components.min.css",
+            //    "`/assets/global/css/plugins.min.css"
+            //    ));
+
             bundles.Add(new StyleBundle("~/assets/admin/pages/css/css").Include(
                "~/assets/admin/pages/css/tasks.css"
                , "~/assets/admin/pages/css/profile.css"
@@ -64,8 +79,8 @@ namespace Evisou.Web.AdminApplication.App_Start
 
             #region /css/transaction/index
             //begin PageLevelPluginsCSS
-            bundles.Add(new StyleBundle("~/assets/global/plugins/select2/css").Include(
-                "~/assets/global/plugins/select2/css/select2.css"
+            bundles.Add(new StyleBundle("~/assets/global/plugins/select2/css/select2").Include(
+                "~/assets/global/plugins/select2/css/select2.min.css"
                 , "~/assets/global/plugins/select2/css/select2-bootstrap.min.css"
                 ));
 
@@ -103,7 +118,7 @@ namespace Evisou.Web.AdminApplication.App_Start
 
             bundles.Add(new StyleBundle("~/assets/global/plugins/jquery-file-upload/css/css").Include(
                 "~/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css"
-                ,"~/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css"));
+                , "~/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css"));
 
             //end PageLevelCSS
 
@@ -112,6 +127,63 @@ namespace Evisou.Web.AdminApplication.App_Start
             #region /css/Agent/Index
 
             #endregion
+
+            #region Account
+
+            #region Auth
+            #region /css/Account/Auth/Login
+            bundles.Add(new StyleBundle("~/Assets/Global/Login/CSS").Include(
+                "~/assets/global/css/components.min.css"
+                , "~/assets/global/css/plugins.min.css"
+               
+                ));
+            bundles.Add(new StyleBundle("~/Assets/Page/LoginCSS").Include(
+                "~/assets/pages/css/login.min.css"
+                ));
+            #endregion
+
+            #region /JS/Account/Auth/Login
+            bundles.Add(new ScriptBundle("~/Script/Account/Auth/Login").Include(
+                       "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
+                       , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
+                       , "~/assets/global/plugins/select2/js/select2.full.min.js"
+                       , "~/assets/global/scripts/app.min.js"
+                       , "~/assets/pages/scripts/login.min.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/Script/Account/Auth/Login2").Include(
+                      "~/assets/global/plugins/js.cookie.min.js",
+                      "~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
+                      "~/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
+                      "~/assets/global/plugins/jquery.blockui.min.js",
+                      "~/assets/global/plugins/uniform/jquery.uniform.min.js",
+                      "~/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
+                      "~/Assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
+                      "~/Assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
+
+                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
+                      , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
+                      , "~/assets/global/plugins/select2/js/select2.full.min.js"
+                      , "~/assets/global/scripts/app.min.js"
+                      , "~/assets/pages/scripts/login.min.js"
+                     ));
+            #endregion
+
+            #endregion
+
+
+            #region /css/Account/Auth/Index
+            bundles.Add(new StyleBundle("~/Assets/Global/Plugins/AuthCSS").Include(
+                "~/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css"
+                , "~/assets/global/plugins/morris/morris.css"
+                , "~/assets/global/plugins/fullcalendar/fullcalendar.min.css"
+                , "~/assets/global/plugins/jqvmap/jqvmap/jqvmap.css"
+                ));
+
+            #endregion
+
+            #endregion
+
 
             #region /Js/Layout
 
@@ -124,6 +196,17 @@ namespace Evisou.Web.AdminApplication.App_Start
                       "~/assets/global/plugins/jquery.min.js"
                       ));
 
+            bundles.Add(new ScriptBundle("~/assets/global/plugins/layout").Include(
+                "~/assets/global/plugins/morris/morris.min.js"
+                 , "~/assets/global/plugins/morris/raphael-min.js"
+                 , "~/assets/global/plugins/jquery.cookie.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/assets/global/app/layout").Include(
+                "~/Assets/global/scripts/app.min.js"
+                 , "~/Assets/global/scripts/modalform.js"
+
+                ));
             //bundles.Add(new ScriptBundle("~/Bundles/jquery-migrate").Include(
             //         "~/assets/global/plugins/jquery-migrate.min.js"));
 
@@ -131,7 +214,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             //    "~/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/assets/global/plugins/bootstrap/js/bootstrap.min.js"));
+                 "~/assets/global/plugins/bootstrap/js/bootstrap.min.js"));
 
             //bundles.Add(new ScriptBundle("~/Bundles/bootstrap-hover-dropdown").Include(
             //    "~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"));
@@ -170,19 +253,19 @@ namespace Evisou.Web.AdminApplication.App_Start
                       "~/Assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js",
                       "~/Assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js"
                       //,"~/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"
-                      
+
 
                       ));
 
             bundles.Add(new ScriptBundle("~/Level/Script").Include(
                         "~/assets/pages/scripts/dashboard.min.js"
                         , "~/assets/global/plugins/jquery-idle-timeout/jquery.idletimeout.js"
-                        ,"~/assets/global/plugins/jquery-idle-timeout/jquery.idletimer.js"
+                        , "~/assets/global/plugins/jquery-idle-timeout/jquery.idletimer.js"
                         , "~/Assets/pages/scripts/layout/ui-idletimeout.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/Theme/Global/Script").Include(
-                      //"~/assets/global/scripts/app.js",
+                       //"~/assets/global/scripts/app.js",
                        "~/assets/global/scripts/admin.main.js"//,"~/assets/global/scripts/metronic.js",
                       ));
 
@@ -196,16 +279,16 @@ namespace Evisou.Web.AdminApplication.App_Start
             #region IMS            
             #region Js/Ims/TransactionDetail/Index
             bundles.Add(new ScriptBundle("~/Plugins/TransactionDetail/Index").Include(
-                     
                       "~/assets/global/scripts/datatable.js"
                      , "~/assets/global/plugins/datatables/datatables.min.js"
                      , "~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"
                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
-                     ,"~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"
+                     , "~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"
                      , "~/assets/global/plugins/moment.min.js"
-                     , "~/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"
                      , "~/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+                     , "~/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"
+                     
                      , "~/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.2.4.18.js"
                      , "~/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"
                      , "~/assets/global/plugins/bootstrap-editable/bootstrap-editable/js/bootstrap-editable.js"
@@ -217,7 +300,7 @@ namespace Evisou.Web.AdminApplication.App_Start
                        "~/Assets/global/scripts/modalform.js"
                        , "~/Assets/pages/scripts/ims/transactiondetail.js"
                       ));
-        
+
             #endregion
 
             #region Js/Ims/Agent/Index
@@ -228,8 +311,8 @@ namespace Evisou.Web.AdminApplication.App_Start
                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js"
-                     , "~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"                    
-                     , "~/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.2.4.18.js"                     
+                     , "~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"
+                     , "~/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.2.4.18.js"
                      ));
 
             bundles.Add(new ScriptBundle("~/Script/Agent/Index").Include(
@@ -242,7 +325,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             #region Js/Ims/Association/Index
             bundles.Add(new ScriptBundle("~/Plugins/Association/Index").Include(
                      "~/assets/global/plugins/select2/js/select2.min.js"
-                     ,"~/assets/global/scripts/datatable.js"
+                     , "~/assets/global/scripts/datatable.js"
                      , "~/assets/global/plugins/datatables/datatables.min.js"
                      , "~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"
                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
@@ -306,7 +389,7 @@ namespace Evisou.Web.AdminApplication.App_Start
                      , "~/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"
                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
-                     , "~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"                   
+                     , "~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"
                      ));
 
             bundles.Add(new ScriptBundle("~/Script/PaypalApi/Index").Include(
@@ -350,7 +433,7 @@ namespace Evisou.Web.AdminApplication.App_Start
                      , "~/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js"
                      , "~/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"
                      , "~/Assets/global/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js"
-                    
+
                      ));
 
             bundles.Add(new ScriptBundle("~/Script/Supplier/Index").Include(
@@ -366,7 +449,7 @@ namespace Evisou.Web.AdminApplication.App_Start
             #region Js/Account/User/Index
             bundles.Add(new ScriptBundle("~/Plugins/User/Index").Include(
                      "~/assets/global/scripts/datatable.js"
-                      , "~/assets/global/plugins/datatables/datatables.min.js"
+                     // , "~/assets/global/plugins/datatables/datatables.min.js"
                       , "~/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
                       , "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
@@ -376,13 +459,13 @@ namespace Evisou.Web.AdminApplication.App_Start
 
             bundles.Add(new ScriptBundle("~/Script/User/Index").Include(
                        "~/Assets/pages/scripts/account/users.js"
-                       ,"~/Assets/global/scripts/modalform.js"
+                       , "~/Assets/global/scripts/modalform.js"
                       ));
 
             #endregion
 
             #region Js/Account/User/Myprofile
-            bundles.Add(new ScriptBundle("~/Plugins/User/Myprofile").Include(                    
+            bundles.Add(new ScriptBundle("~/Plugins/User/Myprofile").Include(
                       "~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/additional-methods.min.js"
                      , "~/assets/global/plugins/jquery-validation/js/jquery.validate.unobtrusive.js"
@@ -390,9 +473,41 @@ namespace Evisou.Web.AdminApplication.App_Start
 
                      ));
 
-            bundles.Add(new ScriptBundle("~/Script/User/Myprofile").Include(                   
-                     "~/assets/admin/layout/scripts/modalform.js"                    
+            bundles.Add(new ScriptBundle("~/Script/User/Myprofile").Include(
+                     "~/assets/admin/layout/scripts/modalform.js"
 
+                     ));
+            #endregion
+
+            #region Js/Account/Auth
+            bundles.Add(new ScriptBundle("~/Assets/Global/Plugins/AuthJS").Include(
+                     "~/assets/global/plugins/moment.min.js"
+                      , "~/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js"
+                      , "~/assets/global/plugins/counterup/jquery.waypoints.min.js"
+                      , "~/assets/global/plugins/counterup/jquery.counterup.min.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/amcharts.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/serial.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/pie.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/radar.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/themes/light.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/themes/patterns.js"
+                     , "~/assets/global/plugins/amcharts/amcharts/themes/chalk.js"
+                     , "~/assets/global/plugins/amcharts/ammap/ammap.js"
+                     , "~/assets/global/plugins/amcharts/ammap/maps/js/worldLow.js"
+                     , "~/assets/global/plugins/amcharts/amstockcharts/amstock.js"
+                     , "~/assets/global/plugins/fullcalendar/fullcalendar.min.js"
+                     , "~/assets/global/plugins/flot/jquery.flot.min.js"
+                     , "~/assets/global/plugins/flot/jquery.flot.resize.min.js"
+                     , "~/assets/global/plugins/flot/jquery.flot.categories.min.js"
+                     , "~/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js"
+                     , "~/assets/global/plugins/jquery.sparkline.min.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js"
+                     , "~/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js"
                      ));
             #endregion
 

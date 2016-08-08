@@ -35,6 +35,7 @@ function UserCtrl($rootScope, $compile, $scope, $http,$uibModal, $log, filterFil
     $scope.defaultSort = dataGridService.setDefaultSort("登录名");
     $scope.changeSorting = function (column, sorting) {
         if (sorting) {
+            console.log(dataGridService.getSortExpression());
             dataGridService.changeSorting(column, $scope.defaultSort, $scope.tableHeaders);
             $scope.defaultSort = dataGridService.getSort();
             $scope.SortDirection = dataGridService.getSortDirection();
@@ -51,8 +52,8 @@ function UserCtrl($rootScope, $compile, $scope, $http,$uibModal, $log, filterFil
 
     $scope.currentPage = 1;
     $scope.pagesizes = [
-                         //{ size: 2 },
-                         //{ size: 5 },
+                         { size: 2 },
+                         { size: 5 },
                          { size: 10 },
                          { size: 20 },
                          { size: 50 },
@@ -191,7 +192,7 @@ function UserCtrl($rootScope, $compile, $scope, $http,$uibModal, $log, filterFil
         angular.element('.table-group-actions').find('span').text(selectedUser.length != 0 ? '选择了' + selectedUser.length + '条记录' : '');
     };
     $scope.checkAll = function () {
-
+       
         console.log($scope.selectAll);
         angular.forEach($scope.users, function (obj) {
             obj.selected = $scope.selectAll;

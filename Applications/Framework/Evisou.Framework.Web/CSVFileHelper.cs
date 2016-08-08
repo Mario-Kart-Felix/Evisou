@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -76,7 +79,7 @@ namespace Evisou.Framework.Web
             }
             using (MemoryStream ms = new MemoryStream())
             {
-                using (StreamWriter sw = new StreamWriter(ms))
+                using (StreamWriter sw = new StreamWriter(ms, System.Text.Encoding.GetEncoding("utf-8")))
                 {
                    
                     #region 
@@ -119,7 +122,25 @@ namespace Evisou.Framework.Web
                 return ms;
             }
         }
- 
+
+        public static HttpResponseMessage ExportByHttpResponseMessage(DataTable dtSource, string strHeaderText, string strFileName, string strSheetName, string[] oldColumnNames, string[] newColumnNames)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ByteArrayContent(new byte[] { 0xEF, 0xBB, 0xBF });
+            response.Content = new ByteArrayContent(SaveCSV(dtSource, strHeaderText, strSheetName, oldColumnNames, newColumnNames).GetBuffer());
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/CSV");
+            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+            response.Content.Headers.Add("x-filename", HttpUtility.UrlEncode(strFileName, Encoding.UTF8)); // 中文乱码
+            return response;
+            
+        }
+
+        public static HttpResponseMessage ExportByHttpResponseMessage(DataTable dtSource, string strHeaderText, string strFileName, string[] oldColumnNames, string[] newColumnNames)
+        {
+           return ExportByHttpResponseMessage(dtSource, strHeaderText, strFileName, "sheet", oldColumnNames, newColumnNames);
+        }
+
         public static void ExportByWeb(DataTable dtSource, string strHeaderText, string strFileName, string strSheetName, string[] oldColumnNames, string[] newColumnNames)
         {
             HttpContext curContext = HttpContext.Current;

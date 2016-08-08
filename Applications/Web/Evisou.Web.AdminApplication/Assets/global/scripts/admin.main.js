@@ -132,7 +132,7 @@ $("#checkall").click(function () {
 });
 
 $("#delete").click(function () {
-    var message = "你确定要删除勾选的记录吗?";
+    var message = "你确定要删除勾选的记录吗?ghgfhfghf";
     if ($(this).attr("message"))
         message = $(this).attr("message") + "，" + message;
     if (confirm(message))

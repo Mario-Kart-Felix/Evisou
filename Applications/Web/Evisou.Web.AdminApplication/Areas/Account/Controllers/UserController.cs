@@ -287,7 +287,7 @@ namespace Evisou.Web.AdminApplication.Areas.Account.Controllers
         public ActionResult Delete(List<int> ids)
         {
             
-            this.AccountService.DeleteUser(ids);
+           this.AccountService.DeleteUser(ids);
             return RedirectToAction("Index");
         }
 

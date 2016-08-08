@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Data;
 using System.IO;
 using System.Text;
@@ -6,6 +6,9 @@ using System.Web;
 using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net;
 
 namespace Evisou.Framework.Web
 {
@@ -60,17 +63,25 @@ namespace Evisou.Framework.Web
                 workbook.DocumentSummaryInformation = dsi;
 
                 SummaryInformation si = PropertySetFactory.CreateSummaryInformation();
-                if (HttpContext.Current.Session["realname"] != null)
+                if (HttpContext.Current.Session != null)
                 {
-                    si.Author = HttpContext.Current.Session["realname"].ToString();
+                    if (HttpContext.Current.Session["realname"] != null)
+                    {
+                        si.Author = HttpContext.Current.Session["realname"].ToString();
+                    }
+                    else
+                    {
+                        if (HttpContext.Current.Session["username"] != null)
+                        {
+                            si.Author = HttpContext.Current.Session["username"].ToString();
+                        }
+                    }
                 }
                 else
                 {
-                    if (HttpContext.Current.Session["username"] != null)
-                    {
-                        si.Author = HttpContext.Current.Session["username"].ToString();
-                    }
-                }                                       //填加xls文件作者信息      
+                    si.Author = "系统";
+                }
+                                                      //填加xls文件作者信息      
                 si.ApplicationName = "NPOI";            //填加xls文件创建程序信息      
                 si.LastAuthor = "OA系统";           //填加xls文件最后保存者信息      
                 si.Comments = "OA系统自动创建文件";      //填加xls文件作者信息      
@@ -284,6 +295,16 @@ namespace Evisou.Framework.Web
             ExportByWeb(dtSource, strHeaderText, strFileName, "sheet", oldColumnNames, newColumnNames);
         }
 
+        public static HttpResponse ExportByHttpResponse(DataTable dtSource, string strHeaderText, string strFileName, string[] oldColumnNames, string[] newColumnNames)
+        {
+           return  ExportByHttpResponse(dtSource, strHeaderText, strFileName, "sheet", oldColumnNames, newColumnNames);
+        }
+
+        public static HttpResponseMessage ExportByHttpResponseMessage(DataTable dtSource, string strHeaderText, string strFileName, string[] oldColumnNames, string[] newColumnNames)
+        {
+            return ExportByHttpResponseMessage(dtSource, strHeaderText, strFileName, "sheet", oldColumnNames, newColumnNames);
+        }
+
         /// <summary>   
         /// WEB导出DataTable到Excel   
         /// </summary>   
@@ -341,6 +362,34 @@ namespace Evisou.Framework.Web
             curContext.Response.BinaryWrite(Export(dtSource, strHeaderText, strSheetName, oldColumnNames, newColumnNames).GetBuffer());
             curContext.Response.End();
         }
+
+        public static HttpResponse ExportByHttpResponse(DataTable dtSource, string strHeaderText, string strFileName, string strSheetName, string[] oldColumnNames, string[] newColumnNames)
+        {
+            HttpContext curContext = HttpContext.Current;
+
+            // 设置编码和附件格式      
+            curContext.Response.ContentType = "application/vnd.ms-excel";
+            curContext.Response.ContentEncoding = Encoding.UTF8;
+            curContext.Response.Charset = "";
+            curContext.Response.AppendHeader("Content-Disposition",
+                "attachment;filename=" + HttpUtility.UrlEncode(strFileName, Encoding.UTF8));
+
+            curContext.Response.BinaryWrite(Export(dtSource, strHeaderText, strSheetName, oldColumnNames, newColumnNames).GetBuffer());
+            return curContext.Response;
+        }
+
+        public static HttpResponseMessage ExportByHttpResponseMessage(DataTable dtSource, string strHeaderText, string strFileName, string strSheetName, string[] oldColumnNames, string[] newColumnNames)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            response.StatusCode = HttpStatusCode.OK;
+            response.Content = new ByteArrayContent(Export(dtSource, strHeaderText, strSheetName, oldColumnNames, newColumnNames).GetBuffer());
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/vnd.ms-excel");
+            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+            response.Content.Headers.Add("x-filename", HttpUtility.UrlEncode(strFileName, Encoding.UTF8)); // 中文乱码
+            return response;
+        }
+
+
 
         /// <summary>读取excel      
         /// 默认第一行为表头，导入第一个工作表   

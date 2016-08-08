@@ -1,6 +1,10 @@
 ﻿
 using System;
+using System.Web;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+
 namespace Evisou.Account.Contract
 {
     public interface IAccountService
@@ -15,11 +19,13 @@ namespace Evisou.Account.Contract
         void SaveUser(User user);
         void DeleteUser(List<int> ids);
         //void ChangeStatus(List<int> ids,string status);
-
+        HttpResponseMessage UserDataExport(List<int> ids, string type);
+   
         Role GetRole(int id);
         IEnumerable<Role> GetRoleList(RoleRequest request = null);
         void SaveRole(Role role);
         void DeleteRole(List<int> ids);
+        HttpResponseMessage RoleDataExport(List<int> ids, string type);
 
         Guid SaveVerifyCode(string verifyCodeText);
         bool CheckVerifyCode(string verifyCodeText, Guid guid);

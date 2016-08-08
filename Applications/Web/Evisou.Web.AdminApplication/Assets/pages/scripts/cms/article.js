@@ -222,12 +222,12 @@
 
         $('#fileupload').fileupload({
             url: url,//"@Url.StaticFile()/UploadHandler.ashx",
-            dataType: 'json',
+            //dataType: 'json',
             autoUpload: false,
             maxNumberOfFiles: 1,
-            limitConcurrentUploads: 1,
+           // limitConcurrentUploads: 1,
             acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-            maxFileSize: 5000000, // 5 MB           
+            maxFileSize: 10971520,//5000000, // 5 MB           
             disableImageResize: /Android(?!.*Chrome)|Opera/
                 .test(window.navigator.userAgent),
             previewMaxWidth: 180,
@@ -270,6 +270,7 @@
             }
 
         }).on('fileuploadprocessalways', function (e, data) {
+            console.log(file);
             var index = data.index,
                 file = data.files[index],
                 node = $(data.context.children()[index]);

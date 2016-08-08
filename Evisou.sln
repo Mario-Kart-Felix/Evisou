@@ -80,8 +80,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Framework.Contract",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Framework.BLL", "Applications\Framework\Evisou.Framework.BLL\Evisou.Framework.BLL.csproj", "{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evisou.Web.AdminAngularJS", "Applications\Web\Evisou.Web.AdminAngularJS\Evisou.Web.AdminAngularJS.csproj", "{EA889E96-A4AA-42C5-A992-80A071466E79}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -200,10 +198,6 @@ Global
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA889E96-A4AA-42C5-A992-80A071466E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA889E96-A4AA-42C5-A992-80A071466E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA889E96-A4AA-42C5-A992-80A071466E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA889E96-A4AA-42C5-A992-80A071466E79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -237,6 +231,5 @@ Global
 		{8D3C7012-8D28-419E-B24B-5D5A77782D42} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
 		{DC181585-D2D9-4748-B425-9A7AF7BCAB11} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
 		{653EE8D0-B8A1-4BF1-AC15-63EEE3880E70} = {55EE2AF6-2EEB-46D4-AED8-C8D622FE1608}
-		{EA889E96-A4AA-42C5-A992-80A071466E79} = {73BAF842-625A-48AA-81C9-22A358E2E59B}
 	EndGlobalSection
 EndGlobal
